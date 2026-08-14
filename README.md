@@ -64,9 +64,11 @@ AXMM은 반대로 본다. **AI 시대에 확장은 쉽다. 어렵고 병목인 �
 ## 이 저장소의 구성
 
 ```
-docs/index.html        웹 버전 (GitHub Pages)
+docs/index.html        웹 버전 (GitHub Pages, 원고에서 자동 생성)
 chapters/              원고 21꼭지 + 검수 리포트
 model/axmm-v0.2.md     모델 명세 — 30문항·채점 규칙의 단일 진실 공급원
+site/                  웹 템플릿·SEO/공유 메타데이터
+scripts/               사이트 빌드·구조 검증
 00_direction.md        방향 확정 (정체성·경쟁 지형·대상 독자)
 01_reference_models.md 기존 6개 모델 지형도 + 학술 비판
 01b, 01c               SEI·MIT 정밀 분석 / SEI 원문 124쪽 정독 노트
@@ -75,6 +77,20 @@ WRITING_BRIEF.md       집필 지침
 REVIEW_BRIEF.md        검수 지침
 DEDUP_DECISIONS.md     중복 소유권 재정
 ```
+
+## 웹 버전 빌드
+
+웹 원고와 삽화 정보의 원본은 `chapters/*_draft.md`다. Pandoc이 설치된
+환경에서 다음 명령으로 `docs/index.html`을 다시 만들고 구조를 검증한다.
+
+```bash
+./scripts/build-site.sh
+```
+
+빌드 과정은 각 원고의 YAML 메타데이터를 제외하고 정해진 순서로 합친 뒤
+`site/template.html`을 적용한다. 이미지 경로·반응형 `srcset`·대체 텍스트,
+내부 링크, SEO/공유 메타데이터는 `scripts/validate_site.py`가 검사한다.
+Pull Request와 `main` 푸시에서도 같은 검증이 자동 실행된다.
 
 ## 이 책에 없는 것
 

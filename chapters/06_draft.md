@@ -7,6 +7,15 @@
 
 # 6장. 어떻게 재는가
 
+<figure class="editorial-figure">
+<img src="assets/images/ch06-first-gap.webp"
+     srcset="assets/images/ch06-first-gap-704.webp 704w, assets/images/ch06-first-gap.webp 1408w"
+     sizes="(max-width: 736px) calc(100vw - 2.5rem), 704px"
+     alt="연속된 사슬의 첫 번째 빈 고리에서 자와 점검팀이 멈추고 뒤쪽 고리들은 떨어져 있는 삽화"
+     width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>뒤의 성취가 아무리 많아도 첫 번째 빈칸에서 눈금은 멈춘다.</figcaption>
+</figure>
+
 같은 자를 두 사람에게 나눠줬다고 해보자. 축도 같고 단계 정의도 같다. 문항도 글자 하나 다르지 않다. 다만 한 사람에게는 "해당되면 표시하세요"라고 말했고, 다른 사람에게는 "해당된다고 말할 근거를 한 줄 적으세요"라고 말했다. 30문항이 끝나고 두 장의 결과지를 나란히 놓으면, 같은 조직을 잰 것이라고 믿기 어려울 만큼 벌어져 있다.
 
 이상한 일이다. 자는 같았는데 왜 그럴까?

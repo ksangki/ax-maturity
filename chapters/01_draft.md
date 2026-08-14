@@ -8,6 +8,15 @@
 
 # 1장. 다들 하고 있는데, 아무도 어디쯤인지 모른다
 
+<figure class="editorial-figure">
+<img src="assets/images/ch01-activity-vs-position.webp"
+     srcset="assets/images/ch01-activity-vs-position-704.webp 704w, assets/images/ch01-activity-vs-position.webp 1408w"
+     sizes="(max-width: 736px) calc(100vw - 2.5rem), 704px"
+     alt="활동량을 나타내는 수많은 표와 토큰 앞에서 사람들이 위치 표시가 없는 지도를 바라보는 삽화"
+     width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>많이 했다는 숫자와 어디쯤 왔다는 위치는 다르다.</figcaption>
+</figure>
+
 회의실에 경영진이 앉아 있고 화면에는 이번 분기 AX 추진 현황이 떠 있다고 해보자. 도입한 도구 몇 종, 교육을 이수한 인원 몇 명, 착수한 과제 몇 건. 숫자는 빠짐없이 채워져 있고 전부 작년보다 늘었다. 발표는 무난하게 끝나가는 참이다. 그런데 누군가 자료를 덮으며 이렇게 묻는다.
 
 "그래서 우리가 지금 어디쯤 온 겁니까?"

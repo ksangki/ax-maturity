@@ -7,6 +7,15 @@
 
 # 8장. A. 인식·동기·역량 — 배우는 수단은 대체로 갖춰져 있다
 
+<figure class="editorial-figure">
+<img src="assets/images/ch08-learning-paths.webp"
+     srcset="assets/images/ch08-learning-paths-704.webp 704w, assets/images/ch08-learning-paths.webp 1408w"
+     sizes="(max-width: 736px) calc(100vw - 2.5rem), 704px"
+     alt="공동 학습 도구가 가득한 열린 수납장에서 사람들이 각자 다른 경로로 실제 작업을 향해 나아가는 삽화"
+     width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>배우는 수단은 함께 열어두되, 다음 한 걸음은 사람마다 달라야 한다.</figcaption>
+</figure>
+
 분기 보고에 올릴 장표를 한 장 만든다고 해보자. AX 칸에 무엇을 적을 수 있을까. 아마 가장 먼저 손이 가는 건 교육일 것이다. 올해 연 과정 수, 이수 인원, 만족도 점수. 숫자가 또박또박 나오고 전년 대비 증가율까지 붙는다. 장표 한 장이 금세 채워진다.
 
 그리고 보고 자리에서 이런 질문이 온다. "그래서 뭐가 달라졌습니까."

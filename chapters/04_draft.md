@@ -7,6 +7,15 @@
 
 # 4장. 여정으로 축을 잡다
 
+<figure class="editorial-figure">
+<img src="assets/images/ch04-six-axes.webp"
+     srcset="assets/images/ch04-six-axes-704.webp 704w, assets/images/ch04-six-axes.webp 1408w"
+     sizes="(max-width: 736px) calc(100vw - 2.5rem), 704px"
+     alt="학습과 제작, 운영과 측정의 네 경로를 두 개의 바깥 레일이 감싸며 여섯 경로가 함께 나아가는 삽화"
+     width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>네 개의 여정 축과 두 개의 관통 축은 함께 움직인다.</figcaption>
+</figure>
+
 눈금을 새기기 전에 정해야 하는 게 하나 있다. 이 자로 무엇을 재느냐가 아니라, **무엇과 무엇을 따로 재느냐**다. 키와 몸무게를 한 줄의 눈금에 얹을 수는 없다. 따로 재기로 정하는 순간 눈금이 갈라지고, 그 갈라짐이 곧 그 자의 세계관이 된다.
 
 성숙도 모델에서는 이 결정을 축이라고 부른다. 몇 단계로 나눌지, 어떻게 점수를 매길지 하는 이야기는 전부 그다음이다. 축을 잘못 잡으면 뒤가 아무리 정교해도 엉뚱한 것을 아주 정밀하게 재게 된다. 그렇게 나온 결과지는 촘촘할수록 더 겉돈다. 그러니 축부터 정해보자.

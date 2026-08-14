@@ -7,6 +7,15 @@
 
 # 2장. 이미 나와 있는 자들, 그리고 그들이 비워둔 자리
 
+<figure class="editorial-figure">
+<img src="assets/images/ch02-existing-rulers-gaps.webp"
+     srcset="assets/images/ch02-existing-rulers-gaps-704.webp 704w, assets/images/ch02-existing-rulers-gaps.webp 1408w"
+     sizes="(max-width: 736px) calc(100vw - 2.5rem), 704px"
+     alt="정교한 대형 측정 장치의 눈금이 자원 연결과 사람 간 인계 구간에서 비고, 손이 작은 자에 새 눈금을 그리는 삽화"
+     width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>좋은 자도 다른 조직을 위해 만들어졌다면 우리가 아픈 자리에 빈 눈금을 남긴다.</figcaption>
+</figure>
+
 자를 하나 만들어보기로 하고 자료를 뒤지기 시작했다고 해보자. 며칠 지나지 않아 이런 문서를 만난다. 124쪽짜리 AI 성숙도 모델. 다섯 단계, 여덟 개 차원, 스물일곱 개 역량영역. 발표는 2026년 6월이고, 낸 곳은 카네기멜런대학교 소프트웨어공학연구소다. 줄여서 SEI라고 부르는 그곳, **CMMI를 만든 바로 그 조직**이다.[^c2n1]
 
 그 대목에서 손이 멈춘다. 나에게 이건 남의 소식이 아니다. 10년 동안 내가 들고 다니던 자를 만든 사람들이, AI 시대에 맞춰 새 자를 깎아서 내놓은 것이다. 그렇다면 하나 더 만들 이유가 남아 있기는 할까?

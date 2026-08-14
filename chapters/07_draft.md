@@ -7,6 +7,15 @@
 
 # 7장. 스스로 재는 일의 함정
 
+<figure class="editorial-figure">
+<img src="assets/images/ch07-three-perspectives.webp"
+     srcset="assets/images/ch07-three-perspectives-704.webp 704w, assets/images/ch07-three-perspectives.webp 1408w"
+     sizes="(max-width: 736px) calc(100vw - 2.5rem), 704px"
+     alt="세 사람이 같은 입체 구조물을 서로 다른 투명 도면으로 바라보고 옆 거울에는 왜곡된 모습이 비치는 삽화"
+     width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>혼자 보면 하나의 단면만 보인다. 서로 다른 관점이 겹칠 때 실체가 드러난다.</figcaption>
+</figure>
+
 앞 장에서 만든 자를 실제로 손에 쥐었다고 해보자. 화면에 문항이 하나씩 뜬다. 중간쯤에서 이런 문장을 만난다. "사내 시스템 연동의 전사 표준이 정립돼 있다." 보유, 보완, 신규 중에 하나를 골라야 한다.
 
 자, 여기서 손가락이 어디로 갈까. 표준이라고 부를 만한 문서가 있기는 하다. 다만 과제마다 담당 조직을 다시 찾아가 개별로 협의하는 것도 사실이다. 그러면 이건 보유인가 보완인가. 몇 초쯤 망설이다가 아마 보유 쪽으로 기울 것이다. 아주 없는 건 아니니까.

@@ -7,6 +7,15 @@
 
 # 13장. 병목부터 하나
 
+<figure class="editorial-figure">
+<img src="assets/images/ch13-bottleneck.webp"
+     srcset="assets/images/ch13-bottleneck-704.webp 704w, assets/images/ch13-bottleneck.webp 1408w"
+     sizes="(max-width: 736px) calc(100vw - 2.5rem), 704px"
+     alt="여섯 흐름이 하나의 좁은 관문에 막혀 있고 사람들이 그 관문 속 장애물 하나를 집중해서 치우는 삽화"
+     width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>여섯 축을 한꺼번에 고치지 않는다. 전체 흐름을 막는 한 곳부터 연다.</figcaption>
+</figure>
+
 진단을 끝내고 결과지를 받아 든 순간을 그려보자. 낮은 축이 하나가 아니다. 둘이거나 셋이다. 화면을 위에서 아래로 훑으면 비어 있는 자리가 하나씩 눈에 걸린다. 여기도 없고, 저기는 있는데 기준이 안 정해져 있고, 이건 당연히 있는 줄 알았는데 막상 증거를 못 댔다.
 
 그러면 손이 저절로 움직인다. 노트를 열고 고칠 것을 적기 시작한다. 하나를 적으면 거기 딸린 게 또 하나 떠오르고, 이십 분쯤 지나면 목록이 열 줄을 넘어간다. 그러면 이번엔 이름을 붙이고 싶어진다. 상반기와 하반기로 나누고, 담당을 적고, 다음 분기 계획에 얹는다. 여기까지 반나절이면 된다.

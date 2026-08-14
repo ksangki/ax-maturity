@@ -1,0 +1,31 @@
+name: Site quality
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Install Pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes pandoc
+
+      - name: Build and validate site
+        run: ./scripts/build-site.sh
+
+      - name: Ensure generated HTML is committed
+        run: git diff --exit-code -- docs/index.html
+
+      - name: Check whitespace errors
+        run: git diff --check

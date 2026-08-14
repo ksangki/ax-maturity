@@ -7,6 +7,15 @@
 
 # 12장. I·J. 자원과 레일 — 내 권한 밖이 내 발목을 잡을 때
 
+<figure class="editorial-figure">
+<img src="assets/images/ch12-resources-and-rails.webp"
+     srcset="assets/images/ch12-resources-and-rails-704.webp 704w, assets/images/ch12-resources-and-rails.webp 1408w"
+     sizes="(max-width: 736px) calc(100vw - 2.5rem), 704px"
+     alt="완성된 기계가 끊어진 전원과 미완성 안전 레일 사이에 멈춰 있고 팀이 근거 자료를 들고 의사결정자를 바라보는 삽화"
+     width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>팀이 갈 수 있는 데까지 갔다면, 다음 일은 자원과 안전한 레일을 위로 올리는 것이다.</figcaption>
+</figure>
+
 반년을 들여 에이전트 하나를 만들었다고 해보자. 시범 기간에는 잘 돌았다. 열 명이 써봤고 반응도 나쁘지 않았다. 그래서 전 부서로 넓히기로 했는데, 결정이 나자마자 질문 하나가 돌아온다.
 
 "그거 계속 돌리는 비용은 어디서 나오나요?"

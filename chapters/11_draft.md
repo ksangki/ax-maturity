@@ -7,6 +7,15 @@
 
 # 11장. D. 평가·측정·개선 — 투입은 재는데 성과를 못 잰다
 
+<figure class="editorial-figure">
+<img src="assets/images/ch11-measure-outcomes.webp"
+     srcset="assets/images/ch11-measure-outcomes-704.webp 704w, assets/images/ch11-measure-outcomes.webp 1408w"
+     sizes="(max-width: 736px) calc(100vw - 2.5rem), 704px"
+     alt="쉽게 셀 수 있는 투입물과 측정하기 어려운 성장 결과가 저울 양쪽에 놓이고 사람들이 새 측정기를 만드는 삽화"
+     width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>투입은 쉽게 세지만 성과를 재려면 별도의 눈금과 되먹임이 필요하다.</figcaption>
+</figure>
+
 "그래서 이번 분기에 뭐가 얼마나 좋아졌습니까."
 
 회의실에서 이 질문이 나왔다고 해보자. 준비한 장표에는 숫자가 빼곡하다. 착수한 과제 몇 건, 참여 인원 몇 명, 사용한 토큰 얼마, 월 비용 얼마. 하나도 틀린 숫자가 없다. 밤새 맞춰본 숫자들이다.
