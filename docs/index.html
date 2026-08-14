@@ -69,11 +69,13 @@
   :root{
     --bg:#fbfaf8; --fg:#1c1b19; --muted:#6b6862; --rule:#e3dfd8;
     --accent:#8a5a3b; --mark:#f3ede4; --quote:#f6f2ec;
+    --panel:#f8f3ec; --panel-strong:#efe3d5;
     --maxw:44rem;
   }
   @media (prefers-color-scheme:dark){
     :root{ --bg:#16151a; --fg:#e8e5e0; --muted:#aaa49b; --rule:#34313a;
-           --accent:#d0a17a; --mark:#26232b; --quote:#1e1c22; }
+           --accent:#d0a17a; --mark:#26232b; --quote:#1e1c22;
+           --panel:#201d24; --panel-strong:#30271f; }
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth; color:var(--fg); background:var(--bg); font-size:100%}
@@ -124,8 +126,8 @@
   ul,ol{padding-left:1.3rem; margin:1.15rem 0}
   li{margin:.45rem 0}
   hr{border:0; border-top:1px solid var(--rule); margin:3rem 0}
-  table{width:100%; border-collapse:collapse; margin:1.8rem 0; font-size:.94rem; display:block; overflow-x:auto; white-space:nowrap}
-  th,td{border-bottom:1px solid var(--rule); padding:.6rem .7rem; text-align:left}
+  table{width:100%; border-collapse:collapse; margin:1.8rem 0; font-size:.94rem; white-space:normal}
+  th,td{border-bottom:1px solid var(--rule); padding:.65rem .7rem; text-align:left; vertical-align:top; line-height:1.65}
   th{font-weight:600; color:var(--muted); font-size:.86rem}
   code{background:var(--mark); padding:.12em .38em; border-radius:3px; font-size:.9em}
   pre{overflow:auto; padding:1rem; background:var(--mark); border-radius:4px}
@@ -136,6 +138,47 @@
   .editorial-figure figcaption{margin:.65rem .15rem 0; color:var(--muted); font-size:.82rem; line-height:1.65; text-align:center}
   .cover .editorial-figure{margin:2.5rem 0 0}
   .cover .editorial-figure img{border-radius:8px}
+
+  .leader-summary{
+    margin:3.2rem 0 2.8rem; padding:1.35rem 1.5rem;
+    background:linear-gradient(145deg,var(--panel),var(--bg));
+    border:1px solid var(--accent); border-radius:10px;
+    box-shadow:0 8px 24px rgba(75,52,36,.06);
+  }
+  .leader-summary h2{margin:0 0 1rem; font-size:1.16rem}
+  .leader-summary h2::before{
+    content:"3분 요약"; display:block; width:max-content; margin:0 0 .65rem;
+    padding:.15rem .5rem; border-radius:999px; background:var(--panel-strong);
+    color:var(--accent); font-size:.68rem; line-height:1.55; letter-spacing:.12em;
+  }
+  .leader-summary p{margin:.82rem 0}
+  .leader-summary p:last-child{margin-bottom:0}
+
+  .reading-aid{
+    margin:2.2rem 0; padding:1.15rem 1.3rem 1.25rem;
+    background:var(--panel); border:1px solid var(--rule); border-radius:8px;
+    overflow-x:auto;
+  }
+  .reading-aid>h3:first-child{margin:0 0 .45rem; color:var(--fg); font-size:1rem}
+  .reading-aid>p:first-child{margin-top:0}
+  .reading-aid table{margin:1rem 0 0; table-layout:fixed; word-break:normal; overflow-wrap:anywhere}
+  .reading-aid th{background:var(--panel-strong); color:var(--fg)}
+  .reading-aid tr:last-child td{border-bottom:0}
+  .reading-aid.wide-table table{min-width:48rem}
+  .decision-path ol{
+    display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.7rem;
+    margin:1rem 0 0; padding:0; list-style:none; counter-reset:decision-step;
+  }
+  .decision-path li{
+    position:relative; margin:0; padding:.78rem .85rem .78rem 2.55rem;
+    background:var(--bg); border:1px solid var(--rule); border-radius:6px;
+    line-height:1.6; counter-increment:decision-step;
+  }
+  .decision-path li::before{
+    content:counter(decision-step); position:absolute; left:.78rem; top:.78rem;
+    width:1.25rem; height:1.25rem; border-radius:50%; background:var(--accent);
+    color:var(--bg); font-size:.7rem; line-height:1.25rem; text-align:center; font-weight:700;
+  }
 
   .footnotes{margin-top:5rem; padding-top:2rem; border-top:1px solid var(--rule); font-size:.88rem; color:var(--muted)}
   .footnotes h2{font-size:.82rem; letter-spacing:.14em; text-transform:uppercase}
@@ -152,6 +195,12 @@
     h1{font-size:1.55rem; margin:4rem 0 1.5rem}
     .editorial-figure{margin:1.8rem 0 2.2rem}
     .editorial-figure img{border-radius:4px}
+    .leader-summary{margin:2.6rem -.15rem 2.3rem; padding:1.15rem 1.1rem}
+    .reading-aid{margin:2rem -.15rem; padding:1rem .85rem}
+    .reading-aid table{font-size:.82rem; table-layout:auto}
+    .reading-aid th,.reading-aid td{padding:.55rem .45rem; line-height:1.55}
+    .reading-aid:not(.wide-table) th,.reading-aid:not(.wide-table) td{min-width:5.5rem}
+    .decision-path ol{grid-template-columns:1fr}
   }
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   @media print{
@@ -160,6 +209,7 @@
     h1{page-break-before:always}
     main.wrap>h1:first-child{page-break-before:auto}
     .editorial-figure{break-inside:avoid; page-break-inside:avoid}
+    .leader-summary,.reading-aid{break-inside:avoid; box-shadow:none; background:#fff}
   }
   </style>
 </head>
@@ -256,6 +306,45 @@
 좋다.</p>
 <p>그리고 30문항은 부록 A에 있다. 설명은 됐고 당장 재보고 싶다면
 거기부터 펼쳐도 좋다. 15분이면 된다.</p>
+<section id="지금-상황에서-펼칠-곳" class="reading-aid">
+<h3>지금 상황에서 펼칠 곳</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>지금 필요한 것</th>
+<th>먼저 펼칠 곳</th>
+<th>이어서 볼 곳</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>막힌 축의 처방이 급하다</td>
+<td>8~12장</td>
+<td>우선순위를 고르는 13장</td>
+</tr>
+<tr class="even">
+<td>모델의 근거와 설계가 궁금하다</td>
+<td>1~7장</td>
+<td>기존 모델을 해부한 부록 C</td>
+</tr>
+<tr class="odd">
+<td>경영 판단에 필요한 핵심만 읽고 싶다</td>
+<td>각 장의 「리더는 여기까지만 읽어도 된다」</td>
+<td>함께 재는 14장과 오용을 막는 15장</td>
+</tr>
+<tr class="even">
+<td>지금 바로 조직을 재보고 싶다</td>
+<td>부록 A의 서른 문항</td>
+<td>화면 안내인 부록 B</td>
+</tr>
+</tbody>
+</table>
+</section>
 <h2 id="약속하지-않는-것">약속하지 않는 것</h2>
 <p>대신 미리 말해둘 것이 두 가지 있다.</p>
 <p>첫째, 이 책은 정답을 주지 않는다. 성숙도 모델은 자지 목적지가 아니다.
@@ -342,6 +431,50 @@
 않고도 읽고 그대로 실행할 수 있게 하려는 것이다. 진단이 끝난 뒤 조직에
 무엇이 남아야 할지 생각해보자. 리포트 한 장이 아니라, 다음번에도 스스로
 잴 수 있는 사람이다.</p>
+<section id="다섯-실패를-뒤집은-설계" class="reading-aid">
+<h3>다섯 실패를 뒤집은 설계</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>예전에 망한 자리</th>
+<th>이번에 붙인 답</th>
+<th>진단 뒤 남겨야 할 것</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>등급이 목적이 된다</td>
+<td>인증·배지·순위표를 만들지 않는다</td>
+<td>다음 한 걸음</td>
+</tr>
+<tr class="even">
+<td>심사용 문서가 따로 생긴다</td>
+<td>오늘 이미 있는 증거만 센다</td>
+<td>실제로 쓰는 자료</td>
+</tr>
+<tr class="odd">
+<td>심사 뒤 원래대로 돌아간다</td>
+<td>마지막 단계를 ’도달’이 아니라 ’되돌아옴’으로 본다</td>
+<td>다시 잴 수 있는 주기</td>
+</tr>
+<tr class="even">
+<td>비용 때문에 소수만 참여한다</td>
+<td>무료 웹·15분·심사관 없음으로 줄인다</td>
+<td>결재 없이 시작할 수 있는 진단</td>
+</tr>
+<tr class="odd">
+<td>컨설턴트가 떠나면 잴 사람이 없다</td>
+<td>문항과 처방을 전부 공개한다</td>
+<td>다음에도 스스로 잴 사람</td>
+</tr>
+</tbody>
+</table>
+</section>
 <h2 id="그래서-이-자를-이렇게-만들었다">그래서 이 자를 이렇게
 만들었다</h2>
 <p>여기서 한 가지 의문이 생긴다. 심사를 없앤 건 그저 편하자고 한 일
@@ -536,8 +669,8 @@ role="doc-noteref"><sup>5</sup></a> 잘하는 조직도 절반 이상이 3년을
 사실이다. 3년을 못 버티고 사라지는 절반의 프로젝트들이 게을러서 그렇게
 된 게 아니라는 걸 기억하자. 그러니 재는 일을 무겁게 만들지 않는 것이
 관건이지, 재지 않는 것이 답은 아니다.</p>
-<h2 id="리더는-여기까지만-읽어도-된다">리더는 여기까지만 읽어도
-된다</h2>
+<section id="리더는-여기까지만-읽어도-된다" class="leader-summary">
+<h2>리더는 여기까지만 읽어도 된다</h2>
 <p>세 가지만 가져가면 된다.</p>
 <p><strong>하나.</strong> 우리 조직이 아직 실험이나 파일럿 언저리에
 있다면 특별히 뒤처진 게 아니다. 조사에 응한 기업의 62퍼센트가 그 자리에
@@ -554,6 +687,7 @@ role="doc-noteref"><sup>5</sup></a> 잘하는 조직도 절반 이상이 3년을
 얼마나 도입했는가” 대신 <strong>“우리 조직에서 가장 약한 고리가
 어디인가, 그리고 그건 없는 것인가 안 정해진 것인가”</strong>다. 이
 질문에 답이 돌아오는 조직은 이미 재고 있는 조직이다.</p>
+</section>
 <h2 id="마무리">마무리</h2>
 <p>기억해두자. 지금 우리가 겪는 답답함의 정체는 실력 부족이 아니라
 좌표계의 부재다. 열심히 걷고 있는데 지도가 없어서 어디까지 왔는지 말을
@@ -745,8 +879,8 @@ role="doc-noteref"><sup>14</sup></a></p>
 아니다.</p>
 <p>SEI 모델의 단계 정의와 여덟 차원, 역량영역의 구성이 궁금하다면 부록
 C에 따로 정리해 두었다. 여기서는 논지만 붙들고 가자.</p>
-<h2 id="리더는-여기까지만-읽어도-된다-1">리더는 여기까지만 읽어도
-된다</h2>
+<section id="리더는-여기까지만-읽어도-된다-1" class="leader-summary">
+<h2>리더는 여기까지만 읽어도 된다</h2>
 <p>네 가지만 가져가면 된다.</p>
 <p><strong>하나.</strong> 이미 좋은 자가 나와 있다. CMMI를 만든 조직이
 2026년 6월에 낸 모델이고, 기존 시도 100건 이상을 검토하고 실무자 600명
@@ -771,6 +905,7 @@ C에 따로 정리해 두었다. 여기서는 논지만 붙들고 가자.</p>
 있었던 문제 세 개를 적고, 검토 중인 모델의 목차에서 그 셋이 각각 어느
 항목에 들어가는지 짚어보면 된다. 하나라도 갈 곳이 없으면 그 자는 우리
 자가 아니다.</p>
+</section>
 <h2 id="마무리-1">마무리</h2>
 <p>이 장에서 확인한 걸 한 줄로 줄이면 이렇다. 이미 나와 있는 자들은 잘
 만들어졌고, 다만 다른 곳을 보라고 만들어졌다. 우리가 할 일은 그걸
@@ -957,8 +1092,8 @@ role="doc-noteref"><sup>18</sup></a> 0건이다.</p>
 것이 잘못 쓰는 것보다 낫기 때문이다. 잘못 쓴 자는 틀린 위치를 알려주고,
 조직은 그 틀린 위치를 믿고 몇 년을 움직인다. 이 이야기는 마지막 장에서
 다시 꺼내자.</p>
-<h2 id="리더는-여기까지만-읽어도-된다-2">리더는 여기까지만 읽어도
-된다</h2>
+<section id="리더는-여기까지만-읽어도-된다-2" class="leader-summary">
+<h2>리더는 여기까지만 읽어도 된다</h2>
 <p>네 가지만 가져가면 된다.</p>
 <p><strong>하나.</strong> 성숙도 모델에 대한 반감은 근거가 있다. 학계가
 오래 지적해온 문제가 넷이다. 현실을 계단으로 단순화한다는 것, 순서에
@@ -982,6 +1117,7 @@ AI 성숙도 모델을 실제 조직에 적용해본 연구가 한 건도 없었
 질문이 여기서 하나 나온다. <strong>“이 모델은 실제로 몇 개 조직에
 적용됐습니까?”</strong> 답이 돌아오지 않는 자는 아직 자가 아니라
 가설이다.</p>
+</section>
 <h2 id="마무리-2">마무리</h2>
 <p>기억해두자. 성숙도 모델이 욕을 먹은 건 재는 일 자체가 잘못이어서가
 아니다. 재고 나서 아무 일도 일어나지 않았기 때문이고, 재는 일이 어느
@@ -1108,6 +1244,55 @@ role="doc-noteref"><sup>21</sup></a></p>
 <p>여섯을 이어 읽어보자. 왜 하는지 알고, 만들고, 붙여서 굴리고, 재고
 고친다. 그 내내 자원과 규칙이 따라붙는다. 이건 분류가 아니라 한 문장으로
 읽히는 길이다.</p>
+<section id="여섯-축-한눈에-보기" class="reading-aid">
+<h3>여섯 축 한눈에 보기</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>축</th>
+<th>핵심 질문</th>
+<th>결과를 쓰는 곳</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A. 인식·동기·역량</td>
+<td>왜 하는지 알고, 배우고, 실제 과제로 넘어가는가</td>
+<td>팀이 직접 개선</td>
+</tr>
+<tr class="even">
+<td>B. 기획·개발</td>
+<td>무엇을 어디까지 AI에게 맡길지 정하고 만들 수 있는가</td>
+<td>팀이 직접 개선</td>
+</tr>
+<tr class="odd">
+<td>C. 연동·배포·운영</td>
+<td>만든 것을 붙이고 올리고, 사람과 무관하게 계속 굴릴 수 있는가</td>
+<td>팀이 직접 개선</td>
+</tr>
+<tr class="even">
+<td>D. 평가·측정·개선</td>
+<td>제대로 도는지 재고, 결과를 개선과 인정으로 되돌리는가</td>
+<td>팀이 직접 개선</td>
+</tr>
+<tr class="odd">
+<td>I. 자원·비용</td>
+<td>시범을 실 운영으로 넘길 자원과 예산 경로가 있는가</td>
+<td>근거를 갖춰 상신</td>
+</tr>
+<tr class="even">
+<td>J. 보안·거버넌스</td>
+<td>에이전트가 안전하게 행동할 권장 경로가 있는가</td>
+<td>기준안을 갖춰 상신</td>
+</tr>
+</tbody>
+</table>
+</section>
 <h2 id="뺀-자리와-넣은-자리">뺀 자리와 넣은 자리</h2>
 <p>여기서 눈에 띄는 게 하나 있다. 앞서 훑은 세 모델이 전부 갖고 있는
 칸이 우리 목록에는 없다. <strong>데이터와 인프라다.</strong></p>
@@ -1168,8 +1353,8 @@ role="doc-noteref"><sup>21</sup></a></p>
 잡히고 나면 회의실에서 “그건 우리가 어떻게 할 수 있는 게
 아니었습니다”라는 말이 처음으로 입 밖에 나온다. 그 한마디를 꺼내기까지
 몇 분기가 걸렸는지 세어보면 좀 허무하다.</p>
-<h2 id="리더는-여기까지만-읽어도-된다-3">리더는 여기까지만 읽어도
-된다</h2>
+<section id="리더는-여기까지만-읽어도-된다-3" class="leader-summary">
+<h2>리더는 여기까지만 읽어도 된다</h2>
 <p><strong>하나.</strong> 기존 AI 성숙도 모델의 축은 전부 경영 관점의
 분류다. 전략·데이터·거버넌스처럼 조직을 위에서 내려다보며 그은 칸이라,
 전사 투자를 결정하는 자리에는 잘 맞지만 실무 팀에는 잘 맞지 않는다.</p>
@@ -1186,6 +1371,7 @@ role="doc-noteref"><sup>21</sup></a></p>
 <p><strong>다섯.</strong> 진단 결과는 직접 개선 가능한 것과 위로 올려야
 하는 것을 나눠 읽는다. 뒤쪽 목록은 팀의 실패가 아니라 경영진에게 전달할
 안건이다.</p>
+</section>
 <h2 id="마무리-3">마무리</h2>
 <p>축을 정하는 일은 겉으로는 목록을 만드는 작업처럼 보이지만, 실은 이
 자를 누구 손에 쥐여줄지 정하는 일이다. 여덟 칸으로 나눌지 여섯 축으로
@@ -1439,8 +1625,8 @@ role="doc-noteref"><sup>24</sup></a></p>
 쓰는 건 좋다. <strong>다만 그 감각으로 단계를 매기지는 말자.</strong>
 분위기가 좋은 것과 체계가 있는 것은 다르고, 이 자가 재려는 건
 뒤쪽이다.</p>
-<h2 id="리더는-여기까지만-읽어도-된다-4">리더는 여기까지만 읽어도
-된다</h2>
+<section id="리더는-여기까지만-읽어도-된다-4" class="leader-summary">
+<h2>리더는 여기까지만 읽어도 된다</h2>
 <p><strong>하나.</strong> 다섯 단계는 각자도생 → 반복 → 레일 → 검증 →
 진화다. “우리 조직에서 AI로 일 제일 잘하는 사람이 누구냐”는 질문에
 어떻게 답하는지를 들어보면 대략 어디쯤인지 감이 온다.</p>
@@ -1456,6 +1642,7 @@ role="doc-noteref"><sup>24</sup></a></p>
 <p><strong>다섯.</strong> 다섯 단계는 골라 담는 목록이 아니라 이어 밟는
 계단이다. 아래가 빈 채 위가 채워져 있으면 그건 성숙이 아니라 불안정이다.
 어떻게 세는지는 6장에서 보자.</p>
+</section>
 <h2 id="마무리-4">마무리</h2>
 <p>기억해두자. 이 다섯 단계에서 우리가 다르게 놓은 건 딱 두 개다.
 4단계에 확장 대신 검증을 놓았고, 5단계를 도달이 아니라 되돌아옴으로
@@ -1654,8 +1841,65 @@ role="doc-noteref"><sup>25</sup></a> 산출물이 있다고 성숙한 것도 아
 <p>그러니 결과지를 받으면 조직의 단계보다 이 비율을 먼저 보는 편이 낫다.
 이 값이 높다면 소식은 오히려 좋은 쪽이다. 우리에게 필요한 게 돈이 아니라
 결정이라는 뜻이니까.</p>
-<h2 id="리더는-여기까지만-읽어도-된다-5">리더는 여기까지만 읽어도
-된다</h2>
+<section id="결과지의-여섯-값" class="reading-aid">
+<h3>결과지의 여섯 값</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>값</th>
+<th>어떻게 구하나</th>
+<th>무엇을 말하나</th>
+<th>먼저 물을 것</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>축별 단계</td>
+<td>1번부터 ’보유’가 연속된 마지막 자리</td>
+<td>그 축이 실제로 버티는 높이</td>
+<td>처음 끊긴 문항은 무엇인가</td>
+</tr>
+<tr class="even">
+<td>조직 단계</td>
+<td>여섯 축 중 가장 낮은 값</td>
+<td>조직 전체를 붙잡는 약한 고리</td>
+<td>가장 낮은 축은 무엇인가</td>
+</tr>
+<tr class="odd">
+<td>진행도</td>
+<td>여섯 축 단계의 평균</td>
+<td>조직 단계가 그대로일 때도 보이는 전진</td>
+<td>지난번보다 움직였는가</td>
+</tr>
+<tr class="even">
+<td>불균형도</td>
+<td>가장 높은 축에서 가장 낮은 축을 뺀 값</td>
+<td>특정 축이 뒤처진 정도</td>
+<td>차이가 3 이상인가</td>
+</tr>
+<tr class="odd">
+<td>병목 축</td>
+<td>가장 낮은 단계에 있는 축</td>
+<td>처방이 시작될 자리</td>
+<td>어디부터 손댈 것인가</td>
+</tr>
+<tr class="even">
+<td>미확정 비율</td>
+<td>‘보완’ 응답 수를 30으로 나눈 값</td>
+<td>없는 것보다 안 정해진 것이 많은 정도</td>
+<td>예산보다 결정이 먼저 아닌가</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="리더는-여기까지만-읽어도-된다-5" class="leader-summary">
+<h2>리더는 여기까지만 읽어도 된다</h2>
 <p>다섯만 가져가면 된다.</p>
 <p><strong>하나.</strong> 답은 세 가지다. 보유, 보완, 신규. 가운데 칸은
 “잘 모르겠다”가 아니라 “있는데 제약이 있다”는 분명한 진술이다.</p>
@@ -1680,6 +1924,7 @@ role="doc-noteref"><sup>25</sup></a> 산출물이 있다고 성숙한 것도 아
 높다면 필요한 건 구축 예산이 아니라 <strong>의사결정</strong>이다. 이
 경우 결재선에서 풀 수 있는 항목이 상당수다. 예산 심의를 기다릴 이유가
 없다.</p>
+</section>
 <h2 id="마무리-5">마무리</h2>
 <p>정리해두자. 축과 단계가 자의 눈금이라면, 채점 규칙은 그 눈금을 읽는
 방법이다. 그리고 읽는 방법이 헐거우면 눈금이 아무리 정교해도 결과는
@@ -1873,8 +2118,8 @@ role="doc-noteref"><sup>26</sup></a> 이 분야에서 셀프 점검은 예외가
 하나라도 떠오른다면 편향은 이미 시작된 것이다. 그럴 때는 차라리 그
 사람에게는 보여주지 않기로 정하고 시작하자. 이상하게 들릴지 모르지만, 이
 자에 관해서는 그게 가장 확실한 안전장치다.</p>
-<h2 id="리더는-여기까지만-읽어도-된다-6">리더는 여기까지만 읽어도
-된다</h2>
+<section id="리더는-여기까지만-읽어도-된다-6" class="leader-summary">
+<h2>리더는 여기까지만 읽어도 된다</h2>
 <p>네 가지만 가져가면 된다.</p>
 <p><strong>하나.</strong> 셀프 점검 결과는 실제보다 후하게 나온다.
 사람이 정직하지 않아서가 아니라 구조가 그렇다. 그러니 우리 조직 결과지를
@@ -1895,6 +2140,7 @@ role="doc-noteref"><sup>26</sup></a> 이 분야에서 셀프 점검은 예외가
 모른다고 한 항목, 그게 인지부채가 있는 자리다. 그러니 다음 회의에서 물을
 것은 “우리 몇 단계 나왔나”가 아니라 <strong>“어느 문항에서 답이
 갈렸나”</strong>다.</p>
+</section>
 <h2 id="마무리-6">마무리</h2>
 <p>스스로 잰다는 건 편한 길이 아니다. 심사관이 있으면 최소한 누구를
 탓할지는 분명한데, 스스로 재고 나면 결과가 나빠도 좋아도 전부 우리
@@ -2129,8 +2375,8 @@ role="doc-noteref"><sup>27</sup></a> 세 숫자가 거의 붙어 있다는 게 �
 다음 해 교육 예산을 지키려면 성과를 대야 하는데 댈 수 있는 게 이수
 인원뿐이다. 같은 장표를 숫자만 바꿔 또 들고 들어가는 일이 몇 해 반복되면
 그 자리가 점점 버거워진다.</p>
-<h2 id="리더는-여기까지만-읽어도-된다-7">리더는 여기까지만 읽어도
-된다</h2>
+<section id="리더는-여기까지만-읽어도-된다-7" class="leader-summary">
+<h2>리더는 여기까지만 읽어도 된다</h2>
 <p><strong>하나.</strong> A축이 높다는 건 좋은 소식이지만 그 뜻은
 하나뿐이다. <strong>출발선에 잘 섰다.</strong> 달렸다는 뜻이 아니다.
 교육 실적이 좋은 조직일수록 이 착각에 빠지기 쉽다.</p>
@@ -2150,6 +2396,7 @@ role="doc-noteref"><sup>27</sup></a> 세 숫자가 거의 붙어 있다는 게 �
 다섯 중 넷은 <strong>이미 있는 것을 잇거나 정하는 일</strong>이다.
 보고를 받았을 때 물어볼 것은 “과정을 몇 개 더 열까”가 아니라
 <strong>“배운 사람이 그다음에 무엇을 했나”</strong>다.</p>
+</section>
 <h2 id="마무리-7">마무리</h2>
 <p>정리해두자. A축이 잘 차 있는 건 눈에 보이고 세기 쉽고 반발이 없기
 때문이다. 그래서 이 축에서 조심할 것은 낮게 나오는 게 아니라
@@ -2277,6 +2524,45 @@ role="doc-noteref"><sup>28</sup></a> 같은 보고서의 다음 문장이 그 �
 <p><strong>다른 시스템에 쓰기.</strong> 바깥에 흔적을 남긴다. 티켓이
 생기고, 메일이 나가고, 값이 갱신된다. 틀리면 되돌리는 데 사람 손이 든다.
 때로는 되돌릴 수 없다.</p>
+<section id="동작-수준을-가르는-질문" class="reading-aid">
+<h3>동작 수준을 가르는 질문</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>수준</th>
+<th>AI가 하는 일</th>
+<th>사람의 자리</th>
+<th>승인 전에 물을 것</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>요약</td>
+<td>읽고 정리해 사람에게 건넨다</td>
+<td>결과를 반드시 한 번 본다</td>
+<td>사람을 거치기 전에 실행되는 일이 있는가</td>
+</tr>
+<tr class="even">
+<td>자체 실행</td>
+<td>스스로 판단해 다음 행동을 고른다</td>
+<td>결과를 보고, 중간 판단은 따로 열어본다</td>
+<td>허용한 행동의 범위가 문서에 있는가</td>
+</tr>
+<tr class="odd">
+<td>다른 시스템에 쓰기</td>
+<td>티켓·메일·값처럼 바깥에 흔적을 남긴다</td>
+<td>누가 언제 확인할지 미리 정한다</td>
+<td>틀렸을 때 되돌릴 수 있는가</td>
+</tr>
+</tbody>
+</table>
+</section>
 <p>이 셋을 가르는 기준은 결국 하나다. <strong>틀렸을 때 어디서 걸리고,
 되돌릴 수 있는가.</strong> 그렇다면 이 셋을 뭉뚱그려 “AI 도입”이라고
 부르면 무슨 일이 생길까? 위험도가 같아지고, 따라서 승인 절차도 같아진다.
@@ -2394,8 +2680,8 @@ role="doc-noteref"><sup>29</sup></a> 이건 사람을 더 뽑으라는 뜻으로
 문서와 현실이 갈라지는 순간 그 문서는 죽고, 다음에 누군가 그걸 근거로
 판단하면 판단까지 함께 틀어진다. <strong>못 하는 걸 못 한다고 적는 게 이
 한 장의 값어치다.</strong></p>
-<h2 id="리더는-여기까지만-읽어도-된다-8">리더는 여기까지만 읽어도
-된다</h2>
+<section id="리더는-여기까지만-읽어도-된다-8" class="leader-summary">
+<h2>리더는 여기까지만 읽어도 된다</h2>
 <p>넷만 가져가면 된다.</p>
 <p><strong>하나.</strong> 도구 보급률은 성숙도가 아니다. 계정과
 라이선스는 조직이 가장 빨리 살 수 있는 것이라 가장 먼저 채워진다. 이
@@ -2414,6 +2700,7 @@ role="doc-noteref"><sup>29</sup></a> 이건 사람을 더 뽑으라는 뜻으로
 만들라고 지시하기 전에 <strong>일의 정의가 있는지부터 확인하는 편이
 낫다.</strong> 순서가 뒤집히면 정해지지 않은 일의 성과를 재는 지표가
 만들어지고, 그 숫자는 몇 분기 뒤에 되돌려야 한다.</p>
+</section>
 <h2 id="마무리-8">마무리</h2>
 <p>정리해두자. 이 축에서 확인할 것은 만들 수 있느냐가 아니다. 도구는
 이미 왔고 만들 줄 아는 사람도 늘고 있다. 확인할 것은 <strong>무엇을
@@ -2633,8 +2920,8 @@ class="footnote-ref" id="fnref32" role="doc-noteref"><sup>32</sup></a>
 들어가고, 왜는 안 들어간다. 왜는 양식 항목으로 물으면 안 나온다. 오히려
 이렇게 물어야 나온다. <strong>“이걸 처음부터 다시 만든다면 어디를 다르게
 하겠나?”</strong> 이 질문에 대한 답이 진짜 인계 문서다.</p>
-<h2 id="리더는-여기까지만-읽어도-된다-9">리더는 여기까지만 읽어도
-된다</h2>
+<section id="리더는-여기까지만-읽어도-된다-9" class="leader-summary">
+<h2>리더는 여기까지만 읽어도 된다</h2>
 <p>네 가지만 가져가면 된다.</p>
 <p><strong>하나.</strong> 이 축이 낮게 나온 것은 우리 사람들이 덜 열심히
 해서가 아니다. 만드는 구간은 개인이 채울 수 있지만 만든 다음 구간은
@@ -2654,6 +2941,7 @@ class="footnote-ref" id="fnref32" role="doc-noteref"><sup>32</sup></a>
 조직에게는 물을 이유가 없는 질문이었을 뿐이다. 이번 분기에 딱 하나만
 한다면 이걸 하자. 가장 많이 쓰는 것 하나를 골라, 내일 담당자가 사라져도
 이어받을 수 있게 한 장을 적어두는 것.</p>
+</section>
 <h2 id="마무리-9">마무리</h2>
 <p>이 축에서 나온 단계가 앞선 두 축보다 낮게 나왔다면, 그건 흔한 결과다.
 오히려 여기가 높고 앞이 낮은 조직이 드물다. 그러니 낮게 나왔다고 김새는
@@ -2882,8 +3170,8 @@ role="doc-noteref"><sup>33</sup></a> 이 지점에서 우리가 처음이라고 
 그러면 애써 만든 검증 장치가 다시 결재가 된다. 인정과 보상은 필요하지만,
 그게 등급 매기기가 되는 순간 어떻게 망가지는지는 15장에서 우리 자신에게
 겨눠 다시 이야기하겠다.</p>
-<h2 id="리더는-여기까지만-읽어도-된다-10">리더는 여기까지만 읽어도
-된다</h2>
+<section id="리더는-여기까지만-읽어도-된다-10" class="leader-summary">
+<h2>리더는 여기까지만 읽어도 된다</h2>
 <p><strong>하나.</strong> 우리 조직은 투입은 잴 수 있는데 산출은 못
 잰다. 토큰과 비용은 시스템이 세어주지만 성과는 아무도 세어주지 않기
 때문이다. 한쪽만 재는 저울로는 잘 되고 있는지 판단할 수 없다.</p>
@@ -2900,6 +3188,7 @@ AX가 아니라 계산식이다.</p>
 <p><strong>다섯.</strong> 평가가 개선과 인정으로 되돌아오지 않으면
 측정은 두세 분기 안에 저절로 사라진다. 지난 분기 지적 하나가 이번 분기
 과제 목록에 올라와 있는지만 확인해도 된다.</p>
+</section>
 <h2 id="마무리-10">마무리</h2>
 <p>한 가지만 덧붙이고 가자. 이 축에서 나온 단계는 다른 축보다
 무겁다.</p>
@@ -2976,6 +3265,45 @@ AX가 아니라 계산식이다.</p>
 아니다. 상신 필요라는 말은 “그래서 안 됩니다”가 아니라 “그래서 이게 다음
 할 일입니다”라는 뜻이다. 목록에 올라간 순간 그건 여전히 우리 일이 된다.
 종류가 다른 일이 될 뿐이다.</p>
+<section id="결과지를-두-칸으로-읽는-법" class="reading-aid">
+<h3>결과지를 두 칸으로 읽는 법</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>결과 칸</th>
+<th>해당 축</th>
+<th>누가 움직이나</th>
+<th>다음 행동</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>직접 개선 가능</td>
+<td>A·B·C·D</td>
+<td>팀과 리더</td>
+<td>끊긴 첫 문항에서 다음 분기에 끝낼 한 걸음을 고른다</td>
+</tr>
+<tr class="even">
+<td>상신 필요</td>
+<td>I·J</td>
+<td>예산·정책 결정권자</td>
+<td>막연한 지원 요청 대신 견적이나 기준안 한 장을 올린다</td>
+</tr>
+<tr class="odd">
+<td>병행할 때</td>
+<td>앞의 네 축과 기반축이 함께 낮은 경우</td>
+<td>팀과 결재선이 각자 움직인다</td>
+<td>팀은 하나를 손대고, 결재선에는 하나를 올려둔다</td>
+</tr>
+</tbody>
+</table>
+</section>
 <h2 id="i.-자원-만들었는데-못-켠다">I. 자원 — 만들었는데 못 켠다</h2>
 <p>자원 축의 아래 두 칸은 요즘 웬만한 조직이 채운다. 구성원에게 쓸 것이
 어떤 형태로든 주어지고(I1), 한도가 얼마이고 어디에 신청하는지가 안내돼
@@ -3118,8 +3446,8 @@ role="doc-noteref"><sup>35</sup></a> 통제할 수 있는 조직이 더 많이
 검토에서 시작한다. 됐다는 신호는 다음 과제가 같은 협의를 처음부터 다시
 하지 않는 것이다. 흔한 실패는 그 한 장이 어느새 금지 목록으로 자라는
 것이다. 그러면 레일을 깔려다 벽을 하나 더 세운 셈이 된다.</p>
-<h2 id="리더는-여기까지만-읽어도-된다-11">리더는 여기까지만 읽어도
-된다</h2>
+<section id="리더는-여기까지만-읽어도-된다-11" class="leader-summary">
+<h2>리더는 여기까지만 읽어도 된다</h2>
 <p><strong>하나.</strong> 진단 결과는 두 칸으로 갈라 읽어야 한다. A부터
 D까지는 우리가 다음 분기에 손댈 수 있는 자리고, I와 J는 결재선을 타야
 움직이는 자리다. 섞어 읽으면 처방이 전부 “더 열심히”로 수렴한다.</p>
@@ -3140,6 +3468,7 @@ D까지는 우리가 다음 분기에 손댈 수 있는 자리고, I와 J는 결
 범위를 정하는 별도 기준이 필요하고, 그 방향은 금지 목록을 늘리는 쪽이
 아니라 권장 경로를 넓히는 쪽이다. 최상위 조직과 나머지를 가른 격차가
 가장 컸던 항목이 정확히 이 통제 능력이었다.</p>
+</section>
 <h2 id="마무리-11">마무리</h2>
 <p>기억해두자. 이 두 축에서 낮은 단계가 나왔다고 해서 그게 우리 팀의
 성적표는 아니다. 그런데 반대로, 낮게 나왔으니 우리는 할 게 없다는 뜻도
@@ -3268,6 +3597,45 @@ D까지는 우리가 다음 분기에 손댈 수 있는 자리고, I와 J는 결
 정말로 만들 것 쪽이다.</p>
 <p>이 세 물음을 통과시켜 보면 결과지의 절반 가까이가 자리를 옮긴다. 예산
 항목이라고 믿었던 것 중 꽤 많은 수가 결정 항목이었다는 뜻이다.</p>
+<section id="없는-것과-안-정해진-것" class="reading-aid">
+<h3>‘없는 것’과 ‘안 정해진 것’</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>구분</th>
+<th>신규 — 없는 것</th>
+<th>보완 — 안 정해진 것</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>비어 있는 것</td>
+<td>도구·시스템·인력 같은 물건</td>
+<td>기준·역할·판단선 같은 문장</td>
+</tr>
+<tr class="even">
+<td>처방</td>
+<td>새로 만든다</td>
+<td>이미 있는 것 사이에서 정한다</td>
+</tr>
+<tr class="odd">
+<td>움직이는 시간</td>
+<td>예산과 분기</td>
+<td>회의와 결재 한 줄</td>
+</tr>
+<tr class="even">
+<td>첫 질문</td>
+<td>무엇을 만들어야 하는가</td>
+<td>오늘 결정할 수 있는 사람은 누구인가</td>
+</tr>
+</tbody>
+</table>
+</section>
 <h2 id="정할-것-칸부터-연다">‘정할 것’ 칸부터 연다</h2>
 <p>그러니 처방 목록을 한 줄로 늘어놓지 말고 두 칸으로 나눠 적어보자.
 한쪽은 만들 것, 다른 쪽은 정할 것. 그리고 정할 것 칸부터 손대는 편이
@@ -3360,8 +3728,21 @@ D까지는 우리가 다음 분기에 손댈 수 있는 자리고, I와 J는 결
 href="#fn36" class="footnote-ref" id="fnref36"
 role="doc-noteref"><sup>36</sup></a> 결과지의 빈칸을 다 채우고 싶어지는
 그 마음의 정체가 대개 앞쪽이다.</p>
-<h2 id="리더는-여기까지만-읽어도-된다-12">리더는 여기까지만 읽어도
-된다</h2>
+<section id="결과지에서-다음-한-걸음까지"
+class="reading-aid decision-path">
+<h3>결과지에서 다음 한 걸음까지</h3>
+<ol type="1">
+<li>여섯 축에서 가장 낮은 축을 찾는다.</li>
+<li>동률이면 A→B→C→D 순서로 고르고, I·J는 상신을 병행한다.</li>
+<li>끊긴 자리가 ’없는 것’인지 ’안 정해진 것’인지 가른다.</li>
+<li>끊긴 첫 문항에서 대상 하나만 고른다.</li>
+<li>다른 사람의 행동으로 확인할 <strong>됐다는 신호</strong>를
+적는다.</li>
+<li>다시 잴 날짜를 잡고 지난 답과 나란히 비교한다.</li>
+</ol>
+</section>
+<section id="리더는-여기까지만-읽어도-된다-12" class="leader-summary">
+<h2>리더는 여기까지만 읽어도 된다</h2>
 <p>다섯 가지만 가져가면 된다.</p>
 <p><strong>하나.</strong> 진단 결과에서 낮게 나온 축이 여럿이어도
 <strong>한 번에 하나만</strong> 손댄다. 열 개짜리 개선 목록은 열 개가 십
@@ -3390,6 +3771,7 @@ role="doc-noteref"><sup>36</sup></a> 결과지의 빈칸을 다 채우고 싶어
 최저값이라 좀처럼 안 움직이니, 단계만 보고 성과를 판단하면 실제로 전진한
 조직도 제자리로 읽힌다. <strong>’신규’가 ’보완’으로 바뀐 문항이 몇
 개인지</strong>를 함께 보자.</p>
+</section>
 <h2 id="마무리-12">마무리</h2>
 <p>정리해두자. 진단이 어렵다고들 하는데, 해보면 진단보다 그다음이
 어렵다. 결과지에 뜬 빈칸을 다 채우고 싶은 마음을 누르고 하나만 고르는
@@ -3563,6 +3945,57 @@ role="doc-noteref"><sup>37</sup></a> 지금까지는 이걸 있음과 돌아감
 걸음도 다음 주로 밀렸다가 그다음 주로 밀린다. 급하지 않은 일은 언제나
 급한 일에 진다. 석 달 뒤든 반년 뒤든, 날짜가 잡혀 있으면 그날을 향해 한
 걸음은 움직인다.</p>
+<section id="분-진행표" class="reading-aid">
+<h3>90분 진행표</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 30%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>구간</th>
+<th style="text-align: right;">시간</th>
+<th>할 일</th>
+<th>반드시 남길 것</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>개별 응답</td>
+<td style="text-align: right;">15분</td>
+<td>서로 말하지 않고 서른 문항에 각자 답한다</td>
+<td>맞추지 않은 원래 응답</td>
+</tr>
+<tr class="even">
+<td>편차 읽기</td>
+<td style="text-align: right;">30분</td>
+<td>답이 갈린 문항만 열고 왜 다르게 봤는지 듣는다</td>
+<td>갈린 이유의 목록</td>
+</tr>
+<tr class="odd">
+<td>병목 확인</td>
+<td style="text-align: right;">20분</td>
+<td>가장 낮은 축과 ’없는 것·안 정해진 것’을 가른다</td>
+<td>병목 문항 하나</td>
+</tr>
+<tr class="even">
+<td>다음 걸음</td>
+<td style="text-align: right;">15분</td>
+<td>한 걸음과 ’됐다는 신호’를 함께 정한다</td>
+<td>행동 하나와 관찰 신호 하나</td>
+</tr>
+<tr class="odd">
+<td>재측정 예약</td>
+<td style="text-align: right;">10분</td>
+<td>다시 잴 날을 실제 달력에 넣는다</td>
+<td>다음 진단 일정</td>
+</tr>
+</tbody>
+</table>
+</section>
 <h2 id="이-90분이-망하는-방식">이 90분이 망하는 방식</h2>
 <p>이 자리가 망하는 방식은 정해져 있다. 미리 알아두면 대부분 피할 수
 있다.</p>
@@ -3613,8 +4046,8 @@ role="doc-noteref"><sup>37</sup></a> 지금까지는 이걸 있음과 돌아감
 영역일수록 답은 오히려 단순하게 나온다.</p>
 <p>그러니 혼자 잰 결과지를 받았다면 보완이 적은 축부터 다시 열어보자.
 그리고 언젠가 사람을 모을 수 있게 되면 그 축부터 물어보자.</p>
-<h2 id="리더는-여기까지만-읽어도-된다-13">리더는 여기까지만 읽어도
-된다</h2>
+<section id="리더는-여기까지만-읽어도-된다-13" class="leader-summary">
+<h2>리더는 여기까지만 읽어도 된다</h2>
 <p>네 가지만 가져가면 된다.</p>
 <p><strong>하나.</strong> 리더 한 사람이 채운 진단표는 조직을 잰 것이
 아니라 <strong>조직에 대한 그 한 사람의 인식</strong>을 잰 것이다. 이건
@@ -3635,6 +4068,7 @@ role="doc-noteref"><sup>37</sup></a> 지금까지는 이걸 있음과 돌아감
 어느 쪽을 찍었는지는 펼치지 않는다. 그리고 가장 나중에 말한다.</strong>
 이름표가 붙는 순간 사람들은 답을 방어하기 시작하고, 가장 높은 사람이
 먼저 말하면 나머지 문항은 볼 것도 없어진다.</p>
+</section>
 <h2 id="마무리-13">마무리</h2>
 <p>정리해두자. 이 자는 여럿이 대라고 만든 물건이다. 혼자 대도 눈금은
 읽히지만, 이 자가 진짜로 잘 잡아내는 건 절대값이 아니라 <strong>사람들
@@ -3790,6 +4224,50 @@ role="doc-noteref"><sup>37</sup></a> 지금까지는 이걸 있음과 돌아감
 축으로 채우면 그때부터는 어디에 예산을 넣을지에 대한 대화가 된다. 위에서
 원하는 것도 사실은 뒤엣것일 때가 많다. <strong>이 자는 위에서 걷어가는
 순간 값이 0이 된다.</strong> 그 한 문장만은 말해두자.</p>
+<section id="넘어가기-시작했다는-다섯-신호" class="reading-aid">
+<h3>넘어가기 시작했다는 다섯 신호</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>위험 신호</th>
+<th>무엇으로 바뀌나</th>
+<th>그 자리에서 할 일</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>축 이름보다 팀의 단계 숫자가 먼저 나온다</td>
+<td>진단이 부서 간 순위표가 된다</td>
+<td>숫자 대신 병목 축을 말한다</td>
+</tr>
+<tr class="even">
+<td>’보유’를 만들려고 새 문서를 쓴다</td>
+<td>실제 문서와 심사용 문서가 갈라진다</td>
+<td>오늘 이미 있는 증거만 적는다</td>
+</tr>
+<tr class="odd">
+<td>다음 진단 날짜 없이 한 번 재고 끝낸다</td>
+<td>개선이 캠페인이 된다</td>
+<td>결과를 받은 날 다시 잴 날짜를 잡는다</td>
+</tr>
+<tr class="even">
+<td>밖의 사람이 대신 답을 적는다</td>
+<td>조직에 잴 줄 아는 사람이 남지 않는다</td>
+<td>진행은 맡겨도 답은 우리가 적는다</td>
+</tr>
+<tr class="odd">
+<td>전 팀의 결과 제출과 취합이 시작된다</td>
+<td>엑셀 한 장이 순위표가 된다</td>
+<td>단계 대신 갈린 문항과 병목 축을 모은다</td>
+</tr>
+</tbody>
+</table>
+</section>
 <h2 id="그래서-이-책에-없는-것들">그래서 이 책에 없는 것들</h2>
 <p>세어보자. 이 책에는 인증 제도가 없다. 배지도 없다. 조직 간 순위표도
 없고, 자격증 과정도 없고, 공인 심사원도 없다.</p>
@@ -3839,8 +4317,8 @@ role="doc-noteref"><sup>37</sup></a> 지금까지는 이걸 있음과 돌아감
 우리가 서 있다는 것이다. <strong>자를 자기 손에 쥔 사람만이 그 자를 지킬
 수 있다.</strong> 10년 전 그 판에서 아무도 막지 못한 이유가 여기 있었다.
 그 판에서 자를 손에 쥔 사람은 아무도 없었다.</p>
-<h2 id="리더는-여기까지만-읽어도-된다-14">리더는 여기까지만 읽어도
-된다</h2>
+<section id="리더는-여기까지만-읽어도-된다-14" class="leader-summary">
+<h2>리더는 여기까지만 읽어도 된다</h2>
 <p>다섯 가지만 가져가면 된다.</p>
 <p><strong>하나.</strong> 이 진단 결과를 부서 간 비교에 쓰지 않는다.
 취합하는 순간 순위표가 되고, 순위표가 생기면 그날부터 모든 답이
@@ -3862,6 +4340,7 @@ role="doc-noteref"><sup>37</sup></a> 지금까지는 이걸 있음과 돌아감
 결과지를 받고 가장 먼저 한 행동이 무엇이었는지만 보면 된다. <strong>가장
 낮은 축의 처방을 폈다면 아직 괜찮고, 이 결과를 어떻게 설명할지부터
 궁리했다면 이미 넘어간 뒤다.</strong></p>
+</section>
 <h2 id="마무리-14">마무리</h2>
 <p>규칙을 안다는 건 여전히 유리한 일이다. 도입부에 그렇게 적었고 지금도
 같은 생각이다. 다만 판돈이 달라졌다는 문장을 여기서 한 번 더 꺼내자.</p>
@@ -4190,6 +4669,60 @@ AI의 동작 수준(요약 / 자체 실행 / 다른 시스템에 쓰기)과 사�
 덩어리로 주지 않고 갈라서 보여주는 이유는 12장에 적었다.</p>
 <p>마지막으로 <strong>병목 축을 다루는 장 번호</strong>가 안내된다.
 거기에 그 축의 처방이 있다.</p>
+<section id="결과-화면에서-먼저-볼-것" class="reading-aid">
+<h3>결과 화면에서 먼저 볼 것</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>화면 요소</th>
+<th>뜻</th>
+<th>먼저 할 일</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>다음 한 걸음</td>
+<td>지금 가장 낮은 자리에서 시작할 행동</td>
+<td>이것부터 펼친다</td>
+</tr>
+<tr class="even">
+<td>축별 단계</td>
+<td>여섯 축이 각각 버티는 높이</td>
+<td>가장 낮은 축을 찾는다</td>
+</tr>
+<tr class="odd">
+<td>조직 단계</td>
+<td>여섯 축 중 최저값</td>
+<td>평균처럼 읽지 않는다</td>
+</tr>
+<tr class="even">
+<td>진행도·불균형도</td>
+<td>움직인 정도와 축 사이의 격차</td>
+<td>단계가 같아도 전진한 문항을 본다</td>
+</tr>
+<tr class="odd">
+<td>미확정 비율</td>
+<td>’보완’이 차지하는 비율</td>
+<td>예산보다 결정이 먼저인지 확인한다</td>
+</tr>
+<tr class="even">
+<td>직접 개선·상신 필요</td>
+<td>팀 안에서 풀 일과 결재선으로 올릴 일</td>
+<td>두 목록의 다음 행동을 섞지 않는다</td>
+</tr>
+<tr class="odd">
+<td>장 번호</td>
+<td>병목 축의 해설과 처방 위치</td>
+<td>해당 장의 다음 한 걸음으로 이동한다</td>
+</tr>
+</tbody>
+</table>
+</section>
 <hr />
 <h2 id="여럿이-하는-법-이쪽이-훨씬-낫다">여럿이 하는 법 — 이쪽이 훨씬
 낫다</h2>
@@ -4385,6 +4918,66 @@ role="doc-noteref"><sup>43</sup></a></p>
 <hr />
 <h2 id="c-4.-axmm은-무엇이-같고-무엇이-다른가">C-4. AXMM은 무엇이 같고
 무엇이 다른가</h2>
+<section id="다섯-자-한눈에-보기" class="reading-aid wide-table">
+<h3>다섯 자 한눈에 보기</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>모델</th>
+<th>근거·규모</th>
+<th>구조·접근</th>
+<th>강점</th>
+<th>AXMM과 나란히 볼 때</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CMU SEI × Accenture</td>
+<td>100건 이상 검토, 36개 이상 정밀 분석, 임원 20~25명 인터뷰, 실무자 약
+600명 설문, Fortune 500 파일럿</td>
+<td>5단계·8차원·27역량영역, 무료 원문</td>
+<td>공학적 실천과 증거 구조가 가장 촘촘하다</td>
+<td>검증은 2단계이며 자원·비용의 독립 역량영역과 담당자 인계 문항은
+없다</td>
+</tr>
+<tr class="even">
+<td>MIT CISR</td>
+<td>721개 기업 서베이</td>
+<td>4단계, 회원 조직 전용</td>
+<td>성숙도와 재무성과의 관계를 실증으로 보여준다</td>
+<td>현재 위치를 설명하지만 직접 대는 처방 도구는 아니다</td>
+</tr>
+<tr class="odd">
+<td>Gartner</td>
+<td>고성숙·저성숙 조직의 3년 이상 운영 유지 수치</td>
+<td>5단계·7기둥, 유료 구독</td>
+<td>도달보다 유지가 어렵다는 근거를 준다</td>
+<td>되돌아옴을 최고 단계로 둔 이유를 뒷받침한다</td>
+</tr>
+<tr class="even">
+<td>Cisco</td>
+<td>매년 발표하는 AI 준비도 지수, 최상위 그룹 13퍼센트</td>
+<td>6기둥, 무료 셀프 진단</td>
+<td>다른 조직과 현재 위치를 비교하기 쉽다</td>
+<td>벤치마크에는 강하지만 다음 행동 처방은 약하다</td>
+</tr>
+<tr class="odd">
+<td>AXMM</td>
+<td>서른 문항, 15분 셀프 점검</td>
+<td>5단계·6축, 무료·심사관 없음</td>
+<td>약한 고리에서 다음 한 걸음을 고르게 한다</td>
+<td>자원·인계·미확정 비율을 별도로 드러낸다</td>
+</tr>
+</tbody>
+</table>
+</section>
 <p><strong>같은 것부터 말하는 게 정직하다.</strong></p>
 <p>다섯 단계 구조는 학술 문헌에서 가장 흔한 형태이고, AXMM도 그것을
 따랐다. 조직 전체의 단계 하나와 축별 단계를 함께 보는 하이브리드 구조
