@@ -24,6 +24,9 @@ class SiteParser(HTMLParser):
         self.figures: list[dict[str, object]] = []
         self.chapter_count = 0
         self.chapter_figures = 0
+        self.leader_summaries = 0
+        self.reading_aids = 0
+        self.table_count = 0
         self.awaiting_chapter_figure = False
         self.in_chapter_h1 = False
         self.current_figure: dict[str, object] | None = None
@@ -56,6 +59,13 @@ class SiteParser(HTMLParser):
         if tag == "h1" and values.get("id", "").startswith("장.-"):
             self.chapter_count += 1
             self.in_chapter_h1 = True
+
+        if "leader-summary" in classes:
+            self.leader_summaries += 1
+        if "reading-aid" in classes:
+            self.reading_aids += 1
+        if tag == "table":
+            self.table_count += 1
 
         if tag == "figure" and "editorial-figure" in classes:
             self.current_figure = {
@@ -128,6 +138,9 @@ def main() -> int:
     require(parser.chapter_count == 15, f"장 제목 수: {parser.chapter_count} (예상 15)")
     require(parser.chapter_figures == 15, f"장 제목 직후 삽화 수: {parser.chapter_figures} (예상 15)")
     require(len(parser.figures) == 16, f"전체 삽화 수: {len(parser.figures)} (예상 16)")
+    require(parser.leader_summaries == 15, f"리더 요약 카드 수: {parser.leader_summaries} (예상 15)")
+    require(parser.reading_aids >= 9, f"읽기 보조 요소 수: {parser.reading_aids} (최소 9)")
+    require(parser.table_count >= 10, f"표 수: {parser.table_count} (최소 10)")
 
     all_images: list[tuple[dict[str, str], bool]] = []
     for figure in parser.figures:
@@ -192,6 +205,7 @@ def main() -> int:
         require(markdown.count('<figure class="editorial-figure">') == 1, f"원고 삽화 블록 오류: {source.relative_to(ROOT)}")
         require(f"ch{number:02d}-" in markdown, f"원고 이미지 경로 오류: {source.relative_to(ROOT)}")
         require("srcset=" in markdown and "sizes=" in markdown, f"원고 반응형 이미지 속성 누락: {source.relative_to(ROOT)}")
+        require(markdown.count("::: {.leader-summary}") == 1, f"리더 요약 카드 원본 오류: {source.relative_to(ROOT)}")
 
     if failures:
         print("사이트 검증 실패:", file=sys.stderr)
@@ -202,6 +216,7 @@ def main() -> int:
     print(
         "사이트 검증 통과: "
         f"chapters={parser.chapter_count} figures={len(parser.figures)} "
+        f"leader_summaries={parser.leader_summaries} reading_aids={parser.reading_aids} tables={parser.table_count} "
         f"internal_links={sum(href.startswith('#') for href in parser.hrefs)} "
         "metadata=ok responsive_images=ok source_images=ok"
     )
