@@ -247,6 +247,19 @@
   code{background:var(--mark); padding:.12em .38em; border-radius:3px; font-size:.9em}
   a{color:var(--accent)}
 
+  /* 본문 삽화 */
+  .editorial-figure{margin:2.2rem 0 2.6rem}
+  .editorial-figure img{
+    display:block; width:100%; height:auto; background:var(--quote);
+    border:1px solid var(--rule); border-radius:6px;
+  }
+  .editorial-figure figcaption{
+    margin:.65rem .15rem 0; color:var(--muted); font-size:.82rem;
+    line-height:1.65; text-align:center;
+  }
+  .cover .editorial-figure{margin:2.5rem 0 0}
+  .cover .editorial-figure img{border-radius:8px}
+
   /* 각주 */
   .footnotes{margin-top:5rem; padding-top:2rem; border-top:1px solid var(--rule);
              font-size:.88rem; color:var(--muted)}
@@ -273,11 +286,14 @@
     .cover{padding:3.5rem 1.25rem 2.5rem}
     .cover h1{font-size:2rem}
     h1{font-size:1.55rem; margin:4rem 0 1.5rem}
+    .editorial-figure{margin:1.8rem 0 2.2rem}
+    .editorial-figure img{border-radius:4px}
   }
   @media print{
     .totop,.toc{display:none}
     body{background:#fff; color:#000; font-size:11pt}
     h1{page-break-before:always}
+    .editorial-figure{break-inside:avoid; page-break-inside:avoid}
   }
   </style>
 </head>
@@ -287,6 +303,11 @@
   <h1>나는 이 게임을 안다</h1>
   <p class="sub">AX 성숙도를 스스로 재는 법</p>
   <p class="by"><b>김상기</b> 지음</p>
+  <figure class="editorial-figure cover-figure">
+    <img src="assets/images/cover-journey.webp"
+         alt="나무 자가 추상적인 게임판과 미로, 철로를 가로지르고 출발점에 한 사람이 서 있는 삽화"
+         width="1408" height="919" loading="eager" decoding="async" fetchpriority="high" />
+  </figure>
 </div>
 <nav class="toc">
   <h2>차례</h2>
@@ -469,6 +490,12 @@
 잊지 말자. 그렇다면 왜 지금 그 자가 필요한지부터 살펴보자.</p>
 <h1 id="장.-다들-하고-있는데-아무도-어디쯤인지-모른다">1장. 다들 하고
 있는데, 아무도 어디쯤인지 모른다</h1>
+<figure class="editorial-figure">
+<img src="assets/images/ch01-activity-vs-position.webp"
+alt="활동량을 나타내는 수많은 표와 토큰 앞에서 사람들이 위치 표시가 없는 지도를 바라보는 삽화"
+width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>많이 했다는 숫자와 어디쯤 왔다는 위치는 다르다.</figcaption>
+</figure>
 <p>회의실에 경영진이 앉아 있고 화면에는 이번 분기 AX 추진 현황이 떠
 있다고 해보자. 도입한 도구 몇 종, 교육을 이수한 인원 몇 명, 착수한 과제
 몇 건. 숫자는 빠짐없이 채워져 있고 전부 작년보다 늘었다. 발표는 무난하게
@@ -881,6 +908,12 @@ C에 따로 정리해 두었다. 여기서는 논지만 붙들고 가자.</p>
 <hr />
 <h1 id="장.-성숙도-모델은-왜-욕을-먹는가">3장. 성숙도 모델은 왜 욕을
 먹는가</h1>
+<figure class="editorial-figure">
+<img src="assets/images/ch03-rating-trap.webp"
+alt="사람들이 계단 위 트로피를 닦는 동안 계단 아래 실제 기계의 균열은 방치된 삽화"
+width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>등급을 닦는 동안 실제 일의 균열은 남을 수 있다.</figcaption>
+</figure>
 <p>“우리 AX가 지금 몇 단계쯤인지 한번 재봅시다.” 회의에서 이 말을 꺼냈을
 때 어떤 반응이 돌아올지 떠올려보자. 고개를 끄덕이는 사람도 있겠지만,
 한쪽에서 표정이 굳는 사람이 대체로 한 명은 있다. 반대 의견을 내지도
@@ -1082,6 +1115,12 @@ AI 성숙도 모델을 실제 조직에 적용해본 연구가 한 건도 없었
 장에서 왜 여섯 개의 축이고, 왜 하필 그 여섯인지를 함께 짚어보자.</p>
 <hr />
 <h1 id="장.-여정으로-축을-잡다">4장. 여정으로 축을 잡다</h1>
+<figure class="editorial-figure">
+<img src="assets/images/ch04-six-axes.webp"
+alt="학습과 제작, 운영과 측정의 네 경로를 두 개의 바깥 레일이 감싸며 여섯 경로가 함께 나아가는 삽화"
+width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>네 개의 여정 축과 두 개의 관통 축은 함께 움직인다.</figcaption>
+</figure>
 <p>눈금을 새기기 전에 정해야 하는 게 하나 있다. 이 자로 무엇을 재느냐가
 아니라, <strong>무엇과 무엇을 따로 재느냐</strong>다. 키와 몸무게를 한
 줄의 눈금에 얹을 수는 없다. 따로 재기로 정하는 순간 눈금이 갈라지고, 그
@@ -1279,6 +1318,12 @@ role="doc-noteref"><sup>21</sup></a></p>
 말해준다.</p>
 <hr />
 <h1 id="장.-다섯-단계">5장. 다섯 단계</h1>
+<figure class="editorial-figure">
+<img src="assets/images/ch05-five-stages.webp"
+alt="개인 작업대에서 반복 작업장과 공동 레일, 검증 관문을 지나 결과가 다시 처음으로 돌아오는 다섯 장면의 삽화"
+width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>성숙은 다섯 칸을 통과하고, 마지막 결과가 다시 처음으로 돌아오는 과정이다.</figcaption>
+</figure>
 <p>“우리 조직에서 AI로 일을 제일 잘하는 사람이 누구예요?”</p>
 <p>이 질문을 다섯 조직에 던졌다고 해보자. 돌아오는 답은 대략 이런 식으로
 갈린다.</p>
@@ -1534,6 +1579,12 @@ role="doc-noteref"><sup>24</sup></a></p>
 어떻게 지키는지. 다음 장에서 자를 실제로 손에 쥐어보자.</p>
 <hr />
 <h1 id="장.-어떻게-재는가">6장. 어떻게 재는가</h1>
+<figure class="editorial-figure">
+<img src="assets/images/ch06-first-gap.webp"
+alt="연속된 사슬의 첫 번째 빈 고리에서 자와 점검팀이 멈추고 뒤쪽 고리들은 떨어져 있는 삽화"
+width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>뒤의 성취가 아무리 많아도 첫 번째 빈칸에서 눈금은 멈춘다.</figcaption>
+</figure>
 <p>같은 자를 두 사람에게 나눠줬다고 해보자. 축도 같고 단계 정의도 같다.
 문항도 글자 하나 다르지 않다. 다만 한 사람에게는 “해당되면
 표시하세요”라고 말했고, 다른 사람에게는 “해당된다고 말할 근거를 한 줄
@@ -1754,6 +1805,12 @@ role="doc-noteref"><sup>25</sup></a> 산출물이 있다고 성숙한 것도 아
 살펴보자.</p>
 <hr />
 <h1 id="장.-스스로-재는-일의-함정">7장. 스스로 재는 일의 함정</h1>
+<figure class="editorial-figure">
+<img src="assets/images/ch07-three-perspectives.webp"
+alt="세 사람이 같은 입체 구조물을 서로 다른 투명 도면으로 바라보고 옆 거울에는 왜곡된 모습이 비치는 삽화"
+width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>혼자 보면 하나의 단면만 보인다. 서로 다른 관점이 겹칠 때 실체가 드러난다.</figcaption>
+</figure>
 <p>앞 장에서 만든 자를 실제로 손에 쥐었다고 해보자. 화면에 문항이 하나씩
 뜬다. 중간쯤에서 이런 문장을 만난다. “사내 시스템 연동의 전사 표준이
 정립돼 있다.” 보유, 보완, 신규 중에 하나를 골라야 한다.</p>
@@ -1954,6 +2011,12 @@ role="doc-noteref"><sup>26</sup></a> 이 분야에서 셀프 점검은 예외가
 <hr />
 <h1 id="장.-a.-인식동기역량-배우는-수단은-대체로-갖춰져-있다">8장. A.
 인식·동기·역량 — 배우는 수단은 대체로 갖춰져 있다</h1>
+<figure class="editorial-figure">
+<img src="assets/images/ch08-learning-paths.webp"
+alt="공동 학습 도구가 가득한 열린 수납장에서 사람들이 각자 다른 경로로 실제 작업을 향해 나아가는 삽화"
+width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>배우는 수단은 함께 열어두되, 다음 한 걸음은 사람마다 달라야 한다.</figcaption>
+</figure>
 <p>분기 보고에 올릴 장표를 한 장 만든다고 해보자. AX 칸에 무엇을 적을 수
 있을까. 아마 가장 먼저 손이 가는 건 교육일 것이다. 올해 연 과정 수, 이수
 인원, 만족도 점수. 숫자가 또박또박 나오고 전년 대비 증가율까지 붙는다.
@@ -2452,6 +2515,12 @@ role="doc-noteref"><sup>29</sup></a> 이건 사람을 더 뽑으라는 뜻으로
 <hr />
 <h1 id="장.-c.-연동배포운영-여기서-대부분이-멈춘다">10장. C.
 연동·배포·운영 — 여기서 대부분이 멈춘다</h1>
+<figure class="editorial-figure">
+<img src="assets/images/ch10-deployment-gap.webp"
+alt="완성된 시제품 작업장과 운영 시스템 사이의 깊은 틈을 사람들이 표준 연결 부품으로 잇는 삽화"
+width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>만든 것과 굴러가는 것 사이에는 연동·배포·운영의 다리가 필요하다.</figcaption>
+</figure>
 <p>팀 회의에서 누군가 자기가 만든 것을 시연했다고 해보자. 매주 반복하던
 확인 작업을 대신 해주는 물건이다. 화면이 돌아가고, 결과가 나오고,
 사람들이 짧게 감탄한다. 여기까지는 성공한 이야기다.</p>
@@ -2685,6 +2754,12 @@ class="footnote-ref" id="fnref32" role="doc-noteref"><sup>32</sup></a>
 <hr />
 <h1 id="장.-d.-평가측정개선-투입은-재는데-성과를-못-잰다">11장. D.
 평가·측정·개선 — 투입은 재는데 성과를 못 잰다</h1>
+<figure class="editorial-figure">
+<img src="assets/images/ch11-measure-outcomes.webp"
+alt="쉽게 셀 수 있는 투입물과 측정하기 어려운 성장 결과가 저울 양쪽에 놓이고 사람들이 새 측정기를 만드는 삽화"
+width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>투입은 쉽게 세지만 성과를 재려면 별도의 눈금과 되먹임이 필요하다.</figcaption>
+</figure>
 <p>“그래서 이번 분기에 뭐가 얼마나 좋아졌습니까.”</p>
 <p>회의실에서 이 질문이 나왔다고 해보자. 준비한 장표에는 숫자가
 빼곡하다. 착수한 과제 몇 건, 참여 인원 몇 명, 사용한 토큰 얼마, 월 비용
@@ -3147,6 +3222,12 @@ D까지는 우리가 다음 분기에 손댈 수 있는 자리고, I와 J는 결
 일이 시작된다.</p>
 <hr />
 <h1 id="장.-병목부터-하나">13장. 병목부터 하나</h1>
+<figure class="editorial-figure">
+<img src="assets/images/ch13-bottleneck.webp"
+alt="여섯 흐름이 하나의 좁은 관문에 막혀 있고 사람들이 그 관문 속 장애물 하나를 집중해서 치우는 삽화"
+width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>여섯 축을 한꺼번에 고치지 않는다. 전체 흐름을 막는 한 곳부터 연다.</figcaption>
+</figure>
 <p>진단을 끝내고 결과지를 받아 든 순간을 그려보자. 낮은 축이 하나가
 아니다. 둘이거나 셋이다. 화면을 위에서 아래로 훑으면 비어 있는 자리가
 하나씩 눈에 걸린다. 여기도 없고, 저기는 있는데 기준이 안 정해져 있고,
@@ -3625,6 +3706,12 @@ role="doc-noteref"><sup>37</sup></a> 지금까지는 이걸 있음과 돌아감
 자리에서 무너질 수 있다.</p>
 <hr />
 <h1 id="장.-등급이-목적이-되는-순간">15장. 등급이 목적이 되는 순간</h1>
+<figure class="editorial-figure">
+<img src="assets/images/ch15-rating-is-not-goal.webp"
+alt="서류를 든 사람들이 트로피로 향하는 계단을 오르는 동안 다른 사람들은 아래에서 끊어진 실제 철로를 고치는 삽화"
+width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>등급을 향하는 계단과 실제 개선의 레일은 쉽게 갈라진다.</figcaption>
+</figure>
 <p>규칙을 안다는 게 그 노인을 안전하게 해줬을까?</p>
 <p>아니다. 그 사람은 규칙을 알고도 그 게임 안에 있었다. 아는 것과
 빠져나오는 것은 전혀 다른 일이다. 게임의 문법을 안다고 해서 그 게임이
