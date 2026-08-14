@@ -7,6 +7,15 @@
 
 # 10장. C. 연동·배포·운영 — 여기서 대부분이 멈춘다
 
+<figure class="editorial-figure">
+<img src="assets/images/ch10-deployment-gap.webp"
+     srcset="assets/images/ch10-deployment-gap-704.webp 704w, assets/images/ch10-deployment-gap.webp 1408w"
+     sizes="(max-width: 736px) calc(100vw - 2.5rem), 704px"
+     alt="완성된 시제품 작업장과 운영 시스템 사이의 깊은 틈을 사람들이 표준 연결 부품으로 잇는 삽화"
+     width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>만든 것과 굴러가는 것 사이에는 연동·배포·운영의 다리가 필요하다.</figcaption>
+</figure>
+
 팀 회의에서 누군가 자기가 만든 것을 시연했다고 해보자. 매주 반복하던 확인 작업을 대신 해주는 물건이다. 화면이 돌아가고, 결과가 나오고, 사람들이 짧게 감탄한다. 여기까지는 성공한 이야기다.
 
 그리고 누가 묻는다. "그거 우리도 쓸 수 있어요?"

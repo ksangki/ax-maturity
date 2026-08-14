@@ -7,6 +7,15 @@
 
 # 9장. B. 기획·개발 — 만들 줄 알게 된 다음이 문제다
 
+<figure class="editorial-figure">
+<img src="assets/images/ch09-define-the-work.webp"
+     srcset="assets/images/ch09-define-the-work-704.webp 704w, assets/images/ch09-define-the-work.webp 1408w"
+     sizes="(max-width: 736px) calc(100vw - 2.5rem), 704px"
+     alt="여러 사람이 작은 일반 작업물을 만들고, 중앙의 한 장짜리 업무 정의서가 사람 검토를 거쳐 실제 시스템으로 이어지는 삽화"
+     width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>도구가 무엇을 할 수 있는지보다, 어떤 일을 어디까지 맡길지를 먼저 정한다.</figcaption>
+</figure>
+
 도구가 다 나왔다고 해보자. 계정이 열렸고, 라이선스가 붙었고, 사내 안내 메일까지 돌았다. 교육도 한 차례 끝났다. 그래서 팀 회의에서 이렇게 말한다. "이제 도구는 다 있으니 각자 하나씩 만들어봅시다."
 
 2주 뒤에 취합해보면 무엇이 올라올까? 회의록을 정리해주는 것, 보고서 초안을 뽑아주는 것, 메일함을 요약해주는 것. 대체로 이 언저리다. 다들 성실하게 만들었고, 시연해보면 실제로 돌아간다. 그런데 이 목록을 정리해 위에 보고할 때가 되면 어쩐지 김이 샌다. 틀린 게 없는데도 그렇다.

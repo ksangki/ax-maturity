@@ -7,6 +7,15 @@
 
 # 15장. 등급이 목적이 되는 순간
 
+<figure class="editorial-figure">
+<img src="assets/images/ch15-rating-is-not-goal.webp"
+     srcset="assets/images/ch15-rating-is-not-goal-704.webp 704w, assets/images/ch15-rating-is-not-goal.webp 1408w"
+     sizes="(max-width: 736px) calc(100vw - 2.5rem), 704px"
+     alt="서류를 든 사람들이 트로피로 향하는 계단을 오르는 동안 다른 사람들은 아래에서 끊어진 실제 철로를 고치는 삽화"
+     width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>등급을 향하는 계단과 실제 개선의 레일은 쉽게 갈라진다.</figcaption>
+</figure>
+
 규칙을 안다는 게 그 노인을 안전하게 해줬을까?
 
 아니다. 그 사람은 규칙을 알고도 그 게임 안에 있었다. 아는 것과 빠져나오는 것은 전혀 다른 일이다. 게임의 문법을 안다고 해서 그 게임이 파놓은 구덩이를 저절로 비껴가지는 않는다. 오히려 손에 익은 동작이 그대로 나오기 때문에, 아는 사람이 더 빨리 옛날 자리로 돌아가기도 한다.

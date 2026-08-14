@@ -7,6 +7,15 @@
 
 # 3장. 성숙도 모델은 왜 욕을 먹는가
 
+<figure class="editorial-figure">
+<img src="assets/images/ch03-rating-trap.webp"
+     srcset="assets/images/ch03-rating-trap-704.webp 704w, assets/images/ch03-rating-trap.webp 1408w"
+     sizes="(max-width: 736px) calc(100vw - 2.5rem), 704px"
+     alt="사람들이 계단 위 트로피를 닦는 동안 계단 아래 실제 기계의 균열은 방치된 삽화"
+     width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>등급을 닦는 동안 실제 일의 균열은 남을 수 있다.</figcaption>
+</figure>
+
 "우리 AX가 지금 몇 단계쯤인지 한번 재봅시다." 회의에서 이 말을 꺼냈을 때 어떤 반응이 돌아올지 떠올려보자. 고개를 끄덕이는 사람도 있겠지만, 한쪽에서 표정이 굳는 사람이 대체로 한 명은 있다. 반대 의견을 내지도 않는다. 그냥 팔짱을 낀다.
 
 그 사람은 예전에 이걸 한 번 해봤을 가능성이 높다. 몇 달 동안 문서를 만들었고, 심사를 받았고, 등급이 나왔고, 그 다음에 아무 일도 일어나지 않았다. 나중에 누가 그 시기에 무슨 일을 했느냐고 물으면 대답할 말이 마땅치 않다. 그 몇 달이 통째로 어디론가 사라진 셈인데, 이런 기억은 생각보다 오래 남는다.

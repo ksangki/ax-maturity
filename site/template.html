@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="$book-lang$">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="$author$" />
+  <meta name="description" content="$description$" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#16151a" media="(prefers-color-scheme: dark)" />
+  <link rel="canonical" href="$canonical$" />
+
+  <meta property="og:type" content="book" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:site_name" content="$short-title$" />
+  <meta property="og:title" content="$title$" />
+  <meta property="og:description" content="$description$" />
+  <meta property="og:url" content="$canonical$" />
+  <meta property="og:image" content="$og-image$" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="$og-image-alt$" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="$title$" />
+  <meta name="twitter:description" content="$description$" />
+  <meta name="twitter:image" content="$og-image$" />
+  <meta name="twitter:image:alt" content="$og-image-alt$" />
+
+  <link rel="preload" as="image"
+        href="assets/images/cover-journey-704.webp"
+        imagesrcset="assets/images/cover-journey-704.webp 704w, assets/images/cover-journey.webp 1408w"
+        imagesizes="(max-width: 736px) calc(100vw - 2.5rem), 704px"
+        fetchpriority="high" />
+  <title>$title$</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "나는 이 게임을 안다 — AX 성숙도를 스스로 재는 법",
+    "alternateName": "나는 이 게임을 안다",
+    "description": "조직의 AX 성숙도를 여섯 축과 다섯 단계로 스스로 진단하고, 가장 약한 병목에서 다음 한 걸음을 고르는 실전 안내서.",
+    "url": "https://ksangki.github.io/ax-maturity/",
+    "image": "https://ksangki.github.io/ax-maturity/assets/images/social-cover.jpg",
+    "inLanguage": "ko",
+    "datePublished": "2026",
+    "isAccessibleForFree": true,
+    "author": {
+      "@type": "Person",
+      "name": "김상기"
+    }
+  }
+  </script>
+
+  <style>
+  :root{
+    --bg:#fbfaf8; --fg:#1c1b19; --muted:#6b6862; --rule:#e3dfd8;
+    --accent:#8a5a3b; --mark:#f3ede4; --quote:#f6f2ec;
+    --maxw:44rem;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#16151a; --fg:#e8e5e0; --muted:#aaa49b; --rule:#34313a;
+           --accent:#d0a17a; --mark:#26232b; --quote:#1e1c22; }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth; color:var(--fg); background:var(--bg); font-size:100%}
+  body{
+    margin:0; padding:0; background:var(--bg); color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
+    font-size:17px; line-height:1.9; word-break:keep-all; overflow-wrap:break-word;
+    text-rendering:optimizeLegibility; font-kerning:normal;
+  }
+  img,svg{max-width:100%; height:auto}
+  a{color:var(--accent)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--accent); outline-offset:3px}
+  .skip-link{
+    position:fixed; top:.75rem; left:.75rem; z-index:100;
+    padding:.55rem .8rem; background:var(--fg); color:var(--bg);
+    border-radius:4px; transform:translateY(-200%); text-decoration:none;
+  }
+  .skip-link:focus{transform:translateY(0)}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 1.25rem 8rem}
+
+  .cover{
+    max-width:var(--maxw); margin:0 auto; padding:5rem 1.25rem 3.5rem;
+    border-bottom:1px solid var(--rule);
+  }
+  .cover .kicker{font-size:.82rem; letter-spacing:.14em; color:var(--muted); text-transform:uppercase}
+  .cover h1{font-size:2.6rem; line-height:1.25; margin:.9rem 0 .5rem; letter-spacing:-.02em}
+  .cover .sub{font-size:1.12rem; color:var(--muted); margin:0 0 1.6rem}
+  .cover .by{font-size:.95rem; color:var(--muted)}
+  .cover .by b{color:var(--fg); font-weight:600}
+
+  .toc{max-width:var(--maxw); margin:0 auto; padding:2.5rem 1.25rem 1rem}
+  .toc h2{font-size:.82rem; letter-spacing:.14em; color:var(--muted); text-transform:uppercase; margin:0 0 1rem}
+  .toc ol{list-style:none; margin:0; padding:0}
+  .toc li{margin:.35rem 0}
+  .toc a{color:var(--fg); text-decoration:none; border-bottom:1px solid transparent}
+  .toc a:hover{border-bottom-color:var(--accent); color:var(--accent)}
+  .toc .part{margin-top:1.4rem; font-size:.78rem; letter-spacing:.12em; color:var(--muted); text-transform:uppercase}
+
+  h1{font-size:1.85rem; line-height:1.35; letter-spacing:-.015em; margin:5.5rem 0 2rem; padding-top:2.5rem; border-top:1px solid var(--rule)}
+  main.wrap>h1:first-child{border-top:0; padding-top:0}
+  h2{font-size:1.22rem; margin:3rem 0 1rem; letter-spacing:-.01em}
+  h3{font-size:1.05rem; margin:2.2rem 0 .8rem; color:var(--muted)}
+  p{margin:1.15rem 0}
+  strong{font-weight:650}
+  em{font-style:italic; color:var(--muted)}
+  blockquote{margin:1.8rem 0; padding:1rem 1.3rem; background:var(--quote); border-left:3px solid var(--accent); border-radius:0 4px 4px 0}
+  blockquote p{margin:.5rem 0}
+  ul,ol{padding-left:1.3rem; margin:1.15rem 0}
+  li{margin:.45rem 0}
+  hr{border:0; border-top:1px solid var(--rule); margin:3rem 0}
+  table{width:100%; border-collapse:collapse; margin:1.8rem 0; font-size:.94rem; display:block; overflow-x:auto; white-space:nowrap}
+  th,td{border-bottom:1px solid var(--rule); padding:.6rem .7rem; text-align:left}
+  th{font-weight:600; color:var(--muted); font-size:.86rem}
+  code{background:var(--mark); padding:.12em .38em; border-radius:3px; font-size:.9em}
+  pre{overflow:auto; padding:1rem; background:var(--mark); border-radius:4px}
+  pre code{padding:0; background:transparent}
+
+  .editorial-figure{margin:2.2rem 0 2.6rem}
+  .editorial-figure img{display:block; width:100%; height:auto; background:var(--quote); border:1px solid var(--rule); border-radius:6px}
+  .editorial-figure figcaption{margin:.65rem .15rem 0; color:var(--muted); font-size:.82rem; line-height:1.65; text-align:center}
+  .cover .editorial-figure{margin:2.5rem 0 0}
+  .cover .editorial-figure img{border-radius:8px}
+
+  .footnotes{margin-top:5rem; padding-top:2rem; border-top:1px solid var(--rule); font-size:.88rem; color:var(--muted)}
+  .footnotes h2{font-size:.82rem; letter-spacing:.14em; text-transform:uppercase}
+  .footnote-back{text-decoration:none}
+  a.footnote-ref sup{font-size:.72em; padding:0 .15em}
+  .totop{position:fixed; right:1.1rem; bottom:1.1rem; z-index:10; background:var(--bg); color:var(--muted); border:1px solid var(--rule); border-radius:999px; padding:.55rem .9rem; font-size:.8rem; text-decoration:none; opacity:.92}
+  .totop:hover{color:var(--accent); border-color:var(--accent)}
+  footer.colophon{max-width:var(--maxw); margin:4rem auto 0; padding:2rem 1.25rem 4rem; border-top:1px solid var(--rule); color:var(--muted); font-size:.88rem}
+
+  @media (max-width:640px){
+    body{font-size:16px}
+    .cover{padding:3.5rem 1.25rem 2.5rem}
+    .cover h1{font-size:2rem}
+    h1{font-size:1.55rem; margin:4rem 0 1.5rem}
+    .editorial-figure{margin:1.8rem 0 2.2rem}
+    .editorial-figure img{border-radius:4px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  @media print{
+    .skip-link,.totop,.toc{display:none}
+    body{background:#fff; color:#000; font-size:11pt}
+    h1{page-break-before:always}
+    main.wrap>h1:first-child{page-break-before:auto}
+    .editorial-figure{break-inside:avoid; page-break-inside:avoid}
+  }
+  </style>
+</head>
+<body id="top">
+<a class="skip-link" href="#content">본문으로 건너뛰기</a>
+<header class="cover">
+  <div class="kicker">AX 성숙도 모델 · AXMM</div>
+  <h1>$short-title$</h1>
+  <p class="sub">$subtitle$</p>
+  <p class="by"><b>$author$</b> 지음</p>
+  <figure class="editorial-figure cover-figure">
+    <img src="assets/images/cover-journey.webp"
+         srcset="assets/images/cover-journey-704.webp 704w, assets/images/cover-journey.webp 1408w"
+         sizes="(max-width: 736px) calc(100vw - 2.5rem), 704px"
+         alt="나무 자가 추상적인 게임판과 미로, 철로를 가로지르고 출발점에 한 사람이 서 있는 삽화"
+         width="1408" height="919" loading="eager" decoding="async" fetchpriority="high" />
+  </figure>
+</header>
+<nav class="toc" aria-label="책 목차">
+  <h2>차례</h2>
+  <ol>
+    <li><a href="#들어가며">들어가며</a></li>
+    <li><a href="#나는-이-게임을-안다">도입부 — 나는 이 게임을 안다</a></li>
+    <li class="part">PART 1 · 왜 지금 성숙도인가</li>
+    <li><a href="#장.-다들-하고-있는데-아무도-어디쯤인지-모른다">1장. 다들 하고 있는데, 아무도 어디쯤인지 모른다</a></li>
+    <li><a href="#장.-이미-나와-있는-자들-그리고-그들이-비워둔-자리">2장. 이미 나와 있는 자들, 그리고 그들이 비워둔 자리</a></li>
+    <li><a href="#장.-성숙도-모델은-왜-욕을-먹는가">3장. 성숙도 모델은 왜 욕을 먹는가</a></li>
+    <li class="part">PART 2 · AXMM, 자를 만들다</li>
+    <li><a href="#장.-여정으로-축을-잡다">4장. 여정으로 축을 잡다</a></li>
+    <li><a href="#장.-다섯-단계">5장. 다섯 단계</a></li>
+    <li><a href="#장.-어떻게-재는가">6장. 어떻게 재는가</a></li>
+    <li><a href="#장.-스스로-재는-일의-함정">7장. 스스로 재는 일의 함정</a></li>
+    <li class="part">PART 3 · 진단</li>
+    <li><a href="#장.-a.-인식동기역량-배우는-수단은-대체로-갖춰져-있다">8장. 인식·동기·역량</a></li>
+    <li><a href="#장.-b.-기획개발-만들-줄-알게-된-다음이-문제다">9장. 기획·개발</a></li>
+    <li><a href="#장.-c.-연동배포운영-여기서-대부분이-멈춘다">10장. 연동·배포·운영</a></li>
+    <li><a href="#장.-d.-평가측정개선-투입은-재는데-성과를-못-잰다">11장. 평가·측정·개선</a></li>
+    <li><a href="#장.-ij.-자원과-레일-내-권한-밖이-내-발목을-잡을-때">12장. 자원과 레일</a></li>
+    <li class="part">PART 4 · 그래서 무엇을 할 것인가</li>
+    <li><a href="#장.-병목부터-하나">13장. 병목부터 하나</a></li>
+    <li><a href="#장.-혼자-재지-마라">14장. 혼자 재지 마라</a></li>
+    <li><a href="#장.-등급이-목적이-되는-순간">15장. 등급이 목적이 되는 순간</a></li>
+    <li class="part">맺으며</li>
+    <li><a href="#에필로그.-자를-넘겨주며">에필로그. 자를 넘겨주며</a></li>
+    <li><a href="#부록-a.-axmm-진단표-서른-개의-질문">부록 A. 진단표 서른 개의 질문</a></li>
+    <li><a href="#부록-b.-종이-대신-화면으로">부록 B. 셀프 점검 사이트 안내</a></li>
+    <li><a href="#부록-c.-이미-나와-있는-자들-구조-해부">부록 C. 기존 AI 성숙도 모델 상세</a></li>
+  </ol>
+</nav>
+<main class="wrap" id="content" tabindex="-1">
+$body$
+</main>
+<a class="totop" href="#top">맨 위로</a>
+<footer class="colophon">
+  <p><b>$title$</b><br />$author$ 지음 · $year$</p>
+  <p>이 책의 모든 서술은 특정 조직을 식별할 수 없도록 일반화되었다. 인용한 외부 자료는 각 장의 각주에 출처를 밝혔다.</p>
+</footer>
+</body>
+</html>

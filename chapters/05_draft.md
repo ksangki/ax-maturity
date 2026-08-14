@@ -7,6 +7,15 @@
 
 # 5장. 다섯 단계
 
+<figure class="editorial-figure">
+<img src="assets/images/ch05-five-stages.webp"
+     srcset="assets/images/ch05-five-stages-704.webp 704w, assets/images/ch05-five-stages.webp 1408w"
+     sizes="(max-width: 736px) calc(100vw - 2.5rem), 704px"
+     alt="개인 작업대에서 반복 작업장과 공동 레일, 검증 관문을 지나 결과가 다시 처음으로 돌아오는 다섯 장면의 삽화"
+     width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>성숙은 다섯 칸을 통과하고, 마지막 결과가 다시 처음으로 돌아오는 과정이다.</figcaption>
+</figure>
+
 "우리 조직에서 AI로 일을 제일 잘하는 사람이 누구예요?"
 
 이 질문을 다섯 조직에 던졌다고 해보자. 돌아오는 답은 대략 이런 식으로 갈린다.

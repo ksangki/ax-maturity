@@ -7,6 +7,15 @@
 
 # 14장. 혼자 재지 마라
 
+<figure class="editorial-figure">
+<img src="assets/images/ch14-three-viewpoints.webp"
+     srcset="assets/images/ch14-three-viewpoints-704.webp 704w, assets/images/ch14-three-viewpoints.webp 1408w"
+     sizes="(max-width: 736px) calc(100vw - 2.5rem), 704px"
+     alt="리더와 제작자와 사용자가 서로 다른 토큰 배열을 겹쳐 놓고 중앙의 불일치를 함께 바라보는 삽화"
+     width="1408" height="939" loading="lazy" decoding="async" />
+<figcaption>같은 답보다 갈린 답이 더 많은 것을 알려준다.</figcaption>
+</figure>
+
 금요일 오후에 진단표를 열었다고 해보자. 회의가 하나 취소돼 시간이 비었고, 마침 이 자를 한번 대보고 싶었다. 30문항을 차례로 내려간다. 15분이 채 안 걸린다. 결과지가 뜬다. 병목 축이 하나 잡히고, 미확정 비율이 나오고, 다음 한 걸음까지 친절하게 적혀 있다.
 
 그런데 이 결과지에 적힌 것은 무엇일까?
