@@ -1,9 +1,10 @@
 # Build Log — 나는 이 게임을 안다 v1.0.0
 
-- **Date:** 2026-08-15T00:53:34Z
+- **Date:** 2026-08-15T03:36:02Z
 - **Output:** `나는-이-게임을-안다-v1.0.0.epub`
-- **Size:** 373160 bytes
+- **Size:** 368670 bytes
 - **Pandoc exit:** 0
+- **Archive and metadata check:** passed
 - **epubcheck:** skipped (epubcheck not installed)
 
 ## Metadata
