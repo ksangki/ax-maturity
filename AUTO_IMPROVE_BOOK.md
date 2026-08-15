@@ -13,7 +13,16 @@
 3. numeric rubric scoring도 `IMPROVE_EVALUATOR`를 사용하게 한다.
 4. upstream의 surgical diff, best-of-N, 양방향 pairwise keep/discard 구조는 그대로 둔다.
 
-## 준비
+## 두 가지 실행 방식
+
+이 저장소에서는 두 방식 모두 사용할 수 있다.
+
+- **GPT 직접 파일럿:** ChatGPT가 장 전체와 rubric을 읽고 mutation 후보 생성 → 별도 평가 패스 → 양방향 pairwise → KEEP/DISCARD를 수행한다. 별도 Gemini API 키가 필요 없다. `results/ch04-gpt56-pilot.md`가 첫 실행 기록이다.
+- **upstream 자동 실행:** 아래 래퍼로 `crimeacs/auto-improve`를 직접 실행한다. 이 경우 Gemini API 키가 필요하다.
+
+GPT 직접 방식은 mutator와 evaluator가 완전히 다른 모델은 아니라는 한계가 있으므로, pairwise 순서를 바꿔 두 번 평가하고 최종 diff를 사람이 검토한다.
+
+## upstream 자동 실행 준비
 
 Auto-Improve는 별도 checkout으로 둔다. 현재 확인한 upstream 기준 커밋은 `03aa5a9464b867bd8ce273841b07bcbf6890d7e7`이다.
 
@@ -42,6 +51,10 @@ export IMPROVE_EVALUATOR=...
 ## 첫 파일럿: 4장
 
 4장은 `축을 왜 조직 기능이 아니라 구성원의 여정으로 잡았는가`라는 책의 설계 판단이 가장 선명하게 드러나는 장이다. 저자 목소리, 추상성, 중복, 독자 효용을 동시에 시험하기 좋아 첫 대상으로 삼는다.
+
+GPT-5.6 Sol 직접 파일럿에서는 4회 중 3개를 KEEP하고 1개를 DISCARD했다. 상세 판단은 `results/ch04-gpt56-pilot.md`에 남겼다.
+
+upstream으로 재현하려면 다음처럼 실행한다.
 
 ```bash
 scripts/run_auto_improve_book.sh chapters/04_draft.md ch04-pilot 4
