@@ -12,6 +12,7 @@
 
 - **웹 버전**: [GitHub Pages에서 읽기](https://ksangki.github.io/ax-maturity/)
 - **EPUB**: [`나는-이-게임을-안다-v1.0.0.epub`](나는-이-게임을-안다-v1.0.0.epub) 다운로드
+- **발표 자료**: [1시간 발표용 슬라이드 30장](https://ksangki.github.io/ax-maturity/presentation/)
 
 ## 직접 재보기
 
