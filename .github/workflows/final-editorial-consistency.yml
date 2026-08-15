@@ -1,0 +1,92 @@
+name: Final editorial consistency
+
+on:
+  push:
+    branches:
+      - agent/auto-improve-book-pilot
+    paths:
+      - .github/workflows/final-editorial-consistency.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fix-build-clean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: agent/auto-improve-book-pilot
+          fetch-depth: 0
+
+      - name: Install Pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes pandoc
+
+      - name: Fix remaining chapter 5 consistency
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path('chapters/05_draft.md')
+          text = path.read_text(encoding='utf-8')
+          edits = [
+              (
+                  'SEI 모델에도 검증을 다루는 역량영역이 있고 내용도 만만치 않은데, 그게 **2단계**에 걸려 있었다.[^c5n2] 배포하려면 당연히 갖춰야 할 기초 위생이라는 뜻이다.',
+                  'SEI 모델에도 검증을 다루는 역량영역이 있고 내용도 만만치 않은데, 그게 **2단계**에 걸려 있었다.[^c5n2] SEI는 검증을 초기 단계의 역량으로 배치했다.'
+              ),
+              (
+                  '그리고 그 배치가 틀린 것도 아니다. 기초를 갖추는 일이 가장 어렵다고 보는 세계관 위에서는 검증이 아래쪽에 놓이는 게 맞다. 다만 **우리는 반대로 놓았다.** 왜 그렇게 놓았는지가 이 절의 이야기다.',
+                  '그리고 그 배치가 틀렸다고 말할 근거도 없다. 다만 분포만으로 왜 그렇게 배치했는지까지 추측하지는 말자. **우리는 검증의 위치를 다르게 놓았다.** 왜 그렇게 놓았는지가 이 절의 이야기다.'
+              ),
+              (
+                  '먼저 단계가 무엇인지부터 짚자. 성숙도 모델의 단계는 결국 **무엇이 어려운가**에 대한 답이다. 어려운 일을 위에 놓고 쉬운 일을 아래에 놓는다. 그러니 4단계를 정하려면 먼저 물어야 한다. 지금 우리에게 어려운 일이 무엇인가.',
+                  '먼저 단계가 무엇인지부터 짚자. 성숙도 모델의 단계는 **어떤 역량을 언제 갖춘 것으로 볼지 정한 순서**다. 위에 무엇을 놓느냐가 그 모델이 성숙을 정의하는 방식을 드러낸다. 그러니 4단계를 정하려면 먼저 물어야 한다. 지금 우리 조직에서 성숙의 분수령으로 볼 역량이 무엇인가.'
+              ),
+              (
+                  '이게 확장과 검증이 갈리는 지점이다. **확장은 도구가 대신해주지만 검증은 조직이 정해줘야 한다.** 무엇을 기준으로 맞다고 할지, 누가 걸러낼지, 걸렸을 때 그 사람이 어떻게 되는지.',
+                  '이게 확장과 검증이 갈리는 지점이다. **확장은 도구의 도움으로 빨라질 수 있지만, 검증 기준과 운영 방식은 조직이 따로 정해야 한다.** 무엇을 기준으로 맞다고 할지, 누가 걸러낼지, 걸렸을 때 그 사람이 어떻게 되는지.'
+              ),
+              (
+                  '그러니 우리는 검증을 기초 위생이 아니라 **분수령**에 놓는다. 넘은 조직은 틀린 것을 그날 안다. 못 넘은 조직은 몇 달 뒤에 남이 알려줘서 안다.',
+                  '그러니 우리는 검증을 기초 위생이 아니라 **분수령**에 놓는다. 넘은 조직은 틀린 것을 더 빨리 잡을 가능성이 높다. 못 넘은 조직은 문제가 늦게 드러날 수 있다.'
+              ),
+          ]
+          for old, new in edits:
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f'exact-match failed ({count}): {old[:80]}')
+              text = text.replace(old, new, 1)
+          path.write_text(text, encoding='utf-8')
+
+          chapters = [
+              'chapters/00_intro_draft.md', 'chapters/00_opening_draft.md',
+              *[f'chapters/{i:02d}_draft.md' for i in range(1, 16)],
+              'chapters/99_epilogue_draft.md', 'chapters/A1_appendix_a_draft.md',
+              'chapters/A2_appendix_b_draft.md', 'chapters/A3_appendix_c_draft.md',
+          ]
+          def body(p):
+              s = Path(p).read_text(encoding='utf-8')
+              if s.startswith('---\n'):
+                  end = s.find('\n---\n', 4)
+                  if end < 0:
+                      raise SystemExit(f'bad frontmatter: {p}')
+                  s = s[end+5:]
+              return s.rstrip() + '\n'
+          Path('04_manuscript.md').write_text('\n\n'.join(body(p) for p in chapters), encoding='utf-8')
+          PY
+
+      - name: Build and validate
+        run: |
+          ./scripts/build-site.sh
+          git diff --check
+
+      - name: Commit and remove one-off workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm .github/workflows/final-editorial-consistency.yml
+          git add chapters/05_draft.md 04_manuscript.md docs/index.html .github/workflows/final-editorial-consistency.yml
+          git commit -m "5장 최종 논리 일관성 보정"
+          git push origin HEAD:agent/auto-improve-book-pilot
