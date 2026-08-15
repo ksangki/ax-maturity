@@ -11,6 +11,17 @@
 ## 읽기
 
 - **웹 버전**: [GitHub Pages에서 읽기](https://ksangki.github.io/ax-maturity/)
+- **EPUB**: [`나는-이-게임을-안다-v1.0.0.epub`](나는-이-게임을-안다-v1.0.0.epub) 다운로드
+
+## 직접 재보기
+
+> ### [axmm-check.vercel.app](https://axmm-check.vercel.app)
+
+서른 문항을 웹에서 답하면 채점을 대신해준다. 로그인도 가입도 없다. **15분**이면 된다.
+
+두세 명이 각자 답한 뒤 [대조](https://axmm-check.vercel.app/compare)하면 훨씬 낫다. 리더는 있다고 하는데 실무자는 모르는 항목 — 갈리는 지점이 곧 진단이다.
+
+증거란에 적은 내용은 브라우저 밖으로 나가지 않는다. 서버로 보내지 않고 공유 링크에도 싣지 않는다.
 
 ## 이 책이 하는 주장
 
