@@ -34,6 +34,8 @@ pip install requests
 cd ../ax-maturity
 ```
 
+`scripts/run_auto_improve_book.sh`는 실행할 때 이 checkout의 `HEAD`가 위 커밋과 정확히 같은지 확인한다. 다른 커밋이면 upstream 구조가 우연히 호환되더라도 실행을 중단해 재현성을 지킨다.
+
 Gemini API key를 환경변수에 둔다.
 
 ```bash
@@ -86,7 +88,8 @@ git diff main...improve/ch04-pilot -- chapters/04_draft.md
 - 4장 파일럿: **3건 KEEP**
 - 전권 본 패스: **180건 적용**
 - 5장 최종 논리 일관성 보정: **5건 적용**
-- 총 품질 수정: **188건**
+- 병합 전 최종 검토: **10건 적용**
+- 총 품질 수정: **198건**
 
 큰 재작성은 하지 않았다. 실제로 효과가 컸던 것은 `AI 같은 문장` 자체를 찾는 것보다 다음 유형을 잡는 일이었다.
 
@@ -96,7 +99,7 @@ git diff main...improve/ch04-pilot -- chapters/04_draft.md
 4. `보완 = 안 정해짐`처럼 모델의 실제 정의보다 좁게 해석한 방법론
 5. 뒤에서 설명할 내용을 미리 결론내는 메타 문장과 중복
 
-상세 반영 목록은 `results/full-book-gpt56-pass.md`에 있다. 전권 적용 후 `04_manuscript.md`와 `docs/index.html`을 다시 생성했고, 사이트 구조 검증과 `git diff --check`를 통과했다.
+상세 반영 목록은 `results/full-book-gpt56-pass.md`에 있다. 전권 적용 후 `04_manuscript.md`와 `docs/index.html`을 다시 생성했고, 사이트 구조 검증과 `git diff --check`를 통과했다. 병합 전 최종 검토에서도 같은 빌드·검증을 다시 통과했다.
 
 ## 이후 운영
 
