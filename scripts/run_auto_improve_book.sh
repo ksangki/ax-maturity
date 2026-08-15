@@ -45,6 +45,14 @@ if [[ ! -f "$upstream" ]]; then
   exit 2
 fi
 
+expected_upstream_sha="03aa5a9464b867bd8ce273841b07bcbf6890d7e7"
+actual_upstream_sha="$(git -C "$AUTO_IMPROVE_HOME" rev-parse HEAD 2>/dev/null || true)"
+if [[ "$actual_upstream_sha" != "$expected_upstream_sha" ]]; then
+  echo "auto-improve checkout must be pinned to $expected_upstream_sha" >&2
+  echo "current HEAD: ${actual_upstream_sha:-unknown}" >&2
+  exit 2
+fi
+
 runtime_dir="${TMPDIR:-/tmp}/ax-book-auto-improve"
 runtime="$runtime_dir/improve_book.py"
 mkdir -p "$runtime_dir"
