@@ -95,6 +95,18 @@
   .cover .sub{font-size:1.12rem; color:var(--muted); margin:0 0 1.6rem}
   .cover .by{font-size:.95rem; color:var(--muted)}
   .cover .by b{color:var(--fg); font-weight:600}
+  .cover-links{
+    display:flex; flex-wrap:wrap; gap:.5rem .75rem;
+    margin:1.5rem 0 0; padding:0; list-style:none;
+  }
+  .cover-links a{
+    display:inline-flex; align-items:baseline; gap:.35rem;
+    padding:.5rem .85rem; border:1px solid var(--rule); border-radius:999px;
+    font-size:.9rem; color:var(--fg); text-decoration:none;
+  }
+  .cover-links a:hover{border-color:var(--accent); color:var(--accent)}
+  .cover-links .dim{color:var(--muted); font-size:.84rem}
+  .cover-links a:hover .dim{color:inherit}
 
   .toc{max-width:var(--maxw); margin:0 auto; padding:2.5rem 1.25rem 1rem}
   .toc h2{font-size:.82rem; letter-spacing:.14em; color:var(--muted); text-transform:uppercase; margin:0 0 1rem}
@@ -210,6 +222,11 @@
   <h1>$short-title$</h1>
   <p class="sub">$subtitle$</p>
   <p class="by"><b>$author$</b> 지음</p>
+  <nav class="cover-links" aria-label="함께 보기">
+    <a href="https://axmm-check.vercel.app">자체 점검 <span class="dim">30문항 · 15분</span></a>
+    <a href="presentation/">발표 자료 <span class="dim">슬라이드 30장</span></a>
+    <a href="https://github.com/ksangki/ax-maturity/raw/main/%EB%82%98%EB%8A%94-%EC%9D%B4-%EA%B2%8C%EC%9E%84%EC%9D%84-%EC%95%88%EB%8B%A4-v1.0.0.epub">EPUB <span class="dim">내려받기</span></a>
+  </nav>
   <figure class="editorial-figure cover-figure">
     <img src="assets/images/cover-journey.webp"
          srcset="assets/images/cover-journey-704.webp 704w, assets/images/cover-journey.webp 1408w"
