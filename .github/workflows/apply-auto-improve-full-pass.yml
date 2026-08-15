@@ -6,6 +6,7 @@ on:
       - agent/auto-improve-book-pilot
     paths:
       - scripts/apply_auto_improve_full_pass.py
+      - scripts/apply_auto_improve_full_pass_v2.py
       - .github/workflows/apply-auto-improve-full-pass.yml
 
 permissions:
@@ -28,7 +29,7 @@ jobs:
           sudo apt-get install --yes pandoc
 
       - name: Apply reviewed surgical edits
-        run: python3 scripts/apply_auto_improve_full_pass.py
+        run: python3 scripts/apply_auto_improve_full_pass_v2.py
 
       - name: Build and validate web book
         run: ./scripts/build-site.sh
