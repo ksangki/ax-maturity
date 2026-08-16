@@ -1,10 +1,10 @@
 # 기존 AI/AX 성숙도 모델 딥리서치 — 지형도와 빈틈
 
-- 작성: 2026-08-14
+- 작성: 2026-08-14 · 공식 자료 재확인: 2026-08-16
 - 목적: ① 경쟁 지형 파악 ② 책 PART 1의 이론 좌표 ③ 우리 모델의 설계 요구사항 도출
-- 출처 신뢰도 표기: **[1차]** 원문 직접 확인 / **[2차]** 원문이 유료·회원 전용이라 보도·해설 경유
+- 출처 신뢰도 표기: **[1차]** 원문·공식 브리핑 직접 확인 / **[2차]** 유료·비공개 세부를 보도·해설로만 확인
 
-> **주의(반드시 지킬 것):** SEI 모델 원문 PDF와 MIT CISR Talking Points는 각각 다운로드·회원 전용이라 본 문서의 해당 항목 일부는 **[2차]** 출처다. 책에 인용할 때는 원문을 확보해 재확인하고, 확보 못 하면 "보도에 따르면"으로 정직하게 처리한다. 숫자를 1차 확인 없이 단정하지 않는다.
+> **2026-08-16 재확인:** SEI 원문 PDF와 MIT CISR 2024·2025 공식 브리핑 본문은 공개돼 있다. MIT의 단계 산식·분포·재무성과와 후속 조사까지 [1차]로 올린다. Gartner는 일곱 기둥과 공개 조사 결과만 [1차]이며, 유료 툴킷의 세부 판정 지침과 중간 단계 설명은 확인 범위 밖이다.
 
 ---
 
@@ -14,8 +14,8 @@
 |---|---|---|---|---|---|
 | **CMMI** (조상) | 1991~ / v2.0 2018 | 5 (Initial→Optimizing) | 프로세스 영역 | 처방+심사 | 유료 심사(SCAMPI) |
 | **CMU SEI × Accenture — AI Adoption Maturity Model v1.0** | **2026-06-30** | 5 (Exploratory→Future-Ready) | **8** (조직변화 4 + 엔지니어링 4) | 처방+로드맵 | PDF 공개 / 심사는 별도 |
-| **MIT CISR — Enterprise AI Maturity** | 2024-12 (2025·2026 갱신) | 4 (Experiment→Future Ready) | 역량 기반 | 서술+실증 | 회원 전용 |
-| **Gartner — AI Maturity Model** | 2025~2026 | 5 (Awareness→Transformational) | 7 (전략·포트폴리오·거버넌스·엔지니어링·데이터·운영모델·인재문화) | 서술+툴킷 | 유료 구독 |
+| **MIT CISR — Enterprise AI Maturity** | 2024-12, 2025 후속 조사 | 4 (Experiment→Future Ready) | 효과성 점수 기반 | 서술+실증 | 공식 브리핑 공개 / 독립 셀프 진단 없음 |
+| **Gartner — AI Maturity Model** | 2024-11 | 5수준 | 7 (전략·유스케이스·제품·거버넌스·엔지니어링·데이터·생태계·운영모델·사람문화) | 서술+툴킷 | 세부 툴킷 유료 |
 | **Cisco — AI Readiness Index** | 2023~2025 연례 | 4구간(Pacesetter 등) | 6 (전략·인프라·데이터·인재·거버넌스·문화) | 벤치마크 서베이 | **무료 셀프 진단 있음** |
 | **학술 AIMM 다수** | 2015~ | 4~9 (5가 최빈) | 데이터·기술·자동화·거버넌스·사람·조직 | 대부분 **서술** | 논문 |
 
@@ -41,11 +41,11 @@
 **가장 중요한 경쟁 모델.** CMMI를 만든 바로 그 조직이 낸 AI판이다.
 
 - 발표: **2026년 6월 30일** (불과 6주 전). 저자: Ipek Ozkaya, Anita Carleton, Sebastián Echeverría, Robert Edman, John Haller, Erin Harper, Michael D. Konrad, Carol J. Smith, Shawn Wray **[1차]** ([SEI Library](https://www.sei.cmu.edu/library/ai-adoption-maturity-model/))
-- **5레벨:** Exploratory → Implemented → Aligned → Scaled → Future-Ready **[2차]**
-- **8차원** **[2차]**
+- **5레벨:** Exploratory → Implemented → Aligned → Scaled → Future-Ready **[1차]**
+- **8차원** **[1차]**
   - 조직 변화 4: Strategy / Workforce / **Workflow re-engineering** / Risk
   - AI 생애주기 엔지니어링 4: Data / Engineering / Operations / Technology ecosystem
-- **개발 규모:** 기존 AI 성숙도 시도 **100개 이상** 체계적 리뷰 + 임원 인터뷰 약 25건 + 실무자 설문 약 600명 + Fortune 500 파일럿 **[2차]** ([SEI 보도](https://www.sei.cmu.edu/news/sei-and-accenture-release-ai-adoption-maturity-model-to-help-organizations-scale-ai-with-predictable-outcomes/), [Accenture 뉴스룸](https://newsroom.accenture.com/news/2026/accenture-and-the-carnegie-mellon-university-software-engineering-institute-launch-ai-adoption-maturity-model-to-help-organizations-scale-ai-with-predictable-outcomes))
+- **개발 규모:** 기존 AI 성숙도 시도 **100개 이상** 체계적 리뷰 + 임원 인터뷰 약 25건 + 실무자 설문 약 600명 + Fortune 500 파일럿 **[1차]** ([SEI 보도](https://www.sei.cmu.edu/news/sei-and-accenture-release-ai-adoption-maturity-model-to-help-organizations-scale-ai-with-predictable-outcomes/), [Accenture 뉴스룸](https://newsroom.accenture.com/news/2026/accenture-and-the-carnegie-mellon-university-software-engineering-institute-launch-ai-adoption-maturity-model-to-help-organizations-scale-ai-with-predictable-outcomes))
 - **핵심 철학 (원문 인용, [1차]):** *"True AI maturity is not measured by how much AI an organization deploys, but by its ability to build trustworthy and resilient capabilities, rigorous engineering practices, and governance approaches aligned with business outcomes."*
 
 **우리 모델과의 관계 — 정직한 평가:**
@@ -63,7 +63,7 @@
 
 ## 3. MIT CISR — Enterprise AI Maturity (4단계)
 
-가장 **실증 데이터가 강한** 모델. 2022년 721개 기업 서베이 기반. **[2차]**
+가장 **실증 데이터가 강한** 모델. 2022년 721개 기업 서베이 기반이며 공식 브리핑에서 산식과 결과를 직접 확인했다. **[1차]**
 
 | 단계 | 이름 | 비중 | 내용 |
 |---|---|---|---|
@@ -72,19 +72,22 @@
 | 3 | Develop AI Ways of Working | **31%** | 산업화·확장 가능 아키텍처·테스트 학습 문화 |
 | 4 | Become AI Future Ready | **7%** | AI가 의사결정 전반에 스며듦 |
 
-**핵심 실증:** 1~2단계 기업은 **업계 평균 이하** 재무성과, 3~4단계는 **업계 평균 상회**. 저자: Peter Weill, Stephanie Woerner, Ina Sebastian **[2차]** ([VKTR 해설](https://www.vktr.com/ai-technology/mits-4-stages-of-enterprise-ai-maturity/), [MIT Sloan](https://mitsloan.mit.edu/ideas-made-to-matter/whats-your-companys-ai-maturity-level), [MIT CISR](https://cisr.mit.edu/publication/2025_0313_AIMaturity_Woerner))
+**핵심 실증:** 1~2단계 기업은 **업계 평균 이하** 재무성과, 3~4단계는 **업계 평균 상회**. 저자: Peter Weill, Stephanie Woerner, Ina Sebastian **[1차]** ([MIT CISR 2024 공식 브리핑](https://cisr.mit.edu/publication/2024_1201_EnterpriseAIMaturityModel_WeillWoernerSebastian))
 
 **책에서 쓸 방식:** 이 **62%(1~2단계)**라는 숫자가 우리 책 도입부의 핵심 무기다. *"당신 조직이 아직 실험 단계라고 느낀다면, 그건 뒤처진 게 아니라 다수다."* — 독자의 방어를 낮추고 진단으로 유도하는 문장.
 
-**한계:** 회원 전용이라 개인·중소조직이 접근 불가. 단계 판정 기준이 공개되지 않아 **스스로 재볼 수가 없다.** ← 우리의 존재 이유를 가장 선명하게 보여주는 빈틈.
+**2025 후속:** 별도 표본 152개 기업의 분포는 13·23·46·18퍼센트였고 2→3단계에서 재무성과가 업계 평균 위로 바뀌는 경계는 유지됐다. 같은 기업을 추적한 패널은 아니다. ([MIT CISR 2025 공식 브리핑](https://cisr.mit.edu/publication/2025_0801_EnterpriseAIMaturityUpdate_WoernerSebastianWeillKaganer))
+
+**한계:** 브리핑 본문과 판정 구간은 공개됐지만, 입력값을 같은 방식으로 산출할 공개 설문지나 독립 셀프 진단은 없다. 결과를 읽을 수 있는 것과 같은 자로 우리 조직을 재는 것은 다르다.
 
 ---
 
 ## 4. Gartner — AI Maturity Model (5레벨 · 7기둥)
 
-- **5레벨:** Awareness → Active → Operational → Systemic → Transformational **[2차]**
-- **7기둥:** 전략 / 제품 포트폴리오 / 거버넌스 / 엔지니어링 / 데이터 / 운영모델 / 인재·문화 **[2차]**
-- **분포:** 대다수가 Level 1~2에 정체. 고성숙 조직 평균 4.2~4.5 vs 저성숙 1.6~2.2 **[2차]**
+- **발표:** 2024년 11월 20일. 현재 준비도를 추정해 투자 우선순위와 로드맵을 정하는 모델 **[1차]** ([Gartner 공식 초록](https://www.gartner.com/en/documents/5937907))
+- **5수준:** 공개 조사에서는 1수준의 끝점을 `planning/beginning`, 5수준의 끝점을 `leadership`으로 설명한다. 중간 수준의 공식 명칭은 공개 자료에서 확인하지 못했다. **[1차]**
+- **7기둥:** AI 전략 / AI 유스케이스·제품 포트폴리오 / AI 거버넌스 / AI 엔지니어링 / AI 데이터 / AI 생태계·운영모델 / 사람·문화 **[1차]**
+- **조사:** 고성숙 조직 평균 4.2~4.5점, 저성숙 조직 1.6~2.2점. 2024년 4분기 6개국 응답자 432명의 일곱 문항 자기보고 조사 **[1차]**
 - **별도 실증 [1차]:** 고성숙 조직조차 **45%만** AI 프로젝트를 3년 이상 운영 유지 (저성숙은 20%). ([Gartner 보도자료](https://www.gartner.com/en/newsroom/press-releases/2025-06-30-gartner-survey-finds-forty-five-percent-of-organizations-with-high-artificial-intelligence-maturity-keep-artificial-intelligence-projects-operational-for-at-least-three-years))
 
 **책에서 쓸 방식:** 이 45%가 **"성숙 = 도달이 아니라 유지"**라는 우리 L5(진화)의 논거다. 높은 등급을 받은 조직조차 절반 이상이 3년을 못 버틴다. 성숙도는 정상에 도달하는 게 아니라 **미끄러지지 않는 능력**이다.
@@ -95,9 +98,9 @@
 
 ## 5. Cisco — AI Readiness Index (유일하게 셀프 진단이 열려 있는 모델)
 
-- **6기둥:** 전략 / 인프라 / 데이터 / 인재 / 거버넌스 / 문화 **[2차]**
-- **Pacesetters(최상위) = 전체의 13%.** 3년 연속 동일 비율 **[2차]**
-- 격차 데이터 **[2차]** ([Cisco 뉴스룸](https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2025/m10/cisco-ai-research-the-most-ai-ready-companies-outpace-peers-in-the-race-to-value.html), [2025 Index PDF](https://www.cisco.com/c/dam/m/en_us/solutions/ai/readiness-index/2025-m10/documents/cisco-ai-readiness-index-2025-realizing-the-value-of-ai.pdf))
+- **6기둥:** 전략 / 인프라 / 데이터 / 인재 / 거버넌스 / 문화 **[1차]**
+- **Pacesetters(최상위) = 전체의 13%.** 3년 연속 동일 비율 **[1차]**
+- 격차 데이터 **[1차]** ([Cisco 뉴스룸](https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2025/m10/cisco-ai-research-the-most-ai-ready-companies-outpace-peers-in-the-race-to-value.html), [2025 Index PDF](https://www.cisco.com/c/dam/m/en_us/solutions/ai/readiness-index/2025-m10/documents/cisco-ai-readiness-index-2025-realizing-the-value-of-ai.pdf))
   - 명확한 AI 전략 보유: Pacesetter **99%** vs 전체 58%
   - 필요한 속도·규모로 배포: **97%** vs 41%
   - 직원 AI 숙련도 확보: **75%** vs 16%
@@ -196,11 +199,12 @@
 - CMU SEI, *The AI Adoption Maturity Model v1.0* (2026-06-30) — https://www.sei.cmu.edu/library/ai-adoption-maturity-model/
 - SEI 보도 — https://www.sei.cmu.edu/news/sei-and-accenture-release-ai-adoption-maturity-model-to-help-organizations-scale-ai-with-predictable-outcomes/
 - Accenture 뉴스룸 (2026) — https://newsroom.accenture.com/news/2026/accenture-and-the-carnegie-mellon-university-software-engineering-institute-launch-ai-adoption-maturity-model-to-help-organizations-scale-ai-with-predictable-outcomes
-- MIT CISR, *Four Stages of Enterprise AI Maturity* — https://cisr.mit.edu/publication/2025_0313_AIMaturity_Woerner
-- MIT CISR, *Enterprise AI Maturity* (Talking Points, 2024-12) — https://cisr.mit.edu/publication/EnterpriseAIMaturity_TalkingPoints
+- MIT CISR, *Building Enterprise AI Maturity* (2024-12-19) — https://cisr.mit.edu/publication/2024_1201_EnterpriseAIMaturityModel_WeillWoernerSebastian
+- MIT CISR, *Grow Enterprise AI Maturity for Bottom-Line Impact* (2025-08-21) — https://cisr.mit.edu/publication/2025_0801_EnterpriseAIMaturityUpdate_WoernerSebastianWeillKaganer
 - MIT Sloan, *What's your company's AI maturity level?* — https://mitsloan.mit.edu/ideas-made-to-matter/whats-your-companys-ai-maturity-level
 - VKTR 해설 — https://www.vktr.com/ai-technology/mits-4-stages-of-enterprise-ai-maturity/
 - Gartner 보도자료 (2025-06-30) — https://www.gartner.com/en/newsroom/press-releases/2025-06-30-gartner-survey-finds-forty-five-percent-of-organizations-with-high-artificial-intelligence-maturity-keep-artificial-intelligence-projects-operational-for-at-least-three-years
+- Gartner AI Maturity Model 공식 초록 (2024-11-20) — https://www.gartner.com/en/documents/5937907
 - Gartner AI Maturity Model Toolkit — https://www.gartner.com/en/chief-information-officer/research/ai-maturity-model-toolkit
 - Cisco AI Readiness Index 2025 (PDF) — https://www.cisco.com/c/dam/m/en_us/solutions/ai/readiness-index/2025-m10/documents/cisco-ai-readiness-index-2025-realizing-the-value-of-ai.pdf
 - Cisco 뉴스룸 (2025-10) — https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2025/m10/cisco-ai-research-the-most-ai-ready-companies-outpace-peers-in-the-race-to-value.html

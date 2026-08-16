@@ -177,7 +177,7 @@ Cisco가 최상위 그룹에 올라가는 일이 얼마나 드문지를 보여�
 
 ---
 
-[^c1n1]: MIT CISR의 기업 AI 성숙도 4단계 연구(Peter Weill, Stephanie L. Woerner, Ina M. Sebastian). 2022년 721개 기업 서베이 기반이며 단계별 분포와 재무성과 상관을 함께 제시한다. 원문은 회원 전용이라 공개 해설을 경유해 확인했다. — MIT CISR, *Four Stages of Enterprise AI Maturity*, https://cisr.mit.edu/publication/2025_0313_AIMaturity_Woerner / MIT Sloan, *What's your company's AI maturity level?*, https://mitsloan.mit.edu/ideas-made-to-matter/whats-your-companys-ai-maturity-level / VKTR 해설, https://www.vktr.com/ai-technology/mits-4-stages-of-enterprise-ai-maturity/
+[^c1n1]: MIT CISR의 기업 AI 성숙도 4단계 연구(Peter Weill, Stephanie L. Woerner, Ina M. Sebastian). 2022년 721개 기업 서베이를 바탕으로 단계별 분포와 성장·이익의 업계 평균 대비 차이를 제시한다. 공식 브리핑 본문에서 총 AI 효과성의 산식과 단계 구간, 수치를 직접 확인했다. 조사 시점상 재무성과 관계는 주로 분석형·전통적 AI를 반영하며 인과관계를 증명하지는 않는다. 2025년 152개 기업 후속 조사는 부록 C에서 따로 비교한다. — MIT CISR, *Building Enterprise AI Maturity*, https://cisr.mit.edu/publication/2024_1201_EnterpriseAIMaturityModel_WeillWoernerSebastian
 
 [^c1n2]: Gartner 보도자료(2025-06-30), *Gartner Survey Finds 45% of Organizations With High AI Maturity Keep AI Projects Operational for at Least Three Years*. 2024년 4분기 미국·영국·프랑스·독일·인도·일본의 응답자 432명을 조사했다. 고성숙 조직의 45퍼센트, 저성숙 조직의 20퍼센트가 AI 이니셔티브가 3년 이상 운영된다고 답했다. — https://www.gartner.com/en/newsroom/press-releases/2025-06-30-gartner-survey-finds-forty-five-percent-of-organizations-with-high-artificial-intelligence-maturity-keep-artificial-intelligence-projects-operational-for-at-least-three-years
 

@@ -102,7 +102,7 @@
 
 ## 마지막 빈틈은 규모다
 
-이제 다른 자들도 짧게 짚고 가자. MIT의 연구는 721개 기업 설문을 직접 근거로 둔다. 1장에서 본 그 분포와 재무성과 상관이 거기서 나왔다. 다만 원문이 회원 조직 전용이라 개인이나 작은 조직은 열어볼 수가 없다. 즉 우리는 그 결과를 인용할 수는 있어도, 그 자로 우리 조직을 재볼 수는 없다. Gartner의 모델은 다섯 단계에 일곱 개 기둥으로 잘 짜여 있고 툴킷도 딸려 있지만 유료 구독자만 쓴다. Cisco는 무료 셀프 진단 도구도 열어두고 있다. 다만 성격이 다르다. 그건 남과 비교해서 내가 어디쯤인지 알려주는 벤치마크지, 그래서 다음에 뭘 하라는 처방이 아니다.[^c2n3]
+이제 다른 자들도 짧게 짚고 가자. MIT의 연구는 721개 기업 설문을 직접 근거로 둔다. 1장에서 본 그 분포와 재무성과 상관이 거기서 나왔다. 공식 브리핑 본문과 단계 구간은 공개돼 있지만, 같은 방식으로 우리 조직의 입력값을 넣어 계산할 공개 설문지는 없다. 즉 구조는 읽을 수 있어도 그 자를 그대로 들고 우리 조직을 재기는 어렵다. Gartner의 모델은 다섯 수준에 일곱 개 기둥으로 잘 짜여 있고 툴킷도 딸려 있지만 전체 지침은 유료 구독자만 쓴다. Cisco는 무료 셀프 진단 도구도 열어두고 있다. 다만 성격이 다르다. 그건 남과 비교해서 내가 어디쯤인지 알려주는 벤치마크지, 그래서 다음에 뭘 하라는 처방이 아니다.[^c2n3]
 
 그리고 SEI 모델로 돌아오면, 마지막 빈틈이 남아 있다. **규모다.**
 
@@ -138,4 +138,4 @@ SEI 모델의 단계 정의와 여덟 차원, 역량영역의 구성이 궁금�
 
 [^c2n2]: 모델 개발 규모(기존 시도 100건 이상 검토, 임원 인터뷰 20~25명, 실무자 약 600명 설문, 포춘 500대 기업 파일럿)는 SEI·Accenture의 발표 자료와 원문 서문에 근거한다. 설문은 SEI와 Accenture의 자체 조사(2026-01)임을 밝혀둔다. — SEI 보도자료, https://www.sei.cmu.edu/news/sei-and-accenture-release-ai-adoption-maturity-model-to-help-organizations-scale-ai-with-predictable-outcomes/ / Accenture 뉴스룸, https://newsroom.accenture.com/news/2026/accenture-and-the-carnegie-mellon-university-software-engineering-institute-launch-ai-adoption-maturity-model-to-help-organizations-scale-ai-with-predictable-outcomes
 
-[^c2n3]: MIT CISR 연구는 원문이 회원 조직 전용이라 공개 해설을 경유해 확인했다(https://cisr.mit.edu/publication/2025_0313_AIMaturity_Woerner). Gartner의 AI 성숙도 모델은 5레벨 7기둥 구조이며 유료 구독 고객에게 툴킷과 함께 제공된다. Cisco는 AI Readiness Index와 함께 무료 셀프 진단 도구를 운영한다 — https://www.cisco.com/c/m/en_us/solutions/ai/readiness-index/lookup-tool.html
+[^c2n3]: MIT CISR 공식 브리핑은 2022년 721개 기업 조사와 단계 판정 방식, 2025년 152개 기업 후속 조사까지 본문을 공개한다. 다만 누구나 같은 점수를 계산할 독립 셀프 진단은 제공하지 않는다 — https://cisr.mit.edu/publication/2024_1201_EnterpriseAIMaturityModel_WeillWoernerSebastian / https://cisr.mit.edu/publication/2025_0801_EnterpriseAIMaturityUpdate_WoernerSebastianWeillKaganer. Gartner의 공개 초록은 5수준·7기둥을 설명하지만 전체 툴킷은 고객 전용이다 — https://www.gartner.com/en/documents/5937907. Cisco는 AI Readiness Index와 함께 무료 셀프 진단을 운영한다 — https://www.cisco.com/c/m/en_us/solutions/ai/readiness-index/lookup-tool.html
