@@ -129,21 +129,21 @@ SCAMPI에 해당하는 심사 방법론이 **문서에 없다.** 조직이 스�
 
 | 항목 | 내용 |
 |---|---|
-| 발표 | 2024-12 초판, 2025·2026 갱신 [1차] |
+| 발표 | 2024-12 초판, 2025 별도 표본 후속 조사 [1차] |
 | 저자 | Peter Weill, Stephanie L. Woerner, Ina M. Sebastian [1차] |
-| 근거 | **2022년 721개 기업 서베이** + 2024년 9개 기업 임원 16명 인터뷰 [2차] |
+| 근거 | **2022년 721개 기업 서베이** + 2024년 9개 기업 임원 16명 인터뷰 [1차] |
 | 구조 | 4단계 (차원 축 없이 역량 기반) |
-| 접근 | **회원 조직 전용** [1차] — 개인·중소조직 접근 불가 |
+| 접근 | 공식 브리핑 본문·단계표·판정 구간 공개 [1차] / 독립 셀프 진단 없음 |
 
 ## B-2. 4단계 — 분포와 재무성과
 
-**이 모델의 압도적 강점: 단계별 기업 분포와 재무성과 상관을 제시하는 유일한 모델이다.** [2차]
+**이 모델의 압도적 강점: 단계별 기업 분포와 재무성과 상관을 함께 제시한다.** [1차]
 
 | 단계 | 이름 | 비중 | 재무성과 |
 |---|---|---|---|
 | 1 | Experiment and Prepare | **28%** | 업계 평균 **이하** |
 | 2 | Build Pilots and Capabilities | **34%** | 업계 평균 **이하** |
-| 3 | Industrialize AI Throughout the Enterprise | **31%** | 업계 평균 **상회** |
+| 3 | Develop AI Ways of Working | **31%** | 업계 평균 **상회** |
 | 4 | AI Future-Ready | **7%** | 업계 평균 **상회** |
 
 > **책의 핵심 무기 두 개가 여기서 나온다.**
@@ -155,7 +155,7 @@ SCAMPI에 해당하는 심사 방법론이 **문서에 없다.** 조직이 스�
 ### 1단계. Experiment and Prepare (28%)
 조직이 인력 교육, AI 정책 수립, 증거 기반 의사결정으로의 전환에 집중하며 자동화된 의사결정 기술을 실험하는 단계.
 
-**필요 역량** [2차]
+**필요 역량** [1차]
 - 리더십·이사회를 포함한 **AI 리터러시 프로그램**
 - 전사 스킬 빌딩
 - AI로 가치를 만들 기회의 식별
@@ -164,20 +164,20 @@ SCAMPI에 해당하는 심사 방법론이 **문서에 없다.** 조직이 스�
 ### 2단계. Build Pilots and Capabilities (34%)
 실험에서 체계적 혁신으로 넘어가는 단계. 기업과 구성원 모두에게 이익이 되는 파일럿을 돌린다.
 
-**필요 역량** [2차]
+**필요 역량** [1차]
 - **AI 활동의 중요 지표 정의**
 - 업무 프로세스의 단순화·자동화
 - **조직 내 데이터 사일로 통합**
 - AI 사용을 위한 안전한 데이터 준비
 - 파일럿에서 얻은 교훈의 **스토리텔링 체계** 구축
 
-**이 단계의 도전** [2차]
+**이 단계의 도전** [1차]
 > **"command-and-control"에서 "coach-and-communicate"로의 문화 전환.** 현장의 의사결정을 가능하게 하려면 통제형 문화를 코칭형으로 바꿔야 한다.
 
-### 3단계. Industrialize AI Throughout the Enterprise (31%)
+### 3단계. Develop AI Ways of Working (31%)
 AI를 산업화하는 단계. 재무성과가 업계 평균을 넘어서기 시작하는 분수령.
 
-**필요 역량** [2차]
+**필요 역량** [1차]
 - **확장 가능한 전사 아키텍처**
 - 데이터와 성과를 투명하게 보여주는 **비즈니스 대시보드**
 - **test-and-learn 문화**
@@ -185,13 +185,13 @@ AI를 산업화하는 단계. 재무성과가 업계 평균을 넘어서기 시�
 - 파운데이션 모델과 sLM(소형 언어 모델) 활용
 - **자체 모델(proprietary model) 개발**
 
-**이 단계의 도전** [2차]
+**이 단계의 도전** [1차]
 > **AI를 적용하기 전에 복잡한 프로세스를 먼저 단순화하는 것.** 그리고 "아키텍처, 재사용, 에이전트"의 확보.
 
 ### 4단계. AI Future-Ready (7%)
 AI가 **모든 의사결정에 내장된** 단계. 자체 AI 역량을 내부에 쓸 뿐 아니라 그것에 기반한 **새로운 서비스를 외부에 판다.**
 
-**필요 역량** [2차]
+**필요 역량** [1차]
 - **human-in-the-loop의 최적 요건 결정**
 - AI 기반 서비스의 상용화
 
@@ -205,7 +205,7 @@ AI가 **모든 의사결정에 내장된** 단계. 자체 AI 역량을 내부에
 |---|---|---|---|
 | **L1 각자도생** | 1 Exploratory | 1 Experiment and Prepare | 대체로 일치 |
 | **L2 반복** | 2 Implemented | 2 Build Pilots | 대체로 일치 |
-| **L3 레일** | 3 Aligned | 3 Industrialize | SEI·MIT는 **ROI/산업화**, AXMM은 **표준과 권장 경로** |
+| **L3 레일** | 3 Aligned | 3 Develop AI Ways of Working | SEI·MIT는 **ROI/산업화**, AXMM은 **표준과 권장 경로** |
 | **L4 검증** | 4 Scaled | — | ★ **여기서 갈린다.** 그들은 *확장*, 우리는 *검증* |
 | **L5 진화** | 5 Future-Ready | 4 AI Future-Ready | 그들은 *복제 가능성*, 우리는 *되돌아옴* |
 
@@ -220,7 +220,7 @@ AI가 **모든 의사결정에 내장된** 단계. 자체 AI 역량을 내부에
 
 AXMM의 근거는 이론이 아니라 실제 진단이다. 어느 조직의 라이프사이클 진단에서 **평가·측정·개선 축이 통째로 비어 있었고**, 품질 평가 항목의 소견은 이랬다 — *"에이전트가 제대로 동작하는지 평가하는 도구가 없다. 사람이 일일이 할 수 없으니 평가용 에이전트를 만들어야 한다."* 투입(토큰·비용)은 재고 있는데 **산출 지표가 없어 되돌릴 수가 없는** 상태였다.
 
-> **주의:** SEI의 `Risk and Governance` 차원에 검증의 일부가 흡수돼 있을 가능성이 있다. 원문 확인 후 이 주장을 조정할 것. 다만 **독립 축으로 세우지 않았다는 사실 자체는 변하지 않는다.**
+> **원문 확인 결과:** SEI에는 `Engineering` 차원의 `Test and Evaluation` 역량영역이 있고 2단계에 귀속된다. AXMM과의 차이는 검증의 존재가 아니라 **2단계 기초 요건으로 놓느냐, 4단계 분수령으로 놓느냐**다.
 
 ### ★ 5단계의 차이 — 도달인가, 되돌아옴인가
 
@@ -257,7 +257,7 @@ AXMM의 근거: Gartner 실증에서 **고성숙 조직조차 45%만** AI 프로
 | 차원 | 8 | 없음(역량 기반) | 6 |
 | 문항 수 | 미확인 | 미공개 | **30** |
 | 평가 주체 | 미확인(도구 동반) | 미공개 | **셀프 전용** |
-| 접근성 | 다운로드 | **회원 전용** | **무료 웹 · 15분** |
+| 접근성 | 다운로드 | **공식 브리핑 공개·독립 셀프 진단 없음** | **무료 웹 · 15분** |
 | 표본 | Fortune 500 | 721개 기업 | 한국 조직 현실 |
 | 대상 | CxO | CxO | **AX 추진 담당자·팀장** |
 | 4단계 | 확장 | *(3단계 산업화)* | **검증** ★ |
@@ -278,7 +278,7 @@ AXMM의 근거: Gartner 실증에서 **고성숙 조직조차 45%만** AI 프로
 | 2 | SEI가 **5레벨인가 차원별 연속 등급인가** | 보도가 엇갈린다. 후자면 AXMM 하이브리드와 같은 계열 | 동일 |
 | 3 | SEI 8차원의 **레벨별 practice 목록** | AXMM 30문항과 정밀 매핑해 겹침을 정직하게 표기해야 함 | 동일 |
 | 4 | SEI에 **검증(verification)이 독립 practice로 있는가** | AXMM의 최대 독창성 주장이 걸려 있다 | 동일 |
-| 5 | MIT CISR **4단계 판정 기준** | 회원 전용이라 확보 난망. 못 하면 "기준 비공개"로 서술 | 회원 접근 또는 포기 |
+| 5 | MIT CISR **4단계 판정 기준** | **해결:** 총 AI 효과성 0~49 / 50~74 / 75~99 / 100점 | 2024 공식 브리핑 직접 확인 |
 | 6 | SEI 모델 **접근 비용** | "무료 웹" 차별점의 강도가 달라진다 | 다운로드 페이지 확인 |
 
 > **①~④·⑥은 SEI PDF 한 건으로 모두 해결된다.** 2장 집필 전 최우선 확보 대상.
@@ -292,5 +292,6 @@ AXMM의 근거: Gartner 실증에서 **고성숙 조직조차 45%만** AI 프로
 - Accenture 뉴스룸 (2026) — https://newsroom.accenture.com/news/2026/accenture-and-the-carnegie-mellon-university-software-engineering-institute-launch-ai-adoption-maturity-model-to-help-organizations-scale-ai-with-predictable-outcomes
 - Verdict, *Accenture and CMU SEI introduce AI Adoption Maturity Model* — https://www.verdict.co.uk/accenture-cmu-ai-adoption-model/
 - MIT Sloan, *What's your company's AI maturity level?* — https://mitsloan.mit.edu/ideas-made-to-matter/whats-your-companys-ai-maturity-level
-- MIT CISR, *Four Stages of Enterprise AI Maturity* — https://cisr.mit.edu/publication/2025_0313_AIMaturity_Woerner
+- MIT CISR, *Building Enterprise AI Maturity* — https://cisr.mit.edu/publication/2024_1201_EnterpriseAIMaturityModel_WeillWoernerSebastian
+- MIT CISR, *Grow Enterprise AI Maturity for Bottom-Line Impact* — https://cisr.mit.edu/publication/2025_0801_EnterpriseAIMaturityUpdate_WoernerSebastianWeillKaganer
 - VKTR, *MIT's 4 Stages of Enterprise AI Maturity* — https://www.vktr.com/ai-technology/mits-4-stages-of-enterprise-ai-maturity/

@@ -30,7 +30,7 @@
 | 모델 | 구조 | 축·기둥 이름 |
 |---|---|---|
 | SEI | 8차원 | 조직 전략 · 인력과 문화 · 워크플로 재설계 · 리스크와 거버넌스 · 데이터 · 엔지니어링 · 운영 · 기술 생태계[^c4n1] |
-| Gartner | 7기둥 | 전략 · 제품 포트폴리오 · 거버넌스 · 엔지니어링 · 데이터 · 운영모델 · 인재·문화[^c4n2] |
+| Gartner | 7기둥 | AI 전략 · 유스케이스·제품 포트폴리오 · AI 거버넌스 · AI 엔지니어링 · AI 데이터 · AI 생태계·운영모델 · 사람·문화[^c4n2] |
 | Cisco | 6기둥 | 전략 · 인프라 · 데이터 · 인재 · 거버넌스 · 문화[^c4n3] |
 :::
 
@@ -135,6 +135,6 @@ SEI에는 이 여덟 차원 아래 역량영역 스물일곱 개가 더 붙는�
 
 [^c4n1]: CMU SEI, *The AI Adoption Maturity Model v1.0* (2026-06-30), 124쪽. 8차원·27역량영역 구조는 공개 PDF 원문을 직접 확인한 결과다. — https://www.sei.cmu.edu/library/ai-adoption-maturity-model/ / PDF: https://www.sei.cmu.edu/documents/6534/The_AI_Adoption_Maturity_Model.pdf
 
-[^c4n2]: Gartner AI Maturity Model의 7기둥 구성. 원문 툴킷이 유료 구독자 전용이라 공개 해설을 경유해 확인했다.
+[^c4n2]: Gartner AI Maturity Model의 일곱 기둥은 Gartner 공식 초록에서 직접 확인했다. 전체 툴킷과 세부 판정 지침은 고객 전용이다. — https://www.gartner.com/en/documents/5937907
 
 [^c4n3]: Cisco AI Readiness Index의 6기둥 구성. 지수 보고서와 공개 해설을 함께 확인했다. — Cisco 뉴스룸(2025-10), https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2025/m10/cisco-ai-research-the-most-ai-ready-companies-outpace-peers-in-the-race-to-value.html / 2025 Index PDF, https://www.cisco.com/c/dam/m/en_us/solutions/ai/readiness-index/2025-m10/documents/cisco-ai-readiness-index-2025-realizing-the-value-of-ai.pdf
