@@ -54,6 +54,22 @@
 
 세어놓고 숫자를 한참 들여다봤다. 가운데 두 단계에만 스물하나, **전체의 84퍼센트가 몰려 있다.** 위의 두 단계에는 각각 하나씩만 있다. 다섯 단계짜리 모델인데 무게는 아래쪽 절반에 다 실려 있는 셈이다. 며칠 동안 문장을 따라 읽을 때는 보이지 않던 것이 반나절 손으로 세자 드러났다. 이때부터는 개별 항목보다 분포 자체를 읽어야 했다.
 
+::: {.reading-aid .stat-dashboard .stat-dashboard--compact}
+### SEI 모델, 25개 역량영역으로 읽기
+
+<p class="stat-caption">단계가 명시된 역량영역의 분포</p>
+<div class="stat-chart stat-stage-distribution" role="img" aria-label="단계가 명시된 SEI 역량영역 25개 가운데 1단계 2개, 2단계 11개, 3단계 10개, 4단계 1개, 5단계 1개다. 2단계와 3단계를 합하면 21개로 전체의 84퍼센트다.">
+<div class="stat-row"><span class="stat-series">1단계</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--compare" data-value="8" x="0" y="0" width="8" height="10" rx="5" /></svg><strong class="stat-value">2개</strong></div>
+<div class="stat-row"><span class="stat-series">2단계</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--leader" data-value="44" x="0" y="0" width="44" height="10" rx="5" /></svg><strong class="stat-value">11개</strong></div>
+<div class="stat-row"><span class="stat-series">3단계</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--leader" data-value="40" x="0" y="0" width="40" height="10" rx="5" /></svg><strong class="stat-value">10개</strong></div>
+<div class="stat-row"><span class="stat-series">4단계</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--compare" data-value="4" x="0" y="0" width="4" height="10" rx="5" /></svg><strong class="stat-value">1개</strong></div>
+<div class="stat-row"><span class="stat-series">5단계</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--compare" data-value="4" x="0" y="0" width="4" height="10" rx="5" /></svg><strong class="stat-value">1개</strong></div>
+</div>
+
+<p class="stat-note">막대 길이는 전체 25개 가운데 각 단계가 차지하는 비중이다. 숫자는 역량영역의 개수로 표시했다.</p>
+<p class="stat-takeaway"><strong>2~3단계에 21개, 전체의 84퍼센트.</strong> SEI 모델은 초기·중간 단계의 역량을 특히 촘촘하게 다룬다.</p>
+:::
+
 ## 분포가 곧 세계관이다
 
 이 분포는 모델의 무게가 어디에 실려 있는지를 보여준다. **초기·중간 단계의 역량을 특히 촘촘하게 다룬다.** 왜 그렇게 배치했는지까지 숫자만으로 단정할 수는 없다.

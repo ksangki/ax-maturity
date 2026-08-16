@@ -152,6 +152,134 @@
   line-height: 1.55;
 }
 
+.axmm-structure {
+  margin: 1.8em 0;
+  padding: .9em;
+  border: 1px solid #cfc5ba;
+  border-radius: .35em;
+  background: #f7f2eb;
+  page-break-inside: avoid;
+}
+
+.axmm-structure figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: .7em;
+  margin: 0 0 .8em;
+  font-size: .82em;
+  text-align: left;
+}
+
+.axmm-structure figcaption span {
+  color: #675f58;
+  font-size: .88em;
+}
+
+.axmm-map-grid {
+  display: grid;
+  grid-template-columns: 6.3em repeat(5, minmax(0, 1fr));
+  gap: .22em;
+}
+
+.axmm-map-corner,
+.axmm-stage,
+.axmm-axis,
+.axmm-cell {
+  display: flex;
+  align-items: center;
+  min-height: 2.35em;
+  border: 1px solid #cfc5ba;
+  border-radius: .22em;
+}
+
+.axmm-map-corner {
+  justify-content: space-between;
+  padding: .3em .4em;
+  color: #675f58;
+  background: #fff;
+  font-size: .58em;
+}
+
+.axmm-stage {
+  justify-content: center;
+  flex-direction: column;
+  padding: .25em .08em;
+  background: #eadfD2;
+  font-size: .58em;
+  line-height: 1.25;
+}
+
+.axmm-stage strong,
+.axmm-axis strong {
+  color: #7b5036;
+}
+
+.axmm-axis {
+  gap: .3em;
+  padding: .28em .38em;
+  font-size: .58em;
+  line-height: 1.25;
+}
+
+.axmm-axis--journey {
+  background: #eadfd2;
+}
+
+.axmm-axis--support,
+.axmm-cell--support {
+  border-color: #8a5a3b;
+  background: #f3ede4;
+}
+
+.axmm-cell {
+  justify-content: center;
+  background: #fff;
+  font-size: .62em;
+  font-weight: bold;
+}
+
+.axmm-map-legend {
+  display: flex;
+  gap: 1em;
+  margin-top: .55em;
+  color: #675f58;
+  font-size: .58em;
+}
+
+.axmm-map-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: .25em;
+}
+
+.axmm-swatch {
+  display: inline-block;
+  width: .65em;
+  height: .65em;
+  border: 1px solid #cfc5ba;
+  border-radius: .12em;
+  background: #eadfd2;
+}
+
+.axmm-swatch--support {
+  border-color: #8a5a3b;
+  background: #f3ede4;
+}
+
+.axmm-map-rule {
+  margin: .7em 0 0;
+  padding: .55em .65em;
+  border-left: .2em solid #8a5a3b;
+  background: #fff;
+  font-size: .66em;
+  line-height: 1.5;
+}
+
+.axmm-map-rule strong {
+  margin-right: .35em;
+  color: #7b5036;
+}
+
 @media (prefers-color-scheme: dark) {
   .leader-summary,
   .reading-aid {
@@ -189,5 +317,41 @@
   .stat-takeaway {
     background: #1d1a20;
     border-left-color: #d0a17a;
+  }
+
+  .axmm-structure {
+    border-color: #655b52;
+    background: #262229;
+  }
+
+  .axmm-structure figcaption span,
+  .axmm-map-corner,
+  .axmm-map-legend {
+    color: #b5ada5;
+  }
+
+  .axmm-map-corner,
+  .axmm-cell,
+  .axmm-map-rule {
+    background: #1d1a20;
+  }
+
+  .axmm-stage,
+  .axmm-axis--journey,
+  .axmm-swatch {
+    background: #30271f;
+  }
+
+  .axmm-axis--support,
+  .axmm-cell--support,
+  .axmm-swatch--support {
+    border-color: #d0a17a;
+    background: #26232b;
+  }
+
+  .axmm-stage strong,
+  .axmm-axis strong,
+  .axmm-map-rule strong {
+    color: #d0a17a;
   }
 }

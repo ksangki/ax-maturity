@@ -204,6 +204,48 @@
     font-size:.84rem; line-height:1.65;
   }
   .stat-dashboard--compact .stat-chart{margin-top:.75rem}
+  .axmm-structure{
+    margin:2.1rem 0; padding:1.15rem; border:1px solid var(--rule); border-radius:.65rem;
+    background:var(--panel); break-inside:avoid; page-break-inside:avoid;
+  }
+  .axmm-structure figcaption{
+    display:flex; align-items:baseline; justify-content:space-between; gap:1rem;
+    margin:0 0 1rem; text-align:left;
+  }
+  .axmm-structure figcaption strong{font-family:Georgia,"Noto Serif KR",serif; font-size:1rem}
+  .axmm-structure figcaption span{color:var(--muted); font-size:.76rem; font-weight:600}
+  .axmm-map-scroll{overflow-x:auto; padding-bottom:.15rem}
+  .axmm-map-grid{
+    display:grid; grid-template-columns:minmax(7.8rem,1.6fr) repeat(5,minmax(4.6rem,1fr));
+    gap:.32rem; min-width:38rem;
+  }
+  .axmm-map-corner,.axmm-stage,.axmm-axis,.axmm-cell{
+    display:flex; align-items:center; min-height:2.6rem; border:1px solid var(--rule); border-radius:.35rem;
+  }
+  .axmm-map-corner{
+    justify-content:space-between; padding:.45rem .65rem; color:var(--muted);
+    background:var(--bg); font-size:.7rem; font-weight:650;
+  }
+  .axmm-stage{
+    justify-content:center; flex-direction:column; padding:.35rem .2rem; background:var(--panel-strong);
+    font-size:.7rem; line-height:1.3;
+  }
+  .axmm-stage strong{color:var(--accent); font-size:.82rem; font-variant-numeric:tabular-nums}
+  .axmm-axis{gap:.55rem; padding:.45rem .6rem; font-size:.72rem; line-height:1.35}
+  .axmm-axis strong{font-size:.88rem; color:var(--accent); font-variant-numeric:tabular-nums}
+  .axmm-axis--journey{background:var(--panel-strong)}
+  .axmm-axis--support{background:var(--mark); border-color:var(--accent)}
+  .axmm-cell{justify-content:center; background:var(--bg); font-size:.76rem; font-weight:650; font-variant-numeric:tabular-nums}
+  .axmm-cell--support{background:var(--mark); border-color:var(--accent)}
+  .axmm-map-legend{display:flex; flex-wrap:wrap; gap:.55rem 1.1rem; margin-top:.75rem; color:var(--muted); font-size:.7rem}
+  .axmm-map-legend span{display:inline-flex; align-items:center; gap:.35rem}
+  .axmm-swatch{display:inline-block; width:.75rem; height:.75rem; border:1px solid var(--rule); border-radius:.18rem; background:var(--panel-strong)}
+  .axmm-swatch--support{background:var(--mark); border-color:var(--accent)}
+  .axmm-map-rule{
+    margin:.85rem 0 0; padding:.7rem .8rem; border-left:3px solid var(--accent); background:var(--bg);
+    font-size:.76rem; line-height:1.6;
+  }
+  .axmm-map-rule strong{margin-right:.45rem; color:var(--accent)}
   .decision-path ol{
     display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.7rem;
     margin:1rem 0 0; padding:0; list-style:none; counter-reset:decision-step;
@@ -243,6 +285,9 @@
     .stat-row{grid-template-columns:3.6rem minmax(0,1fr) 2.7rem; gap:.42rem}
     .stat-metric-label{gap:.5rem}
     .stat-scale{font-size:.76rem}
+    .axmm-structure{padding:1rem}
+    .axmm-structure figcaption{display:block}
+    .axmm-structure figcaption span{display:block; margin-top:.2rem}
     .decision-path ol{grid-template-columns:1fr}
   }
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -257,6 +302,9 @@
     .stat-bar-track{fill:#ded8d1 !important}
     .stat-fill--leader{fill:#7b5036 !important}
     .stat-fill--compare{fill:#aaa29a !important; opacity:1}
+    .axmm-structure{break-inside:avoid; page-break-inside:avoid; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+    .axmm-map-scroll{overflow:visible}
+    .axmm-map-grid{min-width:0; grid-template-columns:7.2rem repeat(5,minmax(0,1fr))}
   }
   </style>
 </head>

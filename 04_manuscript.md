@@ -161,6 +161,21 @@ MIT CISR이 721개 기업을 조사해 기업의 AI 성숙도를 네 단계로 �
 
 1~2단계 기업은 재무성과가 **업계 평균 이하**였고, 3~4단계 기업은 **업계 평균을 웃돌았다.**[^c1n1] 그렇다면 그 선은 어디에 그어져 있을까. 하필 2단계와 3단계 사이다. 62퍼센트라는 다수의 무리와 그 바깥 사이에, 정확히 돈의 선이 지나간다.
 
+::: {.reading-aid .stat-dashboard .stat-dashboard--compact}
+### MIT CISR 조사, 100개 기업으로 읽기
+
+<p class="stat-caption">AI 성숙도 단계별 기업 분포</p>
+<div class="stat-chart stat-stage-distribution" role="img" aria-label="기업 100곳 가운데 1단계 실험·준비 28곳, 2단계 파일럿·역량 구축 34곳, 3단계 전사 산업화 31곳, 4단계 미래대비 7곳이다. 1단계와 2단계를 합하면 62곳이며, 조사에서 재무성과의 경계는 2단계와 3단계 사이에 있었다.">
+<div class="stat-row"><span class="stat-series">1단계</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--compare" data-value="28" x="0" y="0" width="28" height="10" rx="5" /></svg><strong class="stat-value">28%</strong></div>
+<div class="stat-row"><span class="stat-series">2단계</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--compare" data-value="34" x="0" y="0" width="34" height="10" rx="5" /></svg><strong class="stat-value">34%</strong></div>
+<div class="stat-row"><span class="stat-series">3단계</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--leader" data-value="31" x="0" y="0" width="31" height="10" rx="5" /></svg><strong class="stat-value">31%</strong></div>
+<div class="stat-row"><span class="stat-series">4단계</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--leader" data-value="7" x="0" y="0" width="7" height="10" rx="5" /></svg><strong class="stat-value">7%</strong></div>
+</div>
+
+<p class="stat-note">회색은 업계 평균 이하였던 1~2단계, 갈색은 업계 평균을 웃돈 3~4단계다. 이 조사는 함께 움직인 관계를 보여줄 뿐, 성숙도가 재무성과의 원인임을 증명하지는 않는다.</p>
+<p class="stat-takeaway"><strong>1~2단계를 합하면 62곳.</strong> 다수가 서 있는 자리와 재무성과의 경계가 맞닿아 있다.</p>
+:::
+
 다수에 속해 있다는 사실은 위로가 되지만 목표가 될 수는 없다. 무리 안에 있는 편이 마음은 편한데, 그 무리 전체가 평균 이하에 서 있다. 잊지 말자. **다수라는 건 안전하다는 뜻이 아니다.**
 
 ## 도구를 깐다고 성숙해지지 않는다
@@ -330,6 +345,22 @@ Cisco가 최상위 그룹에 올라가는 일이 얼마나 드문지를 보여�
 1단계에 둘. **2단계에 열하나. 3단계에 열.** 4단계에 하나. 5단계에 하나.[^c2n1]
 
 세어놓고 숫자를 한참 들여다봤다. 가운데 두 단계에만 스물하나, **전체의 84퍼센트가 몰려 있다.** 위의 두 단계에는 각각 하나씩만 있다. 다섯 단계짜리 모델인데 무게는 아래쪽 절반에 다 실려 있는 셈이다. 며칠 동안 문장을 따라 읽을 때는 보이지 않던 것이 반나절 손으로 세자 드러났다. 이때부터는 개별 항목보다 분포 자체를 읽어야 했다.
+
+::: {.reading-aid .stat-dashboard .stat-dashboard--compact}
+### SEI 모델, 25개 역량영역으로 읽기
+
+<p class="stat-caption">단계가 명시된 역량영역의 분포</p>
+<div class="stat-chart stat-stage-distribution" role="img" aria-label="단계가 명시된 SEI 역량영역 25개 가운데 1단계 2개, 2단계 11개, 3단계 10개, 4단계 1개, 5단계 1개다. 2단계와 3단계를 합하면 21개로 전체의 84퍼센트다.">
+<div class="stat-row"><span class="stat-series">1단계</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--compare" data-value="8" x="0" y="0" width="8" height="10" rx="5" /></svg><strong class="stat-value">2개</strong></div>
+<div class="stat-row"><span class="stat-series">2단계</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--leader" data-value="44" x="0" y="0" width="44" height="10" rx="5" /></svg><strong class="stat-value">11개</strong></div>
+<div class="stat-row"><span class="stat-series">3단계</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--leader" data-value="40" x="0" y="0" width="40" height="10" rx="5" /></svg><strong class="stat-value">10개</strong></div>
+<div class="stat-row"><span class="stat-series">4단계</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--compare" data-value="4" x="0" y="0" width="4" height="10" rx="5" /></svg><strong class="stat-value">1개</strong></div>
+<div class="stat-row"><span class="stat-series">5단계</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--compare" data-value="4" x="0" y="0" width="4" height="10" rx="5" /></svg><strong class="stat-value">1개</strong></div>
+</div>
+
+<p class="stat-note">막대 길이는 전체 25개 가운데 각 단계가 차지하는 비중이다. 숫자는 역량영역의 개수로 표시했다.</p>
+<p class="stat-takeaway"><strong>2~3단계에 21개, 전체의 84퍼센트.</strong> SEI 모델은 초기·중간 단계의 역량을 특히 촘촘하게 다룬다.</p>
+:::
 
 ## 분포가 곧 세계관이다
 
@@ -732,6 +763,35 @@ SEI는 여덟 갈래로 나눈다. 조직 전략, 인력과 문화, 워크플로
 마지막 답을 다시 보자. "그 평가 결과가 이번 분기 과제 배정이랑 평가에 반영됐어요." 여기서 처음으로 화살표가 되돌아온다. 만들고, 재고, 그 결과가 다시 사람과 시스템으로 돌아와 다음 바퀴를 돌린다.
 
 **5단계는 결과가 개선과 보상으로 되돌아오는 상태다.** 레일이 스스로 넓어지는 단계다.
+
+<figure class="axmm-structure">
+<figcaption id="axmm-structure-title"><strong>AXMM 전체 구조</strong><span>여정 6축 × 성숙 5단계 = 30문항</span></figcaption>
+<div class="axmm-map-scroll">
+<div class="axmm-map-grid" role="img" aria-label="AXMM은 인식·동기·역량, 기획·개발, 연동·배포·운영, 평가·측정·개선, 자원·비용, 보안·거버넌스의 여섯 축과 각자도생, 반복, 레일, 검증, 진화의 다섯 단계로 이루어진다. 각 교차점이 한 문항이라 모두 30문항이다.">
+<div class="axmm-map-corner"><span>축</span><span>단계</span></div>
+<div class="axmm-stage"><strong>1</strong><span>각자도생</span></div>
+<div class="axmm-stage"><strong>2</strong><span>반복</span></div>
+<div class="axmm-stage"><strong>3</strong><span>레일</span></div>
+<div class="axmm-stage"><strong>4</strong><span>검증</span></div>
+<div class="axmm-stage"><strong>5</strong><span>진화</span></div>
+
+<div class="axmm-axis axmm-axis--journey"><strong>A</strong><span>인식·동기·역량</span></div>
+<div class="axmm-cell axmm-cell--journey">A1</div><div class="axmm-cell axmm-cell--journey">A2</div><div class="axmm-cell axmm-cell--journey">A3</div><div class="axmm-cell axmm-cell--journey">A4</div><div class="axmm-cell axmm-cell--journey">A5</div>
+<div class="axmm-axis axmm-axis--journey"><strong>B</strong><span>기획·개발</span></div>
+<div class="axmm-cell axmm-cell--journey">B1</div><div class="axmm-cell axmm-cell--journey">B2</div><div class="axmm-cell axmm-cell--journey">B3</div><div class="axmm-cell axmm-cell--journey">B4</div><div class="axmm-cell axmm-cell--journey">B5</div>
+<div class="axmm-axis axmm-axis--journey"><strong>C</strong><span>연동·배포·운영</span></div>
+<div class="axmm-cell axmm-cell--journey">C1</div><div class="axmm-cell axmm-cell--journey">C2</div><div class="axmm-cell axmm-cell--journey">C3</div><div class="axmm-cell axmm-cell--journey">C4</div><div class="axmm-cell axmm-cell--journey">C5</div>
+<div class="axmm-axis axmm-axis--journey"><strong>D</strong><span>평가·측정·개선</span></div>
+<div class="axmm-cell axmm-cell--journey">D1</div><div class="axmm-cell axmm-cell--journey">D2</div><div class="axmm-cell axmm-cell--journey">D3</div><div class="axmm-cell axmm-cell--journey">D4</div><div class="axmm-cell axmm-cell--journey">D5</div>
+<div class="axmm-axis axmm-axis--support"><strong>I</strong><span>자원·비용</span></div>
+<div class="axmm-cell axmm-cell--support">I1</div><div class="axmm-cell axmm-cell--support">I2</div><div class="axmm-cell axmm-cell--support">I3</div><div class="axmm-cell axmm-cell--support">I4</div><div class="axmm-cell axmm-cell--support">I5</div>
+<div class="axmm-axis axmm-axis--support"><strong>J</strong><span>보안·거버넌스</span></div>
+<div class="axmm-cell axmm-cell--support">J1</div><div class="axmm-cell axmm-cell--support">J2</div><div class="axmm-cell axmm-cell--support">J3</div><div class="axmm-cell axmm-cell--support">J4</div><div class="axmm-cell axmm-cell--support">J5</div>
+</div>
+</div>
+<div class="axmm-map-legend"><span><i class="axmm-swatch axmm-swatch--journey"></i>A~D 여정 축</span><span><i class="axmm-swatch axmm-swatch--support"></i>I~J 관통 축</span></div>
+<p class="axmm-map-rule"><strong>읽는 법</strong> 축 단계는 왼쪽부터 ‘보유’가 끊기지 않은 마지막 칸, 조직 단계는 여섯 축 가운데 가장 낮은 값이다.</p>
+</figure>
 
 ## 왜 하필 다섯 눈금인가
 
