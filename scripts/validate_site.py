@@ -34,6 +34,9 @@ class SiteParser(HTMLParser):
         self.stat_bar_svgs = 0
         self.stat_hidden_bars = 0
         self.stat_width_errors: list[str] = []
+        self.axmm_structures = 0
+        self.axmm_structure_labels = 0
+        self.axmm_cells = 0
         self.awaiting_chapter_figure = False
         self.in_chapter_h1 = False
         self.current_figure: dict[str, object] | None = None
@@ -77,6 +80,15 @@ class SiteParser(HTMLParser):
             self.stat_charts += 1
             if values.get("role") == "img" and values.get("aria-label", "").strip():
                 self.stat_chart_labels += 1
+        if "axmm-structure" in classes:
+            self.axmm_structures += 1
+        if "axmm-map-grid" in classes:
+            if values.get("role") == "img" and (
+                values.get("aria-label", "").strip() or values.get("aria-labelledby", "").strip()
+            ):
+                self.axmm_structure_labels += 1
+        if "axmm-cell" in classes:
+            self.axmm_cells += 1
         if tag == "svg" and {"stat-wide-bar", "stat-mini-bar"}.intersection(classes):
             self.stat_bar_svgs += 1
             if values.get("aria-hidden") == "true" and values.get("focusable") == "false":
@@ -166,16 +178,20 @@ def main() -> int:
     require(parser.leader_summaries == 15, f"리더 요약 카드 수: {parser.leader_summaries} (예상 15)")
     require(parser.reading_aids >= 9, f"읽기 보조 요소 수: {parser.reading_aids} (최소 9)")
     require(parser.table_count >= 10, f"표 수: {parser.table_count} (최소 10)")
-    require(parser.stat_dashboards == 2, f"통계 대시보드 수: {parser.stat_dashboards} (예상 2)")
-    require(parser.stat_charts == 3, f"통계 그래프 수: {parser.stat_charts} (예상 3)")
-    require(parser.stat_chart_labels == 3, f"통계 그래프 접근성 라벨 수: {parser.stat_chart_labels} (예상 3)")
-    require(parser.stat_bar_svgs == 9, f"통계 막대 SVG 수: {parser.stat_bar_svgs} (예상 9)")
-    require(parser.stat_hidden_bars == 9, f"보조기기에서 숨긴 장식 막대 수: {parser.stat_hidden_bars} (예상 9)")
+    require(parser.stat_dashboards == 4, f"통계 대시보드 수: {parser.stat_dashboards} (예상 4)")
+    require(parser.stat_charts == 5, f"통계 그래프 수: {parser.stat_charts} (예상 5)")
+    require(parser.stat_chart_labels == 5, f"통계 그래프 접근성 라벨 수: {parser.stat_chart_labels} (예상 5)")
+    require(parser.stat_bar_svgs == 18, f"통계 막대 SVG 수: {parser.stat_bar_svgs} (예상 18)")
+    require(parser.stat_hidden_bars == 18, f"보조기기에서 숨긴 장식 막대 수: {parser.stat_hidden_bars} (예상 18)")
     require(
-        Counter(parser.stat_values) == Counter([13, 99, 58, 75, 16, 84, 24, 45, 20]),
+        Counter(parser.stat_values)
+        == Counter([13, 99, 58, 75, 16, 84, 24, 45, 20, 28, 34, 31, 7, 8, 44, 40, 4, 4]),
         f"통계 그래프 값 오류: {parser.stat_values}",
     )
     require(not parser.stat_width_errors, f"통계 막대 너비 오류: {parser.stat_width_errors}")
+    require(parser.axmm_structures == 1, f"AXMM 전체 구조도 수: {parser.axmm_structures} (예상 1)")
+    require(parser.axmm_structure_labels == 1, f"AXMM 구조도 접근성 라벨 수: {parser.axmm_structure_labels} (예상 1)")
+    require(parser.axmm_cells == 30, f"AXMM 구조도 문항 셀 수: {parser.axmm_cells} (예상 30)")
 
     all_images: list[tuple[dict[str, str], bool]] = []
     for figure in parser.figures:
@@ -253,6 +269,7 @@ def main() -> int:
         f"chapters={parser.chapter_count} figures={len(parser.figures)} "
         f"leader_summaries={parser.leader_summaries} reading_aids={parser.reading_aids} tables={parser.table_count} "
         f"stat_dashboards={parser.stat_dashboards} stat_charts={parser.stat_charts} stat_bars={parser.stat_bar_svgs} "
+        f"axmm_structures={parser.axmm_structures} axmm_cells={parser.axmm_cells} "
         f"internal_links={sum(href.startswith('#') for href in parser.hrefs)} "
         "metadata=ok responsive_images=ok source_images=ok"
     )

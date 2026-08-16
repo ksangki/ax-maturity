@@ -80,6 +80,35 @@
 
 **5단계는 결과가 개선과 보상으로 되돌아오는 상태다.** 레일이 스스로 넓어지는 단계다.
 
+<figure class="axmm-structure">
+<figcaption id="axmm-structure-title"><strong>AXMM 전체 구조</strong><span>여정 6축 × 성숙 5단계 = 30문항</span></figcaption>
+<div class="axmm-map-scroll">
+<div class="axmm-map-grid" role="img" aria-label="AXMM은 인식·동기·역량, 기획·개발, 연동·배포·운영, 평가·측정·개선, 자원·비용, 보안·거버넌스의 여섯 축과 각자도생, 반복, 레일, 검증, 진화의 다섯 단계로 이루어진다. 각 교차점이 한 문항이라 모두 30문항이다.">
+<div class="axmm-map-corner"><span>축</span><span>단계</span></div>
+<div class="axmm-stage"><strong>1</strong><span>각자도생</span></div>
+<div class="axmm-stage"><strong>2</strong><span>반복</span></div>
+<div class="axmm-stage"><strong>3</strong><span>레일</span></div>
+<div class="axmm-stage"><strong>4</strong><span>검증</span></div>
+<div class="axmm-stage"><strong>5</strong><span>진화</span></div>
+
+<div class="axmm-axis axmm-axis--journey"><strong>A</strong><span>인식·동기·역량</span></div>
+<div class="axmm-cell axmm-cell--journey">A1</div><div class="axmm-cell axmm-cell--journey">A2</div><div class="axmm-cell axmm-cell--journey">A3</div><div class="axmm-cell axmm-cell--journey">A4</div><div class="axmm-cell axmm-cell--journey">A5</div>
+<div class="axmm-axis axmm-axis--journey"><strong>B</strong><span>기획·개발</span></div>
+<div class="axmm-cell axmm-cell--journey">B1</div><div class="axmm-cell axmm-cell--journey">B2</div><div class="axmm-cell axmm-cell--journey">B3</div><div class="axmm-cell axmm-cell--journey">B4</div><div class="axmm-cell axmm-cell--journey">B5</div>
+<div class="axmm-axis axmm-axis--journey"><strong>C</strong><span>연동·배포·운영</span></div>
+<div class="axmm-cell axmm-cell--journey">C1</div><div class="axmm-cell axmm-cell--journey">C2</div><div class="axmm-cell axmm-cell--journey">C3</div><div class="axmm-cell axmm-cell--journey">C4</div><div class="axmm-cell axmm-cell--journey">C5</div>
+<div class="axmm-axis axmm-axis--journey"><strong>D</strong><span>평가·측정·개선</span></div>
+<div class="axmm-cell axmm-cell--journey">D1</div><div class="axmm-cell axmm-cell--journey">D2</div><div class="axmm-cell axmm-cell--journey">D3</div><div class="axmm-cell axmm-cell--journey">D4</div><div class="axmm-cell axmm-cell--journey">D5</div>
+<div class="axmm-axis axmm-axis--support"><strong>I</strong><span>자원·비용</span></div>
+<div class="axmm-cell axmm-cell--support">I1</div><div class="axmm-cell axmm-cell--support">I2</div><div class="axmm-cell axmm-cell--support">I3</div><div class="axmm-cell axmm-cell--support">I4</div><div class="axmm-cell axmm-cell--support">I5</div>
+<div class="axmm-axis axmm-axis--support"><strong>J</strong><span>보안·거버넌스</span></div>
+<div class="axmm-cell axmm-cell--support">J1</div><div class="axmm-cell axmm-cell--support">J2</div><div class="axmm-cell axmm-cell--support">J3</div><div class="axmm-cell axmm-cell--support">J4</div><div class="axmm-cell axmm-cell--support">J5</div>
+</div>
+</div>
+<div class="axmm-map-legend"><span><i class="axmm-swatch axmm-swatch--journey"></i>A~D 여정 축</span><span><i class="axmm-swatch axmm-swatch--support"></i>I~J 관통 축</span></div>
+<p class="axmm-map-rule"><strong>읽는 법</strong> 축 단계는 왼쪽부터 ‘보유’가 끊기지 않은 마지막 칸, 조직 단계는 여섯 축 가운데 가장 낮은 값이다.</p>
+</figure>
+
 ## 왜 하필 다섯 눈금인가
 
 이름을 붙이고 나면 곧장 질문이 하나 붙는다. 왜 다섯인가? 셋이면 안 되나? 일곱이면 더 정밀하지 않을까?

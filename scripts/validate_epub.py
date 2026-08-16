@@ -43,6 +43,9 @@ def main() -> int:
         stat_bar_svgs = 0
         stat_hidden_bars = 0
         stat_width_errors: list[str] = []
+        axmm_structures = 0
+        axmm_structure_labels = 0
+        axmm_cells = 0
 
         for name in sorted(item for item in names if item.endswith(".xhtml")):
             try:
@@ -66,6 +69,16 @@ def main() -> int:
                     stat_charts += 1
                     if element.attrib.get("role") == "img" and element.attrib.get("aria-label", "").strip():
                         stat_chart_labels += 1
+                if "axmm-structure" in classes:
+                    axmm_structures += 1
+                if "axmm-map-grid" in classes:
+                    if element.attrib.get("role") == "img" and (
+                        element.attrib.get("aria-label", "").strip()
+                        or element.attrib.get("aria-labelledby", "").strip()
+                    ):
+                        axmm_structure_labels += 1
+                if "axmm-cell" in classes:
+                    axmm_cells += 1
                 if {"stat-wide-bar", "stat-mini-bar"}.intersection(classes):
                     stat_bar_svgs += 1
                     if element.attrib.get("aria-hidden") == "true" and element.attrib.get("focusable") == "false":
@@ -89,16 +102,20 @@ def main() -> int:
         require(chapter_count == 15, f"장 제목 수: {chapter_count} (예상 15)")
         require(editorial_figures == 15, f"본문 삽화 figure 수: {editorial_figures} (예상 15)")
         require(len(chapter_images) == 15, f"본문 삽화 img 수: {len(chapter_images)} (예상 15)")
-        require(stat_dashboards == 2, f"통계 대시보드 수: {stat_dashboards} (예상 2)")
-        require(stat_charts == 3, f"통계 그래프 수: {stat_charts} (예상 3)")
-        require(stat_chart_labels == 3, f"통계 그래프 접근성 라벨 수: {stat_chart_labels} (예상 3)")
-        require(stat_bar_svgs == 9, f"통계 막대 SVG 수: {stat_bar_svgs} (예상 9)")
-        require(stat_hidden_bars == 9, f"보조기기에서 숨긴 장식 막대 수: {stat_hidden_bars} (예상 9)")
+        require(stat_dashboards == 4, f"통계 대시보드 수: {stat_dashboards} (예상 4)")
+        require(stat_charts == 5, f"통계 그래프 수: {stat_charts} (예상 5)")
+        require(stat_chart_labels == 5, f"통계 그래프 접근성 라벨 수: {stat_chart_labels} (예상 5)")
+        require(stat_bar_svgs == 18, f"통계 막대 SVG 수: {stat_bar_svgs} (예상 18)")
+        require(stat_hidden_bars == 18, f"보조기기에서 숨긴 장식 막대 수: {stat_hidden_bars} (예상 18)")
         require(
-            Counter(stat_values) == Counter([13, 99, 58, 75, 16, 84, 24, 45, 20]),
+            Counter(stat_values)
+            == Counter([13, 99, 58, 75, 16, 84, 24, 45, 20, 28, 34, 31, 7, 8, 44, 40, 4, 4]),
             f"통계 그래프 값 오류: {stat_values}",
         )
         require(not stat_width_errors, f"통계 막대 너비 오류: {stat_width_errors}")
+        require(axmm_structures == 1, f"AXMM 전체 구조도 수: {axmm_structures} (예상 1)")
+        require(axmm_structure_labels == 1, f"AXMM 구조도 접근성 라벨 수: {axmm_structure_labels} (예상 1)")
+        require(axmm_cells == 30, f"AXMM 구조도 문항 셀 수: {axmm_cells} (예상 30)")
 
         for document, source in chapter_images:
             resolved = posixpath.normpath(
@@ -110,6 +127,7 @@ def main() -> int:
         css = "\n".join(archive.read(name).decode("utf-8") for name in stylesheets)
         require(".stat-dashboard" in css, "EPUB 통계 그래프 스타일 누락")
         require(".stat-fill--leader" in css, "EPUB 막대 색상 스타일 누락")
+        require(".axmm-map-grid" in css, "EPUB AXMM 구조도 스타일 누락")
 
     if failures:
         print("EPUB 검증 실패:", file=sys.stderr)
@@ -121,7 +139,8 @@ def main() -> int:
         "EPUB 검증 통과: "
         f"chapters={chapter_count} editorial_figures={editorial_figures} "
         f"embedded_images={len(chapter_images)} stat_dashboards={stat_dashboards} "
-        f"stat_charts={stat_charts} stat_bars={stat_bar_svgs} accessibility_labels={stat_chart_labels}"
+        f"stat_charts={stat_charts} stat_bars={stat_bar_svgs} accessibility_labels={stat_chart_labels} "
+        f"axmm_structures={axmm_structures} axmm_cells={axmm_cells}"
     )
     return 0
 
