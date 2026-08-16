@@ -177,6 +177,43 @@
   .reading-aid th{background:var(--panel-strong); color:var(--fg)}
   .reading-aid tr:last-child td{border-bottom:0}
   .reading-aid.wide-table table{min-width:48rem}
+  .stat-dashboard{overflow-x:visible}
+  .stat-dashboard .stat-caption{
+    margin:1rem 0 .6rem; color:var(--muted); font-size:.83rem; line-height:1.55;
+    font-weight:650; letter-spacing:.02em;
+  }
+  .stat-dashboard .stat-caption--spaced{margin-top:1.65rem}
+  .stat-chart{margin:.65rem 0 0}
+  .stat-wide-bar{display:block; width:100%; height:1rem}
+  .stat-scale{display:flex; justify-content:space-between; gap:1rem; margin-top:.45rem; font-size:.8rem; line-height:1.5}
+  .stat-scale strong{color:var(--accent)}
+  .stat-scale span{color:var(--muted)}
+  .stat-metric{margin:1.05rem 0 0}
+  .stat-metric:first-child{margin-top:0}
+  .stat-metric-label{
+    display:flex; justify-content:space-between; gap:1rem; margin:0 0 .35rem;
+    font-size:.84rem; line-height:1.5; font-weight:650;
+  }
+  .stat-metric-label span{color:var(--muted); font-size:.76rem; font-weight:500; white-space:nowrap}
+  .stat-row{
+    display:grid; grid-template-columns:4.2rem minmax(0,1fr) 3rem;
+    align-items:center; gap:.55rem; margin:.28rem 0; font-size:.78rem; line-height:1.45;
+  }
+  .stat-series{color:var(--muted)}
+  .stat-mini-bar{display:block; width:100%; height:.68rem}
+  .stat-value{font-variant-numeric:tabular-nums; text-align:right; font-size:.78rem}
+  .stat-bar-track{fill:var(--rule)}
+  .stat-fill--leader{fill:var(--accent)}
+  .stat-fill--compare{fill:var(--muted); opacity:.55}
+  .stat-note{
+    margin:1.15rem 0 0; padding-top:.8rem; border-top:1px solid var(--rule);
+    color:var(--muted); font-size:.72rem; line-height:1.6;
+  }
+  .stat-takeaway{
+    margin:1rem 0 0; padding:.7rem .8rem; background:var(--bg); border-left:3px solid var(--accent);
+    font-size:.84rem; line-height:1.65;
+  }
+  .stat-dashboard--compact .stat-chart{margin-top:.75rem}
   .decision-path ol{
     display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.7rem;
     margin:1rem 0 0; padding:0; list-style:none; counter-reset:decision-step;
@@ -212,6 +249,10 @@
     .reading-aid table{font-size:.82rem; table-layout:auto}
     .reading-aid th,.reading-aid td{padding:.55rem .45rem; line-height:1.55}
     .reading-aid:not(.wide-table) th,.reading-aid:not(.wide-table) td{min-width:5.5rem}
+    .stat-dashboard{padding:1rem}
+    .stat-row{grid-template-columns:3.6rem minmax(0,1fr) 2.7rem; gap:.42rem}
+    .stat-metric-label{gap:.5rem}
+    .stat-scale{font-size:.76rem}
     .decision-path ol{grid-template-columns:1fr}
   }
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -222,6 +263,10 @@
     main.wrap>h1:first-child{page-break-before:auto}
     .editorial-figure{break-inside:avoid; page-break-inside:avoid}
     .leader-summary,.reading-aid{break-inside:avoid; box-shadow:none; background:#fff}
+    .stat-chart{break-inside:avoid; page-break-inside:avoid; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+    .stat-bar-track{fill:#ded8d1 !important}
+    .stat-fill--leader{fill:#7b5036 !important}
+    .stat-fill--compare{fill:#aaa29a !important; opacity:1}
   }
   </style>
 </head>
@@ -578,37 +623,119 @@ class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>
 <p>그렇다면 답은 간단해 보인다. 더 좋은 도구를 더 빨리 깔면 되지 않을까?
 지금 시장에는 작년에 없던 물건이 매달 나온다. 예산을 조금 더 쓰고 최신
 도구를 한 벌 더 얹으면 저 선을 넘을 것도 같다.</p>
-<p>정말 그럴까. 숫자를 하나 더 보자.</p>
-<p>Cisco는 몇 해째 기업의 AI 준비도를 조사해 최상위 그룹을 따로
-분류해왔다. 그 최상위 그룹이 전체에서 차지하는 비율은
-<strong>13퍼센트</strong>다. 그리고 이 비율은 <strong>3년째 같은 자리에
-고정돼 있다.</strong><a href="#fn3" class="footnote-ref" id="fnref3"
-role="doc-noteref"><sup>3</sup></a></p>
-<p>지난 3년 동안 도구가 어떻게 달라졌는지 떠올려보자. 비교할 수 있는
-수준이 아니다. 성능도, 가격도, 쓰기 쉬운 정도도 전부 좋아졌다. 이 조사가
-재는 것은 성숙도가 아니라 준비도지만, 둘이 묻는 항목은 상당히 겹친다.
-그러니 도구 개선만으로 조직 준비도가 따라 올라갔다면 최상위 비율도
-움직였을 법하다. 그런데 조사에서 그 비율은 3년째 13퍼센트였다. 왜
-그럴까?</p>
-<p>같은 조사에서 최상위 그룹과 나머지 전체의 격차를 보면 답이 어렴풋이
-보인다. 명확한 AI 전략을 가진 비율이 최상위는 99퍼센트인데 전체는
-58퍼센트다. 직원이 필요한 AI 숙련도를 갖췄다고 답한 비율은 75퍼센트 대
-16퍼센트다. 그리고 이 항목이 가장 눈에 걸린다. <strong>에이전트의 행동을
-가드레일과 실시간 모니터링으로 통제할 수 있다고 답한 비율이 84퍼센트 대
-24퍼센트였다.</strong><a href="#fn4" class="footnote-ref" id="fnref4"
+<p>Cisco는 2025년 30개 시장에서 AI 전략을 맡은 리더 8,000명을 조사했다.
+조직을 준비도에 따라 네 그룹으로 나누고 맨 위 그룹을 Pacesetters, 곧
+최상위 그룹이라 불렀다. 복잡한 이름은 내려놓고 조직 100곳을 세웠다고
+생각해보자. 최상위 그룹은 <strong>약 13곳</strong>뿐이었다. Cisco는 이
+비중이 세 해째 약 13퍼센트에 머물렀다고 설명한다.<a href="#fn3"
+class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>같은 기간 도구의 성능과 가격, 쓰기 쉬운 정도는 크게 좋아졌다. 그런데
+최상위 그룹의 크기는 거의 달라지지 않았다. 이 숫자 하나가 도구의 효과가
+없다고 증명하는 것은 아니다. 다만 <strong>더 좋은 도구를 들이는
+일만으로는 최상위 그룹이 넓어지지 않았다</strong>는 사실은 보여준다.</p>
+<section id="cisco-조사-100개-조직으로-읽기"
+class="reading-aid stat-dashboard">
+<h3>Cisco 조사, 100개 조직으로 읽기</h3>
+<p class="stat-caption">
+AI 준비도 최상위 그룹의 크기
+</p>
+<div class="stat-chart stat-share" role="img"
+aria-label="조직 100곳 중 AI 준비도 최상위 그룹은 약 13곳이고, 그 밖의 조직은 약 87곳이다.">
+<svg class="stat-wide-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--leader" data-value="13" x="0" y="0" width="13" height="10" rx="5" />
+</svg>
+<div class="stat-scale">
+<strong>최상위 약 13곳</strong><span>그 밖 약 87곳</span>
+</div>
+</div>
+<p class="stat-caption stat-caption--spaced">
+최상위 그룹은 무엇이 달랐나
+</p>
+<div class="stat-chart stat-comparison" role="img"
+aria-label="명확한 AI 전략은 최상위 그룹 99퍼센트 대 전체 58퍼센트, 직원 AI 숙련도는 최상위 그룹 75퍼센트 대 그 밖의 조직 16퍼센트, 에이전트 행동 통제는 최상위 그룹 84퍼센트 대 전체 24퍼센트다.">
+<div class="stat-metric">
+<p class="stat-metric-label">
+명확한 AI 전략 <span>격차 41%p</span>
+</p>
+<div class="stat-row">
+<span
+class="stat-series">최상위</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--leader" data-value="99" x="0" y="0" width="99" height="10" rx="5" /></svg><strong class="stat-value">99%</strong>
+</div>
+<div class="stat-row">
+<span
+class="stat-series">전체</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--compare" data-value="58" x="0" y="0" width="58" height="10" rx="5" /></svg><strong class="stat-value">58%</strong>
+</div>
+</div>
+<div class="stat-metric">
+<p class="stat-metric-label">
+직원 AI 숙련도 <span>격차 59%p</span>
+</p>
+<div class="stat-row">
+<span
+class="stat-series">최상위</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--leader" data-value="75" x="0" y="0" width="75" height="10" rx="5" /></svg><strong class="stat-value">75%</strong>
+</div>
+<div class="stat-row">
+<span class="stat-series">그
+밖</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--compare" data-value="16" x="0" y="0" width="16" height="10" rx="5" /></svg><strong class="stat-value">16%</strong>
+</div>
+</div>
+<div class="stat-metric">
+<p class="stat-metric-label">
+에이전트 행동 통제 <span>격차 60%p</span>
+</p>
+<div class="stat-row">
+<span
+class="stat-series">최상위</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--leader" data-value="84" x="0" y="0" width="84" height="10" rx="5" /></svg><strong class="stat-value">84%</strong>
+</div>
+<div class="stat-row">
+<span
+class="stat-series">전체</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--compare" data-value="24" x="0" y="0" width="24" height="10" rx="5" /></svg><strong class="stat-value">24%</strong>
+</div>
+</div>
+</div>
+<p class="stat-note">
+전략·에이전트 통제는 전체 응답 조직과, 직원 숙련도는 최상위가 아닌
+조직과 비교한 수치다. 원자료의 비교 기준을 그대로 표시했다.
+</p>
+</section>
+<p>숫자를 이렇게 펼치면 차이가 선명하다. 최상위 그룹은 전략에서
+41퍼센트포인트, 직원 숙련도에서 59퍼센트포인트, 에이전트 통제에서
+60퍼센트포인트 앞섰다. 어느 항목도 특정 제품을 샀는지를 묻지 않는다.
+방향을 정했는지, 사람이 다룰 줄 아는지, 자율적으로 움직이는 AI를 멈추고
+살필 수 있는지를 묻는다.</p>
+<p>도구는 이 역량을 실행하게 해준다. 그러나 전략을 정하고, 사람을
+키우고, 가드레일과 모니터링을 운영하는 일은 결제만으로 끝나지 않는다.
+조직이 시간을 들여 합의하고 몸에 붙여야 한다. <strong>도구를 깐다고
+성숙해지지 않는다.</strong></p>
+<p>Cisco가 최상위 그룹에 올라가는 일이 얼마나 드문지를 보여준다면,
+Gartner 조사는 올라간 뒤 지키는 일이 얼마나 어려운지를 보여준다. 6개국의
+리더 432명을 조사했더니, 고성숙 조직에서 AI 이니셔티브가 3년 이상
+운영된다고 답한 비율은 45퍼센트였다. 저성숙 조직은 20퍼센트였다.<a
+href="#fn4" class="footnote-ref" id="fnref4"
 role="doc-noteref"><sup>4</sup></a></p>
-<p>이 목록에 도구 이름이 하나도 없다는 점을 눈여겨보자. 전략, 숙련도,
-가드레일, 모니터링. 전부 <strong>도구 구매만으로 해결되지 않는
-것들</strong>이다. 가드레일과 모니터링 도구는 살 수 있어도, 무엇을
-기준으로 어떻게 쓸지는 조직이 정하고 합의해야 한다. 도구는 매년
-좋아지는데 성숙한 조직의 비율이 늘지 않는 이유가 여기 있다.
-<strong>도구를 깐다고 성숙해지지 않는다.</strong></p>
-<p>한 걸음 더 들어가보자. 어렵게 올라간 조직은 그 자리를 지킬까? Gartner
-조사에 따르면 성숙도가 높은 조직조차 AI 프로젝트를 3년 이상 운영 상태로
-유지하는 비율이 <strong>45퍼센트</strong>에 그쳤다. 성숙도가 낮은 조직은
-20퍼센트였다.<a href="#fn5" class="footnote-ref" id="fnref5"
-role="doc-noteref"><sup>5</sup></a> 높은 성숙도에서도 프로젝트를 3년
-이상 운영 상태로 유지한 비율이 절반에 못 미쳤다는 관찰이다.</p>
+<section id="gartner-조사-100개-조직으로-읽기"
+class="reading-aid stat-dashboard stat-dashboard--compact">
+<h3>Gartner 조사, 100개 조직으로 읽기</h3>
+<p class="stat-caption">
+AI 이니셔티브가 3년 이상 운영된다고 답한 비율
+</p>
+<div class="stat-chart stat-comparison" role="img"
+aria-label="AI 이니셔티브가 3년 이상 운영된다고 답한 비율은 고성숙 조직 45퍼센트, 저성숙 조직 20퍼센트다.">
+<div class="stat-row">
+<span
+class="stat-series">고성숙</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--leader" data-value="45" x="0" y="0" width="45" height="10" rx="5" /></svg><strong class="stat-value">45%</strong>
+</div>
+<div class="stat-row">
+<span
+class="stat-series">저성숙</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--compare" data-value="20" x="0" y="0" width="20" height="10" rx="5" /></svg><strong class="stat-value">20%</strong>
+</div>
+</div>
+<p class="stat-takeaway">
+<strong>고성숙 조직이 두 배 넘게 높다.</strong> 그래도 100곳 중
+45곳이다. 높은 단계에 올라가는 것과 그 상태를 오래 지키는 것은 다른
+문제다.
+</p>
+</section>
 <p>작년에 잘 돌던 것이 올해 열어보니 아무도 쓰지 않고 있는 걸 발견할
 때의 그 기분을 떠올려보자. 꽤 아찔하다. 만든 사람은 부서를 옮겼고, 왜
 그렇게 만들었는지 아는 사람이 남아 있지 않다. 그 장면을 개인의
@@ -693,8 +820,8 @@ role="doc-noteref"><sup>5</sup></a> 높은 성숙도에서도 프로젝트를 3�
 <p><strong>하나.</strong> 실험·파일럿 단계의 조직은 뒤처진 예외가
 아니다. 조사 기업의 62퍼센트가 그 자리에 있지만, 재무성과의 경계는 바로
 그 다음 단계에 있다.</p>
-<p><strong>둘.</strong> 도구가 좋아지는 동안에도 최상위 그룹은 3년째
-13퍼센트에 머물렀다. 차이를 만든 것은 전략·숙련도·가드레일처럼
+<p><strong>둘.</strong> 도구가 좋아지는 동안에도 최상위 그룹은 세 해째
+약 13퍼센트에 머물렀다. 차이를 만든 것은 전략·숙련도·가드레일처럼
 결제만으로 살 수 없는 역량이었다.</p>
 <p><strong>셋.</strong> 다음 보고에서는 도입량 대신 <strong>가장 약한
 고리가 어디인지, 그것이 없는 것인지 안 정해진 것인지</strong>를 묻자.
@@ -727,8 +854,8 @@ role="doc-noteref"><sup>5</sup></a> 높은 성숙도에서도 프로젝트를 3�
 모델을 만났다. 다섯 단계, 여덟 개 차원, 스물일곱 개 역량영역. 발표는
 2026년 6월이고, 낸 곳은 카네기멜런대학교 소프트웨어공학연구소다. 줄여서
 SEI라고 부르는 그곳, <strong>CMMI를 만든 바로 그 조직</strong>이다.<a
-href="#fn6" class="footnote-ref" id="fnref6"
-role="doc-noteref"><sup>6</sup></a></p>
+href="#fn5" class="footnote-ref" id="fnref5"
+role="doc-noteref"><sup>5</sup></a></p>
 <p>그 대목에서 손이 멈춘다. 나에게 이건 남의 소식이 아니다. 10년 동안
 내가 들고 다니던 자를 만든 사람들이, AI 시대에 맞춰 새 자를 깎아서
 내놓은 것이다. 그렇다면 하나 더 만들 이유가 남아 있기는 할까?</p>
@@ -739,8 +866,8 @@ role="doc-noteref"><sup>6</sup></a></p>
 성숙도 시도를 100건 넘게 훑었고, 그중 서른여섯 개 이상은 정밀하게
 뜯어봤다. 임원 스무 명에서 스물다섯 명을 인터뷰하고, 실무자 약 600명에게
 설문을 돌렸다. 그리고 포춘 500대 기업 여러 곳에서 실제로 파일럿을 굴려
-검증했다.<a href="#fn7" class="footnote-ref" id="fnref7"
-role="doc-noteref"><sup>7</sup></a></p>
+검증했다.<a href="#fn6" class="footnote-ref" id="fnref6"
+role="doc-noteref"><sup>6</sup></a></p>
 <p>이 목록을 처음 읽었을 때의 기분을 솔직히 적어두는 편이 낫겠다. 김이
 좀 빠졌다. 혼자 노트에 축을 그려가며 몇 주를 보낸 사람 앞에 저런
 이력서가 놓이면, 이게 겨뤄볼 만한 판인가 싶어진다. 규모로 붙자면 이
@@ -750,8 +877,8 @@ role="doc-noteref"><sup>7</sup></a></p>
 그대로 얹어 만들었고, 읽어보면 그게 문장마다 드러난다. 역량영역마다
 “이런 산출물이 있으면 그 역량이 있다고 볼 만하다”는 예시를 붙여둔 것도
 그렇고, 바로 그 옆에 산출물과 증거가 일대일로 대응하지는 않는다고 못
-박아 둔 것도 그렇다.<a href="#fn8" class="footnote-ref" id="fnref8"
-role="doc-noteref"><sup>8</sup></a> 체크리스트를 채우는 놀이로 변질됐던
+박아 둔 것도 그렇다.<a href="#fn7" class="footnote-ref" id="fnref7"
+role="doc-noteref"><sup>7</sup></a> 체크리스트를 채우는 놀이로 변질됐던
 과거를 만든 장본인들이, 자기 문서 안에 그 경고를 먼저 써넣은 것이다.
 이건 아무나 쓸 수 있는 문장이 아니다.</p>
 <p>인정하지 않고 시작하면 뒤에 할 이야기가 전부 헐거워진다. 그러니
@@ -763,8 +890,8 @@ role="doc-noteref"><sup>8</sup></a> 체크리스트를 채우는 놀이로 변�
 <blockquote>
 <p>진짜 AI 성숙도는 조직이 얼마나 많은 AI를 배포했느냐가 아니라, 신뢰할
 수 있고 회복력 있는 역량과 엄정한 엔지니어링 실천, 그리고 사업 성과에
-정렬된 거버넌스를 만들어낼 능력으로 측정된다.<a href="#fn9"
-class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
+정렬된 거버넌스를 만들어낼 능력으로 측정된다.<a href="#fn8"
+class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
 </blockquote>
 <p>이 문장을 읽고 한참 앉아 있었다. 얼마나 깔았느냐가 아니라 믿을 만하게
 만들 능력이라니, 우리가 앞 장에서 도구 이야기를 하며 짚었던 바로 그
@@ -788,8 +915,8 @@ class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
 <p>그래서 그냥 세어봤다. 단계가 명시된 스물다섯 개가 어디에 걸려
 있는지.</p>
 <p>1단계에 둘. <strong>2단계에 열하나. 3단계에 열.</strong> 4단계에
-하나. 5단계에 하나.<a href="#fn10" class="footnote-ref" id="fnref10"
-role="doc-noteref"><sup>10</sup></a></p>
+하나. 5단계에 하나.<a href="#fn9" class="footnote-ref" id="fnref9"
+role="doc-noteref"><sup>9</sup></a></p>
 <p>세어놓고 숫자를 한참 들여다봤다. 가운데 두 단계에만 스물하나,
 <strong>전체의 84퍼센트가 몰려 있다.</strong> 위의 두 단계에는 각각
 하나씩만 있다. 다섯 단계짜리 모델인데 무게는 아래쪽 절반에 다 실려 있는
@@ -810,8 +937,8 @@ role="doc-noteref"><sup>10</sup></a></p>
 드리프트나 환각처럼 AI 특유의 문제를 잡아내는 전문 테스트를 정의하라고
 하고, 매번 같은 답이 나오지 않는 기능의 출력을 어떻게 기준선화할지
 정하라고 하고, 생성형 AI의 결과까지 포함해 테스트를 자동화할 수 있게
-하라고 한다.<a href="#fn11" class="footnote-ref" id="fnref11"
-role="doc-noteref"><sup>11</sup></a> 읽어보면 우리가 실제로 부딪히는
+하라고 한다.<a href="#fn10" class="footnote-ref" id="fnref10"
+role="doc-noteref"><sup>10</sup></a> 읽어보면 우리가 실제로 부딪히는
 문제들이 거의 다 들어 있다.</p>
 <p>그런데 이 역량영역이 걸려 있는 자리가 <strong>2단계</strong>다.</p>
 <p>무슨 뜻일까? 검증은 배포하려면 당연히 갖춰야 하는 기초 위생이라는
@@ -831,13 +958,13 @@ role="doc-noteref"><sup>11</sup></a> 읽어보면 우리가 실제로 부딪히�
 둘이다.</p>
 <p>첫째, <strong>예산과 자원을 다루는 축이 없다.</strong> 대응하는
 역량영역이 아예 없고, 예산이라는 단어는 “자원에는 인력과 자금이
-포함된다” 정도의 부속 언급으로 딱 한 번 나온다.<a href="#fn12"
-class="footnote-ref" id="fnref12"
-role="doc-noteref"><sup>12</sup></a></p>
+포함된다” 정도의 부속 언급으로 딱 한 번 나온다.<a href="#fn11"
+class="footnote-ref" id="fnref11"
+role="doc-noteref"><sup>11</sup></a></p>
 <p>둘째, <strong>담당자가 바뀔 때 어떻게 넘기는지를 묻지
 않는다.</strong> 인계, 승계, 소유권 이전에 해당하는 표현이 124쪽
-어디에도 없다.<a href="#fn13" class="footnote-ref" id="fnref13"
-role="doc-noteref"><sup>13</sup></a></p>
+어디에도 없다.<a href="#fn12" class="footnote-ref" id="fnref12"
+role="doc-noteref"><sup>12</sup></a></p>
 <p>왜 이 둘이 빠졌는지는 원문이 설명하지 않는다. 포춘 500대 기업을
 포함해 검증했다는 사실만으로 예산과 인계가 자동 해결된다고 단정할 수도
 없다. 여기서는 이유를 추측하지 말고, 두 항목이 독립 역량으로 다뤄지지
@@ -863,9 +990,9 @@ role="doc-noteref"><sup>13</sup></a></p>
 Gartner의 모델은 다섯 단계에 일곱 개 기둥으로 잘 짜여 있고 툴킷도 딸려
 있지만 유료 구독자만 쓴다. Cisco는 무료 셀프 진단 도구도 열어두고 있다.
 다만 성격이 다르다. 그건 남과 비교해서 내가 어디쯤인지 알려주는
-벤치마크지, 그래서 다음에 뭘 하라는 처방이 아니다.<a href="#fn14"
-class="footnote-ref" id="fnref14"
-role="doc-noteref"><sup>14</sup></a></p>
+벤치마크지, 그래서 다음에 뭘 하라는 처방이 아니다.<a href="#fn13"
+class="footnote-ref" id="fnref13"
+role="doc-noteref"><sup>13</sup></a></p>
 <p>그리고 SEI 모델로 돌아오면, 마지막 빈틈이 남아 있다.
 <strong>규모다.</strong></p>
 <p>124쪽에 여덟 개 차원, 스물일곱 개 역량영역, 그 아래 목표와 실천
@@ -932,8 +1059,8 @@ C에 따로 정리해 두었다. 여기서는 논지만 붙들고 가자.</p>
 생각보다 오래 남는다.</p>
 <p>나는 그 표정 쪽이 옳다고 본다. 그리고 그 반감은 회의실의 푸념만이
 아니다. 학술 문헌도 오래전부터 같은 말을 해왔고, 그 지적들은 대체로
-정확하다.<a href="#fn15" class="footnote-ref" id="fnref15"
-role="doc-noteref"><sup>15</sup></a></p>
+정확하다.<a href="#fn14" class="footnote-ref" id="fnref14"
+role="doc-noteref"><sup>14</sup></a></p>
 <p>그렇다면 자를 하나 더 내놓겠다는 사람이 무엇부터 해야 할까? 그 자가
 왜 욕을 먹었는지부터 꺼내놓는 편이 낫다. 10년을 이 판 안에 있었던 사람이
 비판을 모르는 척하고 넘어가면, 뒤에 이어질 이야기가 전부 흔들린다.</p>
@@ -965,8 +1092,8 @@ role="doc-noteref"><sup>15</sup></a></p>
 없다</strong>는 것이다.</p>
 <p>2015년부터 2020년 사이에 나온 AI 성숙도 모델 논문 15편을 모아 분석한
 문헌고찰이 있다. 이 연구가 내린 진단 중 하나가 “성숙 개념에 대한 이론적
-성찰이 대체로 빠져 있다”는 것이었다.<a href="#fn16" class="footnote-ref"
-id="fnref16" role="doc-noteref"><sup>16</sup></a></p>
+성찰이 대체로 빠져 있다”는 것이었다.<a href="#fn15" class="footnote-ref"
+id="fnref15" role="doc-noteref"><sup>15</sup></a></p>
 <p>이게 무슨 뜻일까. 성숙도 모델은 항상 순서를 주장한다. A를 갖춘 다음에
 B, B를 갖춘 다음에 C. 그런데 왜 하필 그 순서냐고 물으면 답이 잘 나오지
 않는다. 대체로 “그렇게 하는 게 자연스러우니까” 언저리에서 멈춘다. 심하게
@@ -1026,8 +1153,8 @@ B, B를 갖춘 다음에 C. 그런데 왜 하필 그 순서냐고 물으면 답�
 상태를 서술하는 데 그친 것이 13편이었고, 개선 로드맵까지 내놓은 처방형은
 6편이었다. 저자들의 결론은 개선 로드맵을 제시하는 처방적 모델이 여전히
 과소 대표된다는 것이었다. 모델을 어떤 방식으로든 검증해본 비율은
-47퍼센트였다. 절반이 안 된다.<a href="#fn17" class="footnote-ref"
-id="fnref17" role="doc-noteref"><sup>17</sup></a></p>
+47퍼센트였다. 절반이 안 된다.<a href="#fn16" class="footnote-ref"
+id="fnref16" role="doc-noteref"><sup>16</sup></a></p>
 <p>이게 쓰는 사람 입장에서 무슨 뜻인지 생각해보자. 병원에 갔다고 해보자.
 검사를 잔뜩 받고 진료실에 들어갔는데 의사가 “2단계입니다”라고 말하고는
 그걸로 끝난다. 무엇 때문에 2단계인지, 3단계로 가려면 무엇부터 해야
@@ -1043,8 +1170,8 @@ id="fnref17" role="doc-noteref"><sup>17</sup></a></p>
 따로 있었다</h2>
 <p>같은 문헌고찰에 문장이 하나 더 있다. <strong>이 연구가 검토한
 문헌들에서는</strong> 기존 AI 성숙도 모델을 실제 조직에 적용한 연구가 한
-건도 확인되지 않았다.<a href="#fn18" class="footnote-ref" id="fnref18"
-role="doc-noteref"><sup>18</sup></a> 0건이다.</p>
+건도 확인되지 않았다.<a href="#fn17" class="footnote-ref" id="fnref17"
+role="doc-noteref"><sup>17</sup></a> 0건이다.</p>
 <p>앞의 세 비판은 설계로 답할 수 있다. 축을 여럿 두고, 순서에 근거를
 붙이고, 인증을 만들지 않으면 된다. 그런데 이 지적은 설계로 답할 수가
 없다. 아무리 정교하게 만들어도, 써보지 않았으면 그대로 0건에 한 줄을
@@ -1129,14 +1256,14 @@ role="doc-noteref"><sup>18</sup></a> 0건이다.</p>
 <p>이미 나와 있는 자들이 어디를 갈랐는지 이름부터 훑어보자.</p>
 <p>SEI는 여덟 갈래로 나눈다. 조직 전략, 인력과 문화, 워크플로 재설계,
 리스크와 거버넌스, 데이터, 엔지니어링, 운영, 기술 생태계. 그 아래에
-역량영역이 스물일곱 개 더 붙는다는 건 2장에서 봤다.<a href="#fn19"
-class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a>
+역량영역이 스물일곱 개 더 붙는다는 건 2장에서 봤다.<a href="#fn18"
+class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a>
 Gartner는 일곱 기둥이다. 전략, 제품 포트폴리오, 거버넌스, 엔지니어링,
-데이터, 운영모델, 인재·문화.<a href="#fn20" class="footnote-ref"
-id="fnref20" role="doc-noteref"><sup>20</sup></a> Cisco는 여섯 기둥으로
-간다. 전략, 인프라, 데이터, 인재, 거버넌스, 문화.<a href="#fn21"
-class="footnote-ref" id="fnref21"
-role="doc-noteref"><sup>21</sup></a></p>
+데이터, 운영모델, 인재·문화.<a href="#fn19" class="footnote-ref"
+id="fnref19" role="doc-noteref"><sup>19</sup></a> Cisco는 여섯 기둥으로
+간다. 전략, 인프라, 데이터, 인재, 거버넌스, 문화.<a href="#fn20"
+class="footnote-ref" id="fnref20"
+role="doc-noteref"><sup>20</sup></a></p>
 <p>세 목록을 나란히 놓고 공통점을 찾아보자. 겹치는 이름이 금세 눈에
 들어온다. 전략, 데이터, 거버넌스, 인재. 여섯이든 일곱이든 여덟이든 결국
 비슷한 것을 비슷하게 자른다. 그런데 여기서 정말 봐야 할 공통점은 이름이
@@ -1468,8 +1595,8 @@ role="doc-noteref"><sup>21</sup></a></p>
 것. 오래된 문법이다.</p>
 <p>그럼 검증은 어디에 있을까. 2장에서 남의 자를 뜯어볼 때 이미 답을
 봤다. SEI 모델에도 검증을 다루는 역량영역이 있고 내용도 만만치 않은데,
-그게 <strong>2단계</strong>에 걸려 있었다.<a href="#fn22"
-class="footnote-ref" id="fnref22" role="doc-noteref"><sup>22</sup></a>
+그게 <strong>2단계</strong>에 걸려 있었다.<a href="#fn21"
+class="footnote-ref" id="fnref21" role="doc-noteref"><sup>21</sup></a>
 SEI는 검증을 초기 단계의 역량으로 배치했다.</p>
 <p>오해가 없도록 한 줄만 박아두자. <strong>검증을 다루는 모델이 없다는
 말이 아니다.</strong> 있다. 잘 만들어져 있다. 다른 건 위치다.</p>
@@ -1528,12 +1655,12 @@ SEI는 검증을 초기 단계의 역량으로 배치했다.</p>
 되돌아옴이다</h2>
 <p>그렇다면 맨 위 눈금에 올라가면 끝일까?</p>
 <p>1장에서 본 두 숫자를 다른 각도에서 다시 꺼내보자. Gartner 조사에서
-성숙도가 높은 조직조차 AI 프로젝트를 3년 이상 운영 상태로 유지한 비율은
-<strong>45퍼센트</strong>였다.<a href="#fn23" class="footnote-ref"
-id="fnref23" role="doc-noteref"><sup>23</sup></a> 그리고 Cisco 조사에서
-최상위 그룹의 비율은 <strong>3년째 13퍼센트에 고정</strong>돼 있었다.<a
-href="#fn24" class="footnote-ref" id="fnref24"
-role="doc-noteref"><sup>24</sup></a></p>
+고성숙 조직의 AI 이니셔티브가 3년 이상 운영된다고 답한 비율은
+<strong>45퍼센트</strong>였다.<a href="#fn22" class="footnote-ref"
+id="fnref22" role="doc-noteref"><sup>22</sup></a> Cisco 조사에서는
+최상위 그룹이 <strong>세 해째 약 13퍼센트</strong>에 머물렀다.<a
+href="#fn23" class="footnote-ref" id="fnref23"
+role="doc-noteref"><sup>23</sup></a></p>
 <p>두 수치는 서로 다른 것을 말한다. Gartner는 높은 성숙도에서도
 프로젝트를 장기 운영 상태로 유지하기가 쉽지 않음을 보여주고, Cisco는
 최상위 집단의 비율이 3년 동안 넓어지지 않았음을 보여준다. 이 수치만으로
@@ -1688,8 +1815,8 @@ role="doc-noteref"><sup>24</sup></a></p>
 역량 영역마다 붙여둔 예시 산출물 목록을 설명하면서, 저자들은 이렇게 못
 박는다. <em>“산출물과 성숙도 증거 사이에 일대일 대응은 없다는 점을
 인식하는 것이 중요하다. 이는 대체로 다대다 행렬이다.”</em><a
-href="#fn25" class="footnote-ref" id="fnref25"
-role="doc-noteref"><sup>25</sup></a> 산출물이 있다고 성숙한 것도 아니고,
+href="#fn24" class="footnote-ref" id="fnref24"
+role="doc-noteref"><sup>24</sup></a> 산출물이 있다고 성숙한 것도 아니고,
 없다고 미성숙한 것도 아니라는 말이다. 체크리스트를 채우는 방식이 무엇을
 망가뜨렸는지, 그 방식을 세상에 퍼뜨린 당사자들이 자기 새 모델에
 경고문으로 남긴 셈이다. 우리가 굳이 이 규칙을 세운 이유를 이보다 잘
@@ -1954,8 +2081,8 @@ role="doc-noteref"><sup>25</sup></a> 산출물이 있다고 성숙한 것도 아
 <p>한 가지 짚어둘 것이 있다. 심사관을 두지 않는 게 대단한 결단인 것처럼
 굴지는 말자. SEI조차 AI 성숙도 모델을 내면서 SCAMPI에 해당하는 공식 심사
 방법론을 붙이지 않았고, Cisco는 아예 무료 셀프 진단 도구를 열어두고
-있다.<a href="#fn26" class="footnote-ref" id="fnref26"
-role="doc-noteref"><sup>26</sup></a> SEI와 Cisco만 봐도 셀프 점검은 낯선
+있다.<a href="#fn25" class="footnote-ref" id="fnref25"
+role="doc-noteref"><sup>25</sup></a> SEI와 Cisco만 봐도 셀프 점검은 낯선
 방식이 아니다. 그러니 자랑할 거리가 아니라 숙제가 남을 뿐이다.
 <strong>심사관을 안 부른다면, 그 빈자리를 무엇으로 메울
 것인가.</strong></p>
@@ -2125,8 +2252,8 @@ role="doc-noteref"><sup>26</sup></a> SEI와 Cisco만 봐도 셀프 점검은 낯
 명에게 물었을 때, 공식적인 AI 전략은 있지만 그것이 완전히 실행되지는
 않은 조직이 <strong>61퍼센트</strong>였다. 무엇이 가로막느냐는 질문에는
 데이터가 35퍼센트, 인력이 34퍼센트, 레거시 통합이 32퍼센트로 나왔다.<a
-href="#fn27" class="footnote-ref" id="fnref27"
-role="doc-noteref"><sup>27</sup></a> 세 숫자가 거의 붙어 있다는 게 눈에
+href="#fn26" class="footnote-ref" id="fnref26"
+role="doc-noteref"><sup>26</sup></a> 세 숫자가 거의 붙어 있다는 게 눈에
 걸린다. 이 조사에서도 인력 문제는 데이터·레거시 통합과 비슷한 수준으로
 지목됐다. 교육 실적만으로 사람 문제가 풀렸다고 보기는 어렵다.</p>
 <p>그러니 이 축은 자세를 바꿔 읽는 편이 낫다. <strong>“우리가 교육을
@@ -2409,8 +2536,8 @@ A축은 반발이 없어 가장 먼저 달린다. 그래서 배우는 속도가 
 여기서 무슨 뜻인지 드러난다. 보고서는 많은 조직이 자기 프로세스와 측정
 가능한 성과를 먼저 정의하지 않은 채 동료 기업을 따라 AI를 도입하고,
 <strong>AI가 사업을 위해 무엇을 해야 하는가보다 무엇을 할 수 있는가에
-갇힌다</strong>고 해석한다.<a href="#fn28" class="footnote-ref"
-id="fnref28" role="doc-noteref"><sup>28</sup></a></p>
+갇힌다</strong>고 해석한다.<a href="#fn27" class="footnote-ref"
+id="fnref27" role="doc-noteref"><sup>27</sup></a></p>
 <p><strong>무엇을 할 수 있는가에 갇힌다.</strong> 이 표현이 앞에서 본
 목록의 정체다. 회의록 요약, 보고서 초안, 메일함 정리. 저건 우리에게
 필요한 일의 목록이 아니라 도구가 잘하는 일의 목록이다. 무엇을 할지
@@ -2532,8 +2659,8 @@ D축의 몫이고 11장에서 다룬다. 다만 <strong>거기서 재려면 여�
 곧 역량이 되는 상태</strong>, 이게 정확히 1단계 각자도생이다. 잘 하는
 사람이 잘 하고, 조직은 그걸 모른다.</p>
 <p>앞서 본 조사에서 AI 도입을 저해하는 요인 2위로 꼽힌 것이 지식 있는
-인력의 부족이었다.<a href="#fn29" class="footnote-ref" id="fnref29"
-role="doc-noteref"><sup>29</sup></a> 이건 사람을 더 뽑으라는 뜻으로만
+인력의 부족이었다.<a href="#fn28" class="footnote-ref" id="fnref28"
+role="doc-noteref"><sup>28</sup></a> 이건 사람을 더 뽑으라는 뜻으로만
 읽을 게 아니라 <strong>있는 사람에게 닿는 경로가 정해져
 있는가</strong>의 문제이기도 하다. 할 줄 아는 사람이 있더라도 그
 사람에게 닿는 길이 사적인 부탁뿐이라면, 조직의 지원 체계라고 부르기
@@ -2648,8 +2775,8 @@ role="doc-noteref"><sup>29</sup></a> 이건 사람을 더 뽑으라는 뜻으로
 <p>이게 우리만의 사정도 아니다. 8장에서 본 그 조사 — 전략은 세웠는데
 온전히 실행되지는 않는다던 조직이 절반을 훌쩍 넘던 그 숫자 — 에서 도입을
 가로막는 요인 세 번째가 <strong>레거시 시스템과의 통합</strong>이었다.
-32퍼센트.<a href="#fn30" class="footnote-ref" id="fnref30"
-role="doc-noteref"><sup>30</sup></a> 레거시 통합은 다른 시스템의
+32퍼센트.<a href="#fn29" class="footnote-ref" id="fnref29"
+role="doc-noteref"><sup>29</sup></a> 레거시 통합은 다른 시스템의
 권한·표준·소유자와 맞물리므로 한 팀만으로 해결하기 어렵다는 점이 다르다.
 조사 순위만으로 원인까지 말할 수는 없지만, 통합이 독립적인 병목으로
 지목될 만큼 자주 등장한다는 건 확인된다.</p>
@@ -2708,8 +2835,8 @@ role="doc-noteref"><sup>30</sup></a> 레거시 통합은 다른 시스템의
 쉽다. 실패한 연동은 눈에 보이기라도 하는데, 시작도 못 한 과제는 아무
 데도 안 남는다.</p>
 <p>SEI 모델이 레거시 시스템 통합을 세 번째 단계에 놓은 것도 같은
-맥락으로 읽힌다.<a href="#fn31" class="footnote-ref" id="fnref31"
-role="doc-noteref"><sup>31</sup></a> 우리 자의 언어로 옮기면 레일이
+맥락으로 읽힌다.<a href="#fn30" class="footnote-ref" id="fnref30"
+role="doc-noteref"><sup>30</sup></a> 우리 자의 언어로 옮기면 레일이
 깔리는 자리다. 개별 협의로도 붙기는 붙는다. 다만 그건 사람의 능력으로
 굴러가는 상태고, 표준이 정해져 있어야 새로 온 사람도 같은 길로 간다.</p>
 <p>그렇다면 무엇부터 할까? 전사 표준을 한 번에 세우려 들면 그건 우리
@@ -2773,8 +2900,8 @@ role="doc-noteref"><sup>31</sup></a> 우리 자의 언어로 옮기면 레일이
 항목을 찾지 못했다.</strong> 특히 SEI 원문 124쪽 전체에는 인계나 승계,
 소유권 이전에 해당하는 표현이 한 번도 나오지 않는다. 같은 모델이 AI
 모델의 생애주기는 폐기 단계까지 관리하라고 말하는데도 그렇다.<a
-href="#fn32" class="footnote-ref" id="fnref32"
-role="doc-noteref"><sup>32</sup></a> 물건이 언제 죽는지는 묻고, 사람이
+href="#fn31" class="footnote-ref" id="fnref31"
+role="doc-noteref"><sup>31</sup></a> 물건이 언제 죽는지는 묻고, 사람이
 바뀔 때 그 물건이 어떻게 되는지는 묻지 않는다.</p>
 <p>왜 빠졌는지는 원문이 설명하지 않는다. 대기업 표본이라는 이유만으로
 인계가 자동 해결됐다고 볼 수도 없다. 여기서는 이유를 추측하지 말고, 우리
@@ -2933,8 +3060,8 @@ role="doc-noteref"><sup>32</sup></a> 물건이 언제 죽는지는 묻고, 사�
 <p>검증을 다루는 성숙도 모델이 없는 것은 아니다. SEI의
 <code>Test and Evaluation</code> 역량영역이 대표적이고, 이 책은 2장에서
 그 위치를 발견하고 5장에서 왜 AXMM은 다르게 놓았는지를 설명했다.<a
-href="#fn33" class="footnote-ref" id="fnref33"
-role="doc-noteref"><sup>33</sup></a> 여기서는 그 설계를 다시 논증하지
+href="#fn32" class="footnote-ref" id="fnref32"
+role="doc-noteref"><sup>32</sup></a> 여기서는 그 설계를 다시 논증하지
 않고, D3가 실제 진단에서 어떻게 병목으로 드러나는지만 보자.</p>
 <p>대신 여기서 할 일은 다른 것이다. <strong>그 결정이 우리 진단표에서
 어떤 모양으로 나타나는가.</strong> 채점 규칙을 다시 떠올려보자. 축의
@@ -3184,8 +3311,8 @@ D까지는 3단계이고 I축이 1단계였다면 이야기는 달라진다. 우
 상태가 계속된다.</p>
 <p>이 책에서 검토한 네 모델에서는 자원과 비용을 독립된 축으로 다루는
 경우를 찾기 어려웠다. 특히 카네기멜런 SEI 모델 124쪽에는 이에 대응하는
-역량영역이 없고 예산은 부속 언급으로 한 번 나올 뿐이다.<a href="#fn34"
-class="footnote-ref" id="fnref34" role="doc-noteref"><sup>34</sup></a>
+역량영역이 없고 예산은 부속 언급으로 한 번 나올 뿐이다.<a href="#fn33"
+class="footnote-ref" id="fnref33" role="doc-noteref"><sup>33</sup></a>
 왜 독립 축이 없는지는 원문만으로 알 수 없다. <strong>재는 대상이 다르면
 보이는 벽도 달라질 수 있다.</strong> 여기서는 이유를 추측하지 않고, 이
 책이 다룬 현장에서는 자원·비용이 별도 병목으로 나타났다는 점만 근거로
@@ -3551,8 +3678,8 @@ class="footnote-ref" id="fnref34" role="doc-noteref"><sup>34</sup></a>
 소프트웨어공학연구소는 원문에서 이렇게 못 박는다. 인공지능 도입은 조직의
 가치와 원칙에 정렬되어야 하며, <strong>인공지능을 놓칠까 봐 두려운
 마음이 아니라 사업 우선순위가 그 노력을 끌고 가야 한다</strong>고.<a
-href="#fn35" class="footnote-ref" id="fnref35"
-role="doc-noteref"><sup>35</sup></a> 결과지의 빈칸을 다 채우고 싶어지는
+href="#fn34" class="footnote-ref" id="fnref34"
+role="doc-noteref"><sup>34</sup></a> 결과지의 빈칸을 다 채우고 싶어지는
 그 마음의 정체가 대개 앞쪽이다.</p>
 <section id="결과지에서-다음-한-걸음까지"
 class="reading-aid decision-path">
@@ -4567,13 +4694,13 @@ AI의 동작 수준(요약 / 자체 실행 / 다른 시스템에 쓰기)과 사�
 SEI × Accenture — AI Adoption Maturity Model v1.0</h2>
 <p>2026년 6월 30일 발표. <strong>CMMI를 만든 그 조직이 낸
 AI판이다.</strong> 124쪽 분량이며 SEI 디지털 라이브러리에서 등록 없이
-내려받을 수 있다.<a href="#fn36" class="footnote-ref" id="fnref36"
-role="doc-noteref"><sup>36</sup></a></p>
+내려받을 수 있다.<a href="#fn35" class="footnote-ref" id="fnref35"
+role="doc-noteref"><sup>35</sup></a></p>
 <h3 id="어떻게-만들어졌나">어떻게 만들어졌나</h3>
 <p>기존 AI 성숙도 시도 <strong>100건 이상</strong>을 리뷰하고 그중 36개
 이상을 정밀 분석했다. 임원 20~25명을 인터뷰하고 실무자 약 600명을
-설문했으며, Fortune 500 기업들과 파일럿을 돌렸다.<a href="#fn37"
-class="footnote-ref" id="fnref37" role="doc-noteref"><sup>37</sup></a>
+설문했으며, Fortune 500 기업들과 파일럿을 돌렸다.<a href="#fn36"
+class="footnote-ref" id="fnref36" role="doc-noteref"><sup>36</sup></a>
 이 책에서 검토한 모델 가운데서도 개발 근거를 가장 상세하게 공개한
 편이다.</p>
 <h3 id="구조-네-겹">구조 — 네 겹</h3>
@@ -4660,8 +4787,8 @@ AI Maturity</h2>
 <p>2024년 12월 초판, 이후 갱신. 2022년 <strong>721개 기업
 서베이</strong>를 근거로 한다. 이 책에서 본 모델 가운데 대규모 기업
 설문을 직접 근거로 둔 모델이다. 다만 <strong>회원 조직 전용</strong>이라
-개인이나 중소조직은 접근할 수 없다.<a href="#fn38" class="footnote-ref"
-id="fnref38" role="doc-noteref"><sup>38</sup></a></p>
+개인이나 중소조직은 접근할 수 없다.<a href="#fn37" class="footnote-ref"
+id="fnref37" role="doc-noteref"><sup>37</sup></a></p>
 <h3 id="네-단계와-분포">네 단계와 분포</h3>
 <p><strong>1단계 실험하고 준비하기 — 28퍼센트.</strong> 인력 교육, AI
 정책 수립, 증거 기반 의사결정으로의 전환. 필요 역량은 리더십과 이사회를
@@ -4689,24 +4816,24 @@ id="fnref38" role="doc-noteref"><sup>38</sup></a></p>
 <p><strong>Gartner의 AI 성숙도 모델</strong>은 다섯 단계(인식 → 활성 →
 운영 → 체계 → 변혁)와 일곱 기둥(전략·제품
 포트폴리오·거버넌스·엔지니어링·데이터·운영모델·인재문화)으로 구성된다.
-유료 구독자만 쓸 수 있다.<a href="#fn39" class="footnote-ref"
-id="fnref39" role="doc-noteref"><sup>39</sup></a></p>
+유료 구독자만 쓸 수 있다.<a href="#fn38" class="footnote-ref"
+id="fnref38" role="doc-noteref"><sup>38</sup></a></p>
 <p>Gartner가 내놓은 실증 중 이 책이 가장 많이 인용한 것은 이것이다 —
 <strong>성숙도가 높은 조직조차 45퍼센트만</strong> AI 프로젝트를 3년
-이상 운영 상태로 유지한다(낮은 조직은 20퍼센트).<a href="#fn40"
-class="footnote-ref" id="fnref40" role="doc-noteref"><sup>40</sup></a>
+이상 운영 상태로 유지한다(낮은 조직은 20퍼센트).<a href="#fn39"
+class="footnote-ref" id="fnref39" role="doc-noteref"><sup>39</sup></a>
 높은 성숙도에서도 프로젝트를 장기 운영 상태로 유지하는 일이 쉽지 않음을
 보여준다.</p>
 <p><strong>Cisco의 AI 준비도 지수</strong>는 여섯
 기둥(전략·인프라·데이터·인재·거버넌스·문화)으로 매년 조사를 낸다. 무료
 셀프 진단 도구도 운영한다. 다만 성격이 다르다 — 남과 비교하는 벤치마크지
 다음 걸음을 알려주는 처방 도구가 아니다.</p>
-<p>Cisco 조사에서 최상위 그룹은 전체의 13퍼센트이며, 이 비율은 3년째
-같은 자리에 고정돼 있다. 그들과 나머지의 격차 중 가장 눈에 띄는 항목은
+<p>Cisco 조사에서 최상위 그룹은 지난 3년간 전체의 약 13퍼센트에
+머물렀다. 최상위 그룹과 전체 응답 조직의 격차 중 가장 눈에 띄는 항목은
 <strong>에이전트의 행동을 가드레일과 실시간 모니터링으로 통제할 수
-있다는 응답이 84퍼센트 대 24퍼센트</strong>였다는 것이다.<a href="#fn41"
-class="footnote-ref" id="fnref41"
-role="doc-noteref"><sup>41</sup></a></p>
+있다는 응답이 84퍼센트 대 24퍼센트</strong>였다는 것이다.<a href="#fn40"
+class="footnote-ref" id="fnref40"
+role="doc-noteref"><sup>40</sup></a></p>
 <hr />
 <h2 id="c-4.-axmm은-무엇이-같고-무엇이-다른가">C-4. AXMM은 무엇이 같고
 무엇이 다른가</h2>
@@ -4755,7 +4882,7 @@ role="doc-noteref"><sup>41</sup></a></p>
 </tr>
 <tr class="even">
 <td>Cisco</td>
-<td>매년 발표하는 AI 준비도 지수, 최상위 그룹 13퍼센트</td>
+<td>매년 발표하는 AI 준비도 지수, 최상위 그룹 약 13퍼센트</td>
 <td>6기둥, 무료 셀프 진단</td>
 <td>다른 조직과 현재 위치를 비교하기 쉽다</td>
 <td>벤치마크에는 강하지만 다음 행동 처방은 약하다</td>
@@ -4826,40 +4953,48 @@ https://mitsloan.mit.edu/ideas-made-to-matter/whats-your-companys-ai-maturity-le
 / VKTR 해설,
 https://www.vktr.com/ai-technology/mits-4-stages-of-enterprise-ai-maturity/<a
 href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Cisco AI Readiness Index 2025. 최상위 그룹(Pacesetters)
-비율 13퍼센트와 3년 연속 고정, 전략·숙련도·에이전트 통제 항목의 격차
-수치. — Cisco 뉴스룸(2025-10),
-https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2025/m10/cisco-ai-research-the-most-ai-ready-companies-outpace-peers-in-the-race-to-value.html
-/ 2025 Index PDF,
-https://www.cisco.com/c/dam/m/en_us/solutions/ai/readiness-index/2025-m10/documents/cisco-ai-readiness-index-2025-realizing-the-value-of-ai.pdf<a
+<li id="fn3"><p>Cisco AI Readiness Index 2025. 30개 시장·26개 산업에서
+AI 전략을 담당하는 IT·비즈니스 리더 8,000명을 이중맹검 방식으로
+조사했다. 최상위 그룹(Pacesetters)은 지난 3년간 전체의 약 13퍼센트였다.
+명확한 AI 전략은 최상위 99퍼센트 대 전체 58퍼센트, 직원 AI 숙련도는
+최상위 75퍼센트 대 그 밖의 조직 16퍼센트, 에이전트 행동을 가드레일과
+실시간 모니터링으로 통제한다는 응답은 최상위 84퍼센트 대 전체
+24퍼센트였다. — Cisco AI Readiness Index,
+https://www.cisco.com/c/m/en_us/solutions/ai/readiness-index.html /
+Cisco 뉴스룸(2025-10),
+https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2025/m10/cisco-ai-research-the-most-ai-ready-companies-outpace-peers-in-the-race-to-value.html<a
 href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>Cisco AI Readiness Index 2025. 최상위 그룹(Pacesetters)
-비율 13퍼센트와 3년 연속 고정, 전략·숙련도·에이전트 통제 항목의 격차
-수치. — Cisco 뉴스룸(2025-10),
-https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2025/m10/cisco-ai-research-the-most-ai-ready-companies-outpace-peers-in-the-race-to-value.html
-/ 2025 Index PDF,
-https://www.cisco.com/c/dam/m/en_us/solutions/ai/readiness-index/2025-m10/documents/cisco-ai-readiness-index-2025-realizing-the-value-of-ai.pdf<a
-href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>Gartner 보도자료(2025-06-30), <em>Gartner Survey Finds
+<li id="fn4"><p>Gartner 보도자료(2025-06-30), <em>Gartner Survey Finds
 45% of Organizations With High AI Maturity Keep AI Projects Operational
-for at Least Three Years</em>,
+for at Least Three Years</em>. 2024년 4분기
+미국·영국·프랑스·독일·인도·일본의 응답자 432명을 조사했다. 고성숙 조직의
+45퍼센트, 저성숙 조직의 20퍼센트가 AI 이니셔티브가 3년 이상 운영된다고
+답했다. —
 https://www.gartner.com/en/newsroom/press-releases/2025-06-30-gartner-survey-finds-forty-five-percent-of-organizations-with-high-artificial-intelligence-maturity-keep-artificial-intelligence-projects-operational-for-at-least-three-years<a
-href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>Carnegie Mellon University SEI, <em>The AI Adoption
+href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Carnegie Mellon University SEI, <em>The AI Adoption
 Maturity Model v1.0</em> (2026-06-30), 124쪽. 본문의 인용문, 역량영역의
 단계 귀속과 그 분포, <code>Test and Evaluation</code> 역량영역의
 목표·실천 내용, 예시 산출물에 관한 경고, 예산 언급 빈도와 인계 관련
 표현의 부재는 모두 공개된 원문 PDF를 직접 확인한 것이다. —
 https://www.sei.cmu.edu/library/ai-adoption-maturity-model/ / PDF:
 https://www.sei.cmu.edu/documents/6534/The_AI_Adoption_Maturity_Model.pdf<a
-href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p>모델 개발 규모(기존 시도 100건 이상 검토, 임원 인터뷰
+href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>모델 개발 규모(기존 시도 100건 이상 검토, 임원 인터뷰
 20~25명, 실무자 약 600명 설문, 포춘 500대 기업 파일럿)는 SEI·Accenture의
 발표 자료와 원문 서문에 근거한다. 설문은 SEI와 Accenture의 자체
 조사(2026-01)임을 밝혀둔다. — SEI 보도자료,
 https://www.sei.cmu.edu/news/sei-and-accenture-release-ai-adoption-maturity-model-to-help-organizations-scale-ai-with-predictable-outcomes/
 / Accenture 뉴스룸,
 https://newsroom.accenture.com/news/2026/accenture-and-the-carnegie-mellon-university-software-engineering-institute-launch-ai-adoption-maturity-model-to-help-organizations-scale-ai-with-predictable-outcomes<a
+href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Carnegie Mellon University SEI, <em>The AI Adoption
+Maturity Model v1.0</em> (2026-06-30), 124쪽. 본문의 인용문, 역량영역의
+단계 귀속과 그 분포, <code>Test and Evaluation</code> 역량영역의
+목표·실천 내용, 예시 산출물에 관한 경고, 예산 언급 빈도와 인계 관련
+표현의 부재는 모두 공개된 원문 PDF를 직접 확인한 것이다. —
+https://www.sei.cmu.edu/library/ai-adoption-maturity-model/ / PDF:
+https://www.sei.cmu.edu/documents/6534/The_AI_Adoption_Maturity_Model.pdf<a
 href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn8"><p>Carnegie Mellon University SEI, <em>The AI Adoption
 Maturity Model v1.0</em> (2026-06-30), 124쪽. 본문의 인용문, 역량영역의
@@ -4901,23 +5036,15 @@ Maturity Model v1.0</em> (2026-06-30), 124쪽. 본문의 인용문, 역량영역
 https://www.sei.cmu.edu/library/ai-adoption-maturity-model/ / PDF:
 https://www.sei.cmu.edu/documents/6534/The_AI_Adoption_Maturity_Model.pdf<a
 href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn13"><p>Carnegie Mellon University SEI, <em>The AI Adoption
-Maturity Model v1.0</em> (2026-06-30), 124쪽. 본문의 인용문, 역량영역의
-단계 귀속과 그 분포, <code>Test and Evaluation</code> 역량영역의
-목표·실천 내용, 예시 산출물에 관한 경고, 예산 언급 빈도와 인계 관련
-표현의 부재는 모두 공개된 원문 PDF를 직접 확인한 것이다. —
-https://www.sei.cmu.edu/library/ai-adoption-maturity-model/ / PDF:
-https://www.sei.cmu.edu/documents/6534/The_AI_Adoption_Maturity_Model.pdf<a
-href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn14"><p>MIT CISR 연구는 원문이 회원 조직 전용이라 공개 해설을
+<li id="fn13"><p>MIT CISR 연구는 원문이 회원 조직 전용이라 공개 해설을
 경유해
 확인했다(https://cisr.mit.edu/publication/2025_0313_AIMaturity_Woerner).
 Gartner의 AI 성숙도 모델은 5레벨 7기둥 구조이며 유료 구독 고객에게
 툴킷과 함께 제공된다. Cisco는 AI Readiness Index와 함께 무료 셀프 진단
 도구를 운영한다 —
 https://www.cisco.com/c/m/en_us/solutions/ai/readiness-index/lookup-tool.html<a
-href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn15"><p>성숙도 모델 일반에 대한 비판은 정보시스템 분야에서 오래
+href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn14"><p>성숙도 모델 일반에 대한 비판은 정보시스템 분야에서 오래
 축적돼 왔다. Pöppelbuß &amp; Röglinger, <em>What makes a useful maturity
 model?</em> (ECIS 2011), https://aisel.aisnet.org/ecis2011/28/ /
 <em>Exploring the Limitations of Business Process Maturity Models: A
@@ -4925,8 +5052,15 @@ Systematic Literature Review</em> (2024),
 https://www.tandfonline.com/doi/full/10.1080/10580530.2024.2332210 /
 Mettler, <em>Maturity assessment models: a design science research
 approach</em> (2011). 뒤의 두 편은 원문 전체가 유료라 공개된 초록과
-해설을 경유해 확인했다.<a href="#fnref15" class="footnote-back"
+해설을 경유해 확인했다.<a href="#fnref14" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
+<li id="fn15"><p>Sadiq et al., <em>Artificial intelligence maturity
+model: a systematic literature review</em> (2021). 2015~2020년 AI 성숙도
+모델 논문 15편에 대한 체계적 문헌고찰이다. 서술형 13편 대 처방형
+6편(분류가 중복 집계된다), 검증 비율 47퍼센트, 기존 모델의 실제 적용
+연구 0건, 그리고 “성숙 개념에 대한 이론적 성찰의 결여”가 모두 이 논문의
+결론에서 왔다. https://pmc.ncbi.nlm.nih.gov/articles/PMC8409328/<a
+href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn16"><p>Sadiq et al., <em>Artificial intelligence maturity
 model: a systematic literature review</em> (2021). 2015~2020년 AI 성숙도
 모델 논문 15편에 대한 체계적 문헌고찰이다. 서술형 13편 대 처방형
@@ -4941,48 +5075,41 @@ model: a systematic literature review</em> (2021). 2015~2020년 AI 성숙도
 연구 0건, 그리고 “성숙 개념에 대한 이론적 성찰의 결여”가 모두 이 논문의
 결론에서 왔다. https://pmc.ncbi.nlm.nih.gov/articles/PMC8409328/<a
 href="#fnref17" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn18"><p>Sadiq et al., <em>Artificial intelligence maturity
-model: a systematic literature review</em> (2021). 2015~2020년 AI 성숙도
-모델 논문 15편에 대한 체계적 문헌고찰이다. 서술형 13편 대 처방형
-6편(분류가 중복 집계된다), 검증 비율 47퍼센트, 기존 모델의 실제 적용
-연구 0건, 그리고 “성숙 개념에 대한 이론적 성찰의 결여”가 모두 이 논문의
-결론에서 왔다. https://pmc.ncbi.nlm.nih.gov/articles/PMC8409328/<a
-href="#fnref18" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn19"><p>CMU SEI, <em>The AI Adoption Maturity Model v1.0</em>
+<li id="fn18"><p>CMU SEI, <em>The AI Adoption Maturity Model v1.0</em>
 (2026-06-30), 124쪽. 8차원·27역량영역 구조는 공개 PDF 원문을 직접 확인한
 결과다. — https://www.sei.cmu.edu/library/ai-adoption-maturity-model/ /
 PDF:
 https://www.sei.cmu.edu/documents/6534/The_AI_Adoption_Maturity_Model.pdf<a
-href="#fnref19" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn20"><p>Gartner AI Maturity Model의 7기둥 구성. 원문 툴킷이
-유료 구독자 전용이라 공개 해설을 경유해 확인했다.<a href="#fnref20"
+href="#fnref18" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn19"><p>Gartner AI Maturity Model의 7기둥 구성. 원문 툴킷이
+유료 구독자 전용이라 공개 해설을 경유해 확인했다.<a href="#fnref19"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn21"><p>Cisco AI Readiness Index의 6기둥 구성. 지수 보고서와
+<li id="fn20"><p>Cisco AI Readiness Index의 6기둥 구성. 지수 보고서와
 공개 해설을 함께 확인했다. — Cisco 뉴스룸(2025-10),
 https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2025/m10/cisco-ai-research-the-most-ai-ready-companies-outpace-peers-in-the-race-to-value.html
 / 2025 Index PDF,
 https://www.cisco.com/c/dam/m/en_us/solutions/ai/readiness-index/2025-m10/documents/cisco-ai-readiness-index-2025-realizing-the-value-of-ai.pdf<a
-href="#fnref21" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn22"><p>CMU SEI·Accenture, <em>The AI Adoption Maturity Model
+href="#fnref20" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn21"><p>CMU SEI·Accenture, <em>The AI Adoption Maturity Model
 v1.0</em> (2026-06-30), 124쪽. <code>Test and Evaluation</code>
 역량영역의 Level 2 귀속은 원문 직접 확인. 역량영역 분포는 2장에서
 다뤘다. —
 https://www.sei.cmu.edu/documents/6534/The_AI_Adoption_Maturity_Model.pdf<a
-href="#fnref22" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn23"><p>Gartner 보도자료(2025-06-30), <em>Gartner Survey Finds
+href="#fnref21" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn22"><p>Gartner 보도자료(2025-06-30), <em>Gartner Survey Finds
 45% of Organizations With High AI Maturity Keep AI Projects Operational
 for at Least Three Years</em>. —
 https://www.gartner.com/en/newsroom/press-releases/2025-06-30-gartner-survey-finds-forty-five-percent-of-organizations-with-high-artificial-intelligence-maturity-keep-artificial-intelligence-projects-operational-for-at-least-three-years<a
+href="#fnref22" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn23"><p>Cisco AI Readiness Index 2025. 최상위 그룹은 지난 3년간
+전체의 약 13퍼센트였다. —
+https://www.cisco.com/c/m/en_us/solutions/ai/readiness-index.html<a
 href="#fnref23" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn24"><p>Cisco AI Readiness Index 2025. 최상위 그룹 비율
-13퍼센트와 3년 연속 고정. —
-https://www.cisco.com/c/dam/m/en_us/solutions/ai/readiness-index/2025-m10/documents/cisco-ai-readiness-index-2025-realizing-the-value-of-ai.pdf<a
-href="#fnref24" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn25"><p>CMU SEI, <em>The AI Adoption Maturity Model v1.0</em>
+<li id="fn24"><p>CMU SEI, <em>The AI Adoption Maturity Model v1.0</em>
 (2026-06-30), §4.3 예시 산출물 설명. 원문 PDF 직접 확인.
 https://www.sei.cmu.edu/documents/6534/The_AI_Adoption_Maturity_Model.pdf<a
-href="#fnref25" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn26"><p>CMU SEI, <em>The AI Adoption Maturity Model</em>
+href="#fnref24" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn25"><p>CMU SEI, <em>The AI Adoption Maturity Model</em>
 v1.0(2026-06-30) 원문 124쪽에는 CMMI의 SCAMPI에 해당하는 공식 심사
 방법론이 제시돼 있지 않다. 조직이 스스로 목표를 정하고 현재를 평가하는
 구조로 서술돼 있으며, 이는 공개된 원문 PDF를 직접 확인한 것이다. —
@@ -4990,14 +5117,20 @@ https://www.sei.cmu.edu/library/ai-adoption-maturity-model/ / PDF:
 https://www.sei.cmu.edu/documents/6534/The_AI_Adoption_Maturity_Model.pdf
 . Cisco는 AI Readiness Index와 함께 무료 셀프 진단 도구를 운영한다 —
 https://www.cisco.com/c/m/en_us/solutions/ai/readiness-index/lookup-tool.html<a
-href="#fnref26" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn27"><p>CMU SEI·Accenture가 AI 도입 성숙도 모델 개발 과정에서
+href="#fnref25" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn26"><p>CMU SEI·Accenture가 AI 도입 성숙도 모델 개발 과정에서
 수행한 실무자 설문(2026-01, 약 600명). 공식 AI 전략이 있으나 완전히
 실행되지 않은 조직의 비율과 저해 요인 상위 세 항목(데이터·인력·레거시
 통합)이 여기서 나왔다. 모델 개발 주체의 자체 조사임을 밝혀둔다. 수치는
 공개된 원문 PDF에서 직접 확인했다. — SEI·Accenture, <em>The AI Adoption
 Maturity Model v1.0</em> (2026-06-30, 124쪽),
 https://www.sei.cmu.edu/library/ai-adoption-maturity-model/ / PDF:
+https://www.sei.cmu.edu/documents/6534/The_AI_Adoption_Maturity_Model.pdf<a
+href="#fnref26" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn27"><p>8장에서 인용한 SEI·Accenture의 같은 자체 조사다.
+여기서는 원문이 61퍼센트의 상태를 “규율 있는 실천의 부재”와 “반사적
+도입”으로 해석한 대목을 사용했다. 조사 주체·표본·수치의 단서는 8장
+각주에 적었다. —
 https://www.sei.cmu.edu/documents/6534/The_AI_Adoption_Maturity_Model.pdf<a
 href="#fnref27" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn28"><p>8장에서 인용한 SEI·Accenture의 같은 자체 조사다.
@@ -5007,62 +5140,62 @@ href="#fnref27" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 https://www.sei.cmu.edu/documents/6534/The_AI_Adoption_Maturity_Model.pdf<a
 href="#fnref28" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn29"><p>8장에서 인용한 SEI·Accenture의 같은 자체 조사다.
-여기서는 원문이 61퍼센트의 상태를 “규율 있는 실천의 부재”와 “반사적
-도입”으로 해석한 대목을 사용했다. 조사 주체·표본·수치의 단서는 8장
-각주에 적었다. —
-https://www.sei.cmu.edu/documents/6534/The_AI_Adoption_Maturity_Model.pdf<a
-href="#fnref29" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn30"><p>8장에서 인용한 SEI·Accenture의 같은 자체 조사다.
 여기서는 도입 저해 요인 가운데 레거시 시스템 통합이 32퍼센트였다는
 결과만 사용했다. 조사 주체·표본·한계는 8장 각주에 적었다. —
 https://www.sei.cmu.edu/documents/6534/The_AI_Adoption_Maturity_Model.pdf<a
-href="#fnref30" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+href="#fnref29" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn30"><p>같은 원문 124쪽. <code>Legacy Integration</code>
+역량영역의 단계 귀속(3단계), <code>AI Model Management</code> 역량영역이
+폐기(decommissioning)를 포함한다는 서술, 그리고 인계·승계·소유권 이전에
+해당하는 표현이 전문에 등장하지 않는다는 사실은 모두 공개된 원문 PDF를
+직접 확인한 것이다.<a href="#fnref30" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
 <li id="fn31"><p>같은 원문 124쪽. <code>Legacy Integration</code>
 역량영역의 단계 귀속(3단계), <code>AI Model Management</code> 역량영역이
 폐기(decommissioning)를 포함한다는 서술, 그리고 인계·승계·소유권 이전에
 해당하는 표현이 전문에 등장하지 않는다는 사실은 모두 공개된 원문 PDF를
 직접 확인한 것이다.<a href="#fnref31" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn32"><p>같은 원문 124쪽. <code>Legacy Integration</code>
-역량영역의 단계 귀속(3단계), <code>AI Model Management</code> 역량영역이
-폐기(decommissioning)를 포함한다는 서술, 그리고 인계·승계·소유권 이전에
-해당하는 표현이 전문에 등장하지 않는다는 사실은 모두 공개된 원문 PDF를
-직접 확인한 것이다.<a href="#fnref32" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
-<li id="fn33"><p>CMU SEI·Accenture, <em>The AI Adoption Maturity Model
+<li id="fn32"><p>CMU SEI·Accenture, <em>The AI Adoption Maturity Model
 v1.0</em> (2026-06-30), 124쪽. <code>Test and Evaluation</code>
 역량영역의 목표·실천(AI 특유 기능의 격리 환경 시험, 데이터 드리프트·환각
 대응 전문 테스트, 비결정적 출력의 기준선화, 생성형 AI 결과를 포함한
 테스트 자동화)과 해당 역량영역의 Level 2 귀속은 원문 직접 확인. —
 https://www.sei.cmu.edu/documents/6534/The_AI_Adoption_Maturity_Model.pdf<a
-href="#fnref33" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn34"><p>CMU SEI·Accenture, <em>The AI Adoption Maturity Model
+href="#fnref32" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn33"><p>CMU SEI·Accenture, <em>The AI Adoption Maturity Model
 v1.0</em> (2026-06-30), 124쪽. 8차원 27역량영역 가운데 자원·예산에
 대응하는 역량영역은 없으며, 예산(budget)은 다른 실천의 부속 언급으로 한
 차례 등장한다. 원문 직접 확인. —
 https://www.sei.cmu.edu/documents/6534/The_AI_Adoption_Maturity_Model.pdf<a
-href="#fnref34" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn35"><p>CMU SEI·Accenture, <em>The AI Adoption Maturity Model
+href="#fnref33" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn34"><p>CMU SEI·Accenture, <em>The AI Adoption Maturity Model
 v1.0</em> (2026-06-30) Level 2 서술. AI 도입 노력을 FOMO가 아니라 조직
 가치·원칙과 사업 우선순위에 맞추라는 취지의 대목을 공개 원문 PDF에서
 직접 확인했다.
 https://www.sei.cmu.edu/library/ai-adoption-maturity-model/ / PDF:
 https://www.sei.cmu.edu/documents/6534/The_AI_Adoption_Maturity_Model.pdf<a
-href="#fnref35" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn36"><p>CMU SEI, <em>The AI Adoption Maturity Model v1.0</em>
+href="#fnref34" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn35"><p>CMU SEI, <em>The AI Adoption Maturity Model v1.0</em>
 (2026-06-30), 124pp.
 https://www.sei.cmu.edu/library/ai-adoption-maturity-model/ — 본 부록의
 SEI <strong>모델 구조·단계 정의·역량영역 귀속</strong>은 원문 PDF를 직접
-확인한 것이다.<a href="#fnref36" class="footnote-back"
+확인한 것이다.<a href="#fnref35" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn37"><p>개발 규모(리뷰 100건 이상·정밀 분석 36개 이상·임원
+<li id="fn36"><p>개발 규모(리뷰 100건 이상·정밀 분석 36개 이상·임원
 인터뷰 20~25명·실무자 설문 약 600명·Fortune 500 파일럿)는 SEI와
-Accenture의 발표 자료에서 확인했다.<a href="#fnref37"
+Accenture의 발표 자료에서 확인했다.<a href="#fnref36"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn38"><p>MIT CISR, <em>Four Stages of Enterprise AI
+<li id="fn37"><p>MIT CISR, <em>Four Stages of Enterprise AI
 Maturity</em>.
 https://cisr.mit.edu/publication/2025_0313_AIMaturity_Woerner — 원문이
 회원 전용이라 공개 해설(MIT Sloan, VKTR)을 경유해 확인했다.<a
+href="#fnref37" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn38"><p>다섯 단계·일곱 기둥 구성은 <strong>원문이 유료 구독
+자료라 공개 해설을 경유해 확인했다.</strong> 3년 이상 운영 유지
+45퍼센트(저성숙 20퍼센트)는 Gartner 보도자료(2025-06-30) 원문에서 직접
+확인한 것이다.
+https://www.gartner.com/en/newsroom/press-releases/2025-06-30-gartner-survey-finds-forty-five-percent-of-organizations-with-high-artificial-intelligence-maturity-keep-artificial-intelligence-projects-operational-for-at-least-three-years<a
 href="#fnref38" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn39"><p>다섯 단계·일곱 기둥 구성은 <strong>원문이 유료 구독
 자료라 공개 해설을 경유해 확인했다.</strong> 3년 이상 운영 유지
@@ -5070,15 +5203,9 @@ href="#fnref38" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 확인한 것이다.
 https://www.gartner.com/en/newsroom/press-releases/2025-06-30-gartner-survey-finds-forty-five-percent-of-organizations-with-high-artificial-intelligence-maturity-keep-artificial-intelligence-projects-operational-for-at-least-three-years<a
 href="#fnref39" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn40"><p>다섯 단계·일곱 기둥 구성은 <strong>원문이 유료 구독
-자료라 공개 해설을 경유해 확인했다.</strong> 3년 이상 운영 유지
-45퍼센트(저성숙 20퍼센트)는 Gartner 보도자료(2025-06-30) 원문에서 직접
-확인한 것이다.
-https://www.gartner.com/en/newsroom/press-releases/2025-06-30-gartner-survey-finds-forty-five-percent-of-organizations-with-high-artificial-intelligence-maturity-keep-artificial-intelligence-projects-operational-for-at-least-three-years<a
+<li id="fn40"><p>Cisco AI Readiness Index 2025.
+https://www.cisco.com/c/m/en_us/solutions/ai/readiness-index.html<a
 href="#fnref40" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn41"><p>Cisco AI Readiness Index 2025.
-https://www.cisco.com/c/dam/m/en_us/solutions/ai/readiness-index/2025-m10/documents/cisco-ai-readiness-index-2025-realizing-the-value-of-ai.pdf<a
-href="#fnref41" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
 </main>
