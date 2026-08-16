@@ -177,6 +177,9 @@
   .reading-aid th{background:var(--panel-strong); color:var(--fg)}
   .reading-aid tr:last-child td{border-bottom:0}
   .reading-aid.wide-table table{min-width:48rem}
+  .model-axis-table col:nth-child(1){width:16% !important}
+  .model-axis-table col:nth-child(2){width:14% !important}
+  .model-axis-table col:nth-child(3){width:70% !important}
   .stat-dashboard{overflow-x:visible}
   .stat-dashboard .stat-caption{
     margin:1rem 0 .6rem; color:var(--muted); font-size:.83rem; line-height:1.55;
@@ -1374,20 +1377,54 @@ role="doc-noteref"><sup>17</sup></a> 0건이다.</p>
 <h2 id="남의-자에는-눈금이-어떻게-나뉘어-있나">남의 자에는 눈금이 어떻게
 나뉘어 있나</h2>
 <p>이미 나와 있는 자들이 어디를 갈랐는지 이름부터 훑어보자.</p>
-<p>SEI는 여덟 갈래로 나눈다. 조직 전략, 인력과 문화, 워크플로 재설계,
-리스크와 거버넌스, 데이터, 엔지니어링, 운영, 기술 생태계. 그 아래에
-역량영역이 스물일곱 개 더 붙는다는 건 2장에서 봤다.<a href="#fn18"
-class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a>
-Gartner는 일곱 기둥이다. 전략, 제품 포트폴리오, 거버넌스, 엔지니어링,
-데이터, 운영모델, 인재·문화.<a href="#fn19" class="footnote-ref"
-id="fnref19" role="doc-noteref"><sup>19</sup></a> Cisco는 여섯 기둥으로
-간다. 전략, 인프라, 데이터, 인재, 거버넌스, 문화.<a href="#fn20"
+<section id="세-모델은-어디에-선을-그었나"
+class="reading-aid wide-table model-axis-table">
+<h3>세 모델은 어디에 선을 그었나</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>모델</th>
+<th>구조</th>
+<th>축·기둥 이름</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SEI</td>
+<td>8차원</td>
+<td>조직 전략 · 인력과 문화 · 워크플로 재설계 · 리스크와 거버넌스 ·
+데이터 · 엔지니어링 · 운영 · 기술 생태계<a href="#fn18"
+class="footnote-ref" id="fnref18"
+role="doc-noteref"><sup>18</sup></a></td>
+</tr>
+<tr class="even">
+<td>Gartner</td>
+<td>7기둥</td>
+<td>전략 · 제품 포트폴리오 · 거버넌스 · 엔지니어링 · 데이터 · 운영모델 ·
+인재·문화<a href="#fn19" class="footnote-ref" id="fnref19"
+role="doc-noteref"><sup>19</sup></a></td>
+</tr>
+<tr class="odd">
+<td>Cisco</td>
+<td>6기둥</td>
+<td>전략 · 인프라 · 데이터 · 인재 · 거버넌스 · 문화<a href="#fn20"
 class="footnote-ref" id="fnref20"
-role="doc-noteref"><sup>20</sup></a></p>
-<p>세 목록을 나란히 놓고 공통점을 찾아보자. 겹치는 이름이 금세 눈에
-들어온다. 전략, 데이터, 거버넌스, 인재. 여섯이든 일곱이든 여덟이든 결국
-비슷한 것을 비슷하게 자른다. 그런데 여기서 정말 봐야 할 공통점은 이름이
-아니다. <strong>나누는 사람이 서 있는 자리</strong>다.</p>
+role="doc-noteref"><sup>20</sup></a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<p>SEI에는 이 여덟 차원 아래 역량영역 스물일곱 개가 더 붙는다. 그 구조는
+2장에서 이미 봤다.</p>
+<p>표에서 같은 이름을 찾아보면 전략, 데이터, 거버넌스, 인재가 겹친다.
+여섯이든 일곱이든 여덟이든 결국 비슷한 것을 비슷하게 자른다. 그런데
+여기서 정말 봐야 할 공통점은 이름이 아니다. <strong>나누는 사람이 서
+있는 자리</strong>다.</p>
 <p>전략이 한 칸, 데이터가 한 칸, 인재가 한 칸. 이렇게 자르려면 조직
 전체가 한눈에 들어오는 높이에 서 있어야 한다. 전략을 따로 떼어 이야기할
 수 있는 사람, 데이터 기반을 한 덩어리로 볼 수 있는 사람, 인재 정책을 한

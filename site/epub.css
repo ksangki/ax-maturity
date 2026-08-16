@@ -37,6 +37,18 @@
   margin-top: 0;
 }
 
+.model-axis-table col:nth-child(1) {
+  width: 16% !important;
+}
+
+.model-axis-table col:nth-child(2) {
+  width: 14% !important;
+}
+
+.model-axis-table col:nth-child(3) {
+  width: 70% !important;
+}
+
 .stat-dashboard {
   page-break-inside: auto;
 }
