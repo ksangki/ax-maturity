@@ -167,17 +167,58 @@ MIT CISR이 721개 기업을 조사해 기업의 AI 성숙도를 네 단계로 �
 
 그렇다면 답은 간단해 보인다. 더 좋은 도구를 더 빨리 깔면 되지 않을까? 지금 시장에는 작년에 없던 물건이 매달 나온다. 예산을 조금 더 쓰고 최신 도구를 한 벌 더 얹으면 저 선을 넘을 것도 같다.
 
-정말 그럴까. 숫자를 하나 더 보자.
+Cisco는 2025년 30개 시장에서 AI 전략을 맡은 리더 8,000명을 조사했다. 조직을 준비도에 따라 네 그룹으로 나누고 맨 위 그룹을 Pacesetters, 곧 최상위 그룹이라 불렀다. 복잡한 이름은 내려놓고 조직 100곳을 세웠다고 생각해보자. 최상위 그룹은 **약 13곳**뿐이었다. Cisco는 이 비중이 세 해째 약 13퍼센트에 머물렀다고 설명한다.[^c1n3]
 
-Cisco는 몇 해째 기업의 AI 준비도를 조사해 최상위 그룹을 따로 분류해왔다. 그 최상위 그룹이 전체에서 차지하는 비율은 **13퍼센트**다. 그리고 이 비율은 **3년째 같은 자리에 고정돼 있다.**[^c1n3]
+같은 기간 도구의 성능과 가격, 쓰기 쉬운 정도는 크게 좋아졌다. 그런데 최상위 그룹의 크기는 거의 달라지지 않았다. 이 숫자 하나가 도구의 효과가 없다고 증명하는 것은 아니다. 다만 **더 좋은 도구를 들이는 일만으로는 최상위 그룹이 넓어지지 않았다**는 사실은 보여준다.
 
-지난 3년 동안 도구가 어떻게 달라졌는지 떠올려보자. 비교할 수 있는 수준이 아니다. 성능도, 가격도, 쓰기 쉬운 정도도 전부 좋아졌다. 이 조사가 재는 것은 성숙도가 아니라 준비도지만, 둘이 묻는 항목은 상당히 겹친다. 그러니 도구 개선만으로 조직 준비도가 따라 올라갔다면 최상위 비율도 움직였을 법하다. 그런데 조사에서 그 비율은 3년째 13퍼센트였다. 왜 그럴까?
+::: {.reading-aid .stat-dashboard}
+### Cisco 조사, 100개 조직으로 읽기
 
-같은 조사에서 최상위 그룹과 나머지 전체의 격차를 보면 답이 어렴풋이 보인다. 명확한 AI 전략을 가진 비율이 최상위는 99퍼센트인데 전체는 58퍼센트다. 직원이 필요한 AI 숙련도를 갖췄다고 답한 비율은 75퍼센트 대 16퍼센트다. 그리고 이 항목이 가장 눈에 걸린다. **에이전트의 행동을 가드레일과 실시간 모니터링으로 통제할 수 있다고 답한 비율이 84퍼센트 대 24퍼센트였다.**[^c1n3]
+<p class="stat-caption">AI 준비도 최상위 그룹의 크기</p>
+<div class="stat-chart stat-share" role="img" aria-label="조직 100곳 중 AI 준비도 최상위 그룹은 약 13곳이고, 그 밖의 조직은 약 87곳이다.">
+<svg class="stat-wide-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--leader" data-value="13" x="0" y="0" width="13" height="10" rx="5" /></svg>
+<div class="stat-scale"><strong>최상위 약 13곳</strong><span>그 밖 약 87곳</span></div>
+</div>
 
-이 목록에 도구 이름이 하나도 없다는 점을 눈여겨보자. 전략, 숙련도, 가드레일, 모니터링. 전부 **도구 구매만으로 해결되지 않는 것들**이다. 가드레일과 모니터링 도구는 살 수 있어도, 무엇을 기준으로 어떻게 쓸지는 조직이 정하고 합의해야 한다. 도구는 매년 좋아지는데 성숙한 조직의 비율이 늘지 않는 이유가 여기 있다. **도구를 깐다고 성숙해지지 않는다.**
+<p class="stat-caption stat-caption--spaced">최상위 그룹은 무엇이 달랐나</p>
+<div class="stat-chart stat-comparison" role="img" aria-label="명확한 AI 전략은 최상위 그룹 99퍼센트 대 전체 58퍼센트, 직원 AI 숙련도는 최상위 그룹 75퍼센트 대 그 밖의 조직 16퍼센트, 에이전트 행동 통제는 최상위 그룹 84퍼센트 대 전체 24퍼센트다.">
+<div class="stat-metric">
+<p class="stat-metric-label">명확한 AI 전략 <span>격차 41%p</span></p>
+<div class="stat-row"><span class="stat-series">최상위</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--leader" data-value="99" x="0" y="0" width="99" height="10" rx="5" /></svg><strong class="stat-value">99%</strong></div>
+<div class="stat-row"><span class="stat-series">전체</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--compare" data-value="58" x="0" y="0" width="58" height="10" rx="5" /></svg><strong class="stat-value">58%</strong></div>
+</div>
+<div class="stat-metric">
+<p class="stat-metric-label">직원 AI 숙련도 <span>격차 59%p</span></p>
+<div class="stat-row"><span class="stat-series">최상위</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--leader" data-value="75" x="0" y="0" width="75" height="10" rx="5" /></svg><strong class="stat-value">75%</strong></div>
+<div class="stat-row"><span class="stat-series">그 밖</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--compare" data-value="16" x="0" y="0" width="16" height="10" rx="5" /></svg><strong class="stat-value">16%</strong></div>
+</div>
+<div class="stat-metric">
+<p class="stat-metric-label">에이전트 행동 통제 <span>격차 60%p</span></p>
+<div class="stat-row"><span class="stat-series">최상위</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--leader" data-value="84" x="0" y="0" width="84" height="10" rx="5" /></svg><strong class="stat-value">84%</strong></div>
+<div class="stat-row"><span class="stat-series">전체</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--compare" data-value="24" x="0" y="0" width="24" height="10" rx="5" /></svg><strong class="stat-value">24%</strong></div>
+</div>
+</div>
 
-한 걸음 더 들어가보자. 어렵게 올라간 조직은 그 자리를 지킬까? Gartner 조사에 따르면 성숙도가 높은 조직조차 AI 프로젝트를 3년 이상 운영 상태로 유지하는 비율이 **45퍼센트**에 그쳤다. 성숙도가 낮은 조직은 20퍼센트였다.[^c1n2] 높은 성숙도에서도 프로젝트를 3년 이상 운영 상태로 유지한 비율이 절반에 못 미쳤다는 관찰이다.
+<p class="stat-note">전략·에이전트 통제는 전체 응답 조직과, 직원 숙련도는 최상위가 아닌 조직과 비교한 수치다. 원자료의 비교 기준을 그대로 표시했다.</p>
+:::
+
+숫자를 이렇게 펼치면 차이가 선명하다. 최상위 그룹은 전략에서 41퍼센트포인트, 직원 숙련도에서 59퍼센트포인트, 에이전트 통제에서 60퍼센트포인트 앞섰다. 어느 항목도 특정 제품을 샀는지를 묻지 않는다. 방향을 정했는지, 사람이 다룰 줄 아는지, 자율적으로 움직이는 AI를 멈추고 살필 수 있는지를 묻는다.
+
+도구는 이 역량을 실행하게 해준다. 그러나 전략을 정하고, 사람을 키우고, 가드레일과 모니터링을 운영하는 일은 결제만으로 끝나지 않는다. 조직이 시간을 들여 합의하고 몸에 붙여야 한다. **도구를 깐다고 성숙해지지 않는다.**
+
+Cisco가 최상위 그룹에 올라가는 일이 얼마나 드문지를 보여준다면, Gartner 조사는 올라간 뒤 지키는 일이 얼마나 어려운지를 보여준다. 6개국의 리더 432명을 조사했더니, 고성숙 조직에서 AI 이니셔티브가 3년 이상 운영된다고 답한 비율은 45퍼센트였다. 저성숙 조직은 20퍼센트였다.[^c1n2]
+
+::: {.reading-aid .stat-dashboard .stat-dashboard--compact}
+### Gartner 조사, 100개 조직으로 읽기
+
+<p class="stat-caption">AI 이니셔티브가 3년 이상 운영된다고 답한 비율</p>
+<div class="stat-chart stat-comparison" role="img" aria-label="AI 이니셔티브가 3년 이상 운영된다고 답한 비율은 고성숙 조직 45퍼센트, 저성숙 조직 20퍼센트다.">
+<div class="stat-row"><span class="stat-series">고성숙</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--leader" data-value="45" x="0" y="0" width="45" height="10" rx="5" /></svg><strong class="stat-value">45%</strong></div>
+<div class="stat-row"><span class="stat-series">저성숙</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--compare" data-value="20" x="0" y="0" width="20" height="10" rx="5" /></svg><strong class="stat-value">20%</strong></div>
+</div>
+
+<p class="stat-takeaway"><strong>고성숙 조직이 두 배 넘게 높다.</strong> 그래도 100곳 중 45곳이다. 높은 단계에 올라가는 것과 그 상태를 오래 지키는 것은 다른 문제다.</p>
+:::
 
 작년에 잘 돌던 것이 올해 열어보니 아무도 쓰지 않고 있는 걸 발견할 때의 그 기분을 떠올려보자. 꽤 아찔하다. 만든 사람은 부서를 옮겼고, 왜 그렇게 만들었는지 아는 사람이 남아 있지 않다. 그 장면을 개인의 게으름으로만 설명할 수는 없다. 인계와 운영 체계가 있었는지부터 봐야 한다. 도구가 성숙을 만들지 못하는 것과 같은 이유다. 사람과 체계가 남지 않으면, 잘 깔아둔 것도 조용히 꺼진다.
 
@@ -219,7 +260,7 @@ Cisco는 몇 해째 기업의 AI 준비도를 조사해 최상위 그룹을 따�
 
 **하나.** 실험·파일럿 단계의 조직은 뒤처진 예외가 아니다. 조사 기업의 62퍼센트가 그 자리에 있지만, 재무성과의 경계는 바로 그 다음 단계에 있다.
 
-**둘.** 도구가 좋아지는 동안에도 최상위 그룹은 3년째 13퍼센트에 머물렀다. 차이를 만든 것은 전략·숙련도·가드레일처럼 결제만으로 살 수 없는 역량이었다.
+**둘.** 도구가 좋아지는 동안에도 최상위 그룹은 세 해째 약 13퍼센트에 머물렀다. 차이를 만든 것은 전략·숙련도·가드레일처럼 결제만으로 살 수 없는 역량이었다.
 
 **셋.** 다음 보고에서는 도입량 대신 **가장 약한 고리가 어디인지, 그것이 없는 것인지 안 정해진 것인지**를 묻자. 위치와 처방을 함께 알려주는 질문이다.
 
@@ -235,9 +276,9 @@ Cisco는 몇 해째 기업의 AI 준비도를 조사해 최상위 그룹을 따�
 
 [^c1n1]: MIT CISR의 기업 AI 성숙도 4단계 연구(Peter Weill, Stephanie L. Woerner, Ina M. Sebastian). 2022년 721개 기업 서베이 기반이며 단계별 분포와 재무성과 상관을 함께 제시한다. 원문은 회원 전용이라 공개 해설을 경유해 확인했다. — MIT CISR, *Four Stages of Enterprise AI Maturity*, https://cisr.mit.edu/publication/2025_0313_AIMaturity_Woerner / MIT Sloan, *What's your company's AI maturity level?*, https://mitsloan.mit.edu/ideas-made-to-matter/whats-your-companys-ai-maturity-level / VKTR 해설, https://www.vktr.com/ai-technology/mits-4-stages-of-enterprise-ai-maturity/
 
-[^c1n2]: Gartner 보도자료(2025-06-30), *Gartner Survey Finds 45% of Organizations With High AI Maturity Keep AI Projects Operational for at Least Three Years*, https://www.gartner.com/en/newsroom/press-releases/2025-06-30-gartner-survey-finds-forty-five-percent-of-organizations-with-high-artificial-intelligence-maturity-keep-artificial-intelligence-projects-operational-for-at-least-three-years
+[^c1n2]: Gartner 보도자료(2025-06-30), *Gartner Survey Finds 45% of Organizations With High AI Maturity Keep AI Projects Operational for at Least Three Years*. 2024년 4분기 미국·영국·프랑스·독일·인도·일본의 응답자 432명을 조사했다. 고성숙 조직의 45퍼센트, 저성숙 조직의 20퍼센트가 AI 이니셔티브가 3년 이상 운영된다고 답했다. — https://www.gartner.com/en/newsroom/press-releases/2025-06-30-gartner-survey-finds-forty-five-percent-of-organizations-with-high-artificial-intelligence-maturity-keep-artificial-intelligence-projects-operational-for-at-least-three-years
 
-[^c1n3]: Cisco AI Readiness Index 2025. 최상위 그룹(Pacesetters) 비율 13퍼센트와 3년 연속 고정, 전략·숙련도·에이전트 통제 항목의 격차 수치. — Cisco 뉴스룸(2025-10), https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2025/m10/cisco-ai-research-the-most-ai-ready-companies-outpace-peers-in-the-race-to-value.html / 2025 Index PDF, https://www.cisco.com/c/dam/m/en_us/solutions/ai/readiness-index/2025-m10/documents/cisco-ai-readiness-index-2025-realizing-the-value-of-ai.pdf
+[^c1n3]: Cisco AI Readiness Index 2025. 30개 시장·26개 산업에서 AI 전략을 담당하는 IT·비즈니스 리더 8,000명을 이중맹검 방식으로 조사했다. 최상위 그룹(Pacesetters)은 지난 3년간 전체의 약 13퍼센트였다. 명확한 AI 전략은 최상위 99퍼센트 대 전체 58퍼센트, 직원 AI 숙련도는 최상위 75퍼센트 대 그 밖의 조직 16퍼센트, 에이전트 행동을 가드레일과 실시간 모니터링으로 통제한다는 응답은 최상위 84퍼센트 대 전체 24퍼센트였다. — Cisco AI Readiness Index, https://www.cisco.com/c/m/en_us/solutions/ai/readiness-index.html / Cisco 뉴스룸(2025-10), https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2025/m10/cisco-ai-research-the-most-ai-ready-companies-outpace-peers-in-the-race-to-value.html
 
 
 
@@ -738,7 +779,7 @@ SEI는 여덟 갈래로 나눈다. 조직 전략, 인력과 문화, 워크플로
 
 그렇다면 맨 위 눈금에 올라가면 끝일까?
 
-1장에서 본 두 숫자를 다른 각도에서 다시 꺼내보자. Gartner 조사에서 성숙도가 높은 조직조차 AI 프로젝트를 3년 이상 운영 상태로 유지한 비율은 **45퍼센트**였다.[^c5n3] 그리고 Cisco 조사에서 최상위 그룹의 비율은 **3년째 13퍼센트에 고정**돼 있었다.[^c5n4]
+1장에서 본 두 숫자를 다른 각도에서 다시 꺼내보자. Gartner 조사에서 고성숙 조직의 AI 이니셔티브가 3년 이상 운영된다고 답한 비율은 **45퍼센트**였다.[^c5n3] Cisco 조사에서는 최상위 그룹이 **세 해째 약 13퍼센트**에 머물렀다.[^c5n4]
 
 두 수치는 서로 다른 것을 말한다. Gartner는 높은 성숙도에서도 프로젝트를 장기 운영 상태로 유지하기가 쉽지 않음을 보여주고, Cisco는 최상위 집단의 비율이 3년 동안 넓어지지 않았음을 보여준다. 이 수치만으로 어느 조직이 올라오고 내려갔는지는 알 수 없다. 다만 **한 번 올라가면 끝**이라고 보기 어렵다는 신호는 충분하다.
 
@@ -794,7 +835,7 @@ SEI는 최고 단계를 **속도와 예측력**으로 정의한다. 새 기술�
 
 [^c5n3]: Gartner 보도자료(2025-06-30), *Gartner Survey Finds 45% of Organizations With High AI Maturity Keep AI Projects Operational for at Least Three Years*. — https://www.gartner.com/en/newsroom/press-releases/2025-06-30-gartner-survey-finds-forty-five-percent-of-organizations-with-high-artificial-intelligence-maturity-keep-artificial-intelligence-projects-operational-for-at-least-three-years
 
-[^c5n4]: Cisco AI Readiness Index 2025. 최상위 그룹 비율 13퍼센트와 3년 연속 고정. — https://www.cisco.com/c/dam/m/en_us/solutions/ai/readiness-index/2025-m10/documents/cisco-ai-readiness-index-2025-realizing-the-value-of-ai.pdf
+[^c5n4]: Cisco AI Readiness Index 2025. 최상위 그룹은 지난 3년간 전체의 약 13퍼센트였다. — https://www.cisco.com/c/m/en_us/solutions/ai/readiness-index.html
 
 
 
@@ -2653,7 +2694,7 @@ Gartner가 내놓은 실증 중 이 책이 가장 많이 인용한 것은 이것
 
 **Cisco의 AI 준비도 지수**는 여섯 기둥(전략·인프라·데이터·인재·거버넌스·문화)으로 매년 조사를 낸다. 무료 셀프 진단 도구도 운영한다. 다만 성격이 다르다 — 남과 비교하는 벤치마크지 다음 걸음을 알려주는 처방 도구가 아니다.
 
-Cisco 조사에서 최상위 그룹은 전체의 13퍼센트이며, 이 비율은 3년째 같은 자리에 고정돼 있다. 그들과 나머지의 격차 중 가장 눈에 띄는 항목은 **에이전트의 행동을 가드레일과 실시간 모니터링으로 통제할 수 있다는 응답이 84퍼센트 대 24퍼센트**였다는 것이다.[^ac4]
+Cisco 조사에서 최상위 그룹은 지난 3년간 전체의 약 13퍼센트에 머물렀다. 최상위 그룹과 전체 응답 조직의 격차 중 가장 눈에 띄는 항목은 **에이전트의 행동을 가드레일과 실시간 모니터링으로 통제할 수 있다는 응답이 84퍼센트 대 24퍼센트**였다는 것이다.[^ac4]
 
 ---
 
@@ -2667,7 +2708,7 @@ Cisco 조사에서 최상위 그룹은 전체의 13퍼센트이며, 이 비율�
 | CMU SEI × Accenture | 100건 이상 검토, 36개 이상 정밀 분석, 임원 20~25명 인터뷰, 실무자 약 600명 설문, Fortune 500 파일럿 | 5단계·8차원·27역량영역, 무료 원문 | 공학적 실천과 증거 구조가 가장 촘촘하다 | 검증은 2단계이며 자원·비용의 독립 역량영역과 담당자 인계 문항은 없다 |
 | MIT CISR | 721개 기업 서베이 | 4단계, 회원 조직 전용 | 성숙도와 재무성과의 관계를 실증으로 보여준다 | 현재 위치를 설명하지만 직접 대는 처방 도구는 아니다 |
 | Gartner | 고성숙·저성숙 조직의 3년 이상 운영 유지 수치 | 5단계·7기둥, 유료 구독 | 도달보다 유지가 어렵다는 근거를 준다 | 되돌아옴을 최고 단계로 둔 이유를 뒷받침한다 |
-| Cisco | 매년 발표하는 AI 준비도 지수, 최상위 그룹 13퍼센트 | 6기둥, 무료 셀프 진단 | 다른 조직과 현재 위치를 비교하기 쉽다 | 벤치마크에는 강하지만 다음 행동 처방은 약하다 |
+| Cisco | 매년 발표하는 AI 준비도 지수, 최상위 그룹 약 13퍼센트 | 6기둥, 무료 셀프 진단 | 다른 조직과 현재 위치를 비교하기 쉽다 | 벤치마크에는 강하지만 다음 행동 처방은 약하다 |
 | AXMM | 서른 문항, 15분 셀프 점검 | 5단계·6축, 무료·심사관 없음 | 약한 고리에서 다음 한 걸음을 고르게 한다 | 자원·인계·미확정 비율을 별도로 드러낸다 |
 :::
 
@@ -2692,5 +2733,5 @@ Cisco 조사에서 최상위 그룹은 전체의 13퍼센트이며, 이 비율�
 [^ac1]: CMU SEI, *The AI Adoption Maturity Model v1.0* (2026-06-30), 124pp. https://www.sei.cmu.edu/library/ai-adoption-maturity-model/ — 본 부록의 SEI **모델 구조·단계 정의·역량영역 귀속**은 원문 PDF를 직접 확인한 것이다.
 [^ac2]: MIT CISR, *Four Stages of Enterprise AI Maturity*. https://cisr.mit.edu/publication/2025_0313_AIMaturity_Woerner — 원문이 회원 전용이라 공개 해설(MIT Sloan, VKTR)을 경유해 확인했다.
 [^ac3]: 다섯 단계·일곱 기둥 구성은 **원문이 유료 구독 자료라 공개 해설을 경유해 확인했다.** 3년 이상 운영 유지 45퍼센트(저성숙 20퍼센트)는 Gartner 보도자료(2025-06-30) 원문에서 직접 확인한 것이다. https://www.gartner.com/en/newsroom/press-releases/2025-06-30-gartner-survey-finds-forty-five-percent-of-organizations-with-high-artificial-intelligence-maturity-keep-artificial-intelligence-projects-operational-for-at-least-three-years
-[^ac4]: Cisco AI Readiness Index 2025. https://www.cisco.com/c/dam/m/en_us/solutions/ai/readiness-index/2025-m10/documents/cisco-ai-readiness-index-2025-realizing-the-value-of-ai.pdf
+[^ac4]: Cisco AI Readiness Index 2025. https://www.cisco.com/c/m/en_us/solutions/ai/readiness-index.html
 [^ac5]: 개발 규모(리뷰 100건 이상·정밀 분석 36개 이상·임원 인터뷰 20~25명·실무자 설문 약 600명·Fortune 500 파일럿)는 SEI와 Accenture의 발표 자료에서 확인했다.

@@ -106,7 +106,7 @@ Gartner가 내놓은 실증 중 이 책이 가장 많이 인용한 것은 이것
 
 **Cisco의 AI 준비도 지수**는 여섯 기둥(전략·인프라·데이터·인재·거버넌스·문화)으로 매년 조사를 낸다. 무료 셀프 진단 도구도 운영한다. 다만 성격이 다르다 — 남과 비교하는 벤치마크지 다음 걸음을 알려주는 처방 도구가 아니다.
 
-Cisco 조사에서 최상위 그룹은 전체의 13퍼센트이며, 이 비율은 3년째 같은 자리에 고정돼 있다. 그들과 나머지의 격차 중 가장 눈에 띄는 항목은 **에이전트의 행동을 가드레일과 실시간 모니터링으로 통제할 수 있다는 응답이 84퍼센트 대 24퍼센트**였다는 것이다.[^ac4]
+Cisco 조사에서 최상위 그룹은 지난 3년간 전체의 약 13퍼센트에 머물렀다. 최상위 그룹과 전체 응답 조직의 격차 중 가장 눈에 띄는 항목은 **에이전트의 행동을 가드레일과 실시간 모니터링으로 통제할 수 있다는 응답이 84퍼센트 대 24퍼센트**였다는 것이다.[^ac4]
 
 ---
 
@@ -120,7 +120,7 @@ Cisco 조사에서 최상위 그룹은 전체의 13퍼센트이며, 이 비율�
 | CMU SEI × Accenture | 100건 이상 검토, 36개 이상 정밀 분석, 임원 20~25명 인터뷰, 실무자 약 600명 설문, Fortune 500 파일럿 | 5단계·8차원·27역량영역, 무료 원문 | 공학적 실천과 증거 구조가 가장 촘촘하다 | 검증은 2단계이며 자원·비용의 독립 역량영역과 담당자 인계 문항은 없다 |
 | MIT CISR | 721개 기업 서베이 | 4단계, 회원 조직 전용 | 성숙도와 재무성과의 관계를 실증으로 보여준다 | 현재 위치를 설명하지만 직접 대는 처방 도구는 아니다 |
 | Gartner | 고성숙·저성숙 조직의 3년 이상 운영 유지 수치 | 5단계·7기둥, 유료 구독 | 도달보다 유지가 어렵다는 근거를 준다 | 되돌아옴을 최고 단계로 둔 이유를 뒷받침한다 |
-| Cisco | 매년 발표하는 AI 준비도 지수, 최상위 그룹 13퍼센트 | 6기둥, 무료 셀프 진단 | 다른 조직과 현재 위치를 비교하기 쉽다 | 벤치마크에는 강하지만 다음 행동 처방은 약하다 |
+| Cisco | 매년 발표하는 AI 준비도 지수, 최상위 그룹 약 13퍼센트 | 6기둥, 무료 셀프 진단 | 다른 조직과 현재 위치를 비교하기 쉽다 | 벤치마크에는 강하지만 다음 행동 처방은 약하다 |
 | AXMM | 서른 문항, 15분 셀프 점검 | 5단계·6축, 무료·심사관 없음 | 약한 고리에서 다음 한 걸음을 고르게 한다 | 자원·인계·미확정 비율을 별도로 드러낸다 |
 :::
 
@@ -145,5 +145,5 @@ Cisco 조사에서 최상위 그룹은 전체의 13퍼센트이며, 이 비율�
 [^ac1]: CMU SEI, *The AI Adoption Maturity Model v1.0* (2026-06-30), 124pp. https://www.sei.cmu.edu/library/ai-adoption-maturity-model/ — 본 부록의 SEI **모델 구조·단계 정의·역량영역 귀속**은 원문 PDF를 직접 확인한 것이다.
 [^ac2]: MIT CISR, *Four Stages of Enterprise AI Maturity*. https://cisr.mit.edu/publication/2025_0313_AIMaturity_Woerner — 원문이 회원 전용이라 공개 해설(MIT Sloan, VKTR)을 경유해 확인했다.
 [^ac3]: 다섯 단계·일곱 기둥 구성은 **원문이 유료 구독 자료라 공개 해설을 경유해 확인했다.** 3년 이상 운영 유지 45퍼센트(저성숙 20퍼센트)는 Gartner 보도자료(2025-06-30) 원문에서 직접 확인한 것이다. https://www.gartner.com/en/newsroom/press-releases/2025-06-30-gartner-survey-finds-forty-five-percent-of-organizations-with-high-artificial-intelligence-maturity-keep-artificial-intelligence-projects-operational-for-at-least-three-years
-[^ac4]: Cisco AI Readiness Index 2025. https://www.cisco.com/c/dam/m/en_us/solutions/ai/readiness-index/2025-m10/documents/cisco-ai-readiness-index-2025-realizing-the-value-of-ai.pdf
+[^ac4]: Cisco AI Readiness Index 2025. https://www.cisco.com/c/m/en_us/solutions/ai/readiness-index.html
 [^ac5]: 개발 규모(리뷰 100건 이상·정밀 분석 36개 이상·임원 인터뷰 20~25명·실무자 설문 약 600명·Fortune 500 파일럿)는 SEI와 Accenture의 발표 자료에서 확인했다.

@@ -6,3 +6,5 @@ cd "$ax_repo_root"
 
 python3 scripts/build_site.py
 python3 scripts/validate_site.py
+python3 scripts/build_epub.py
+python3 scripts/validate_epub.py

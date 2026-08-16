@@ -126,7 +126,7 @@
 
 그렇다면 맨 위 눈금에 올라가면 끝일까?
 
-1장에서 본 두 숫자를 다른 각도에서 다시 꺼내보자. Gartner 조사에서 성숙도가 높은 조직조차 AI 프로젝트를 3년 이상 운영 상태로 유지한 비율은 **45퍼센트**였다.[^c5n3] 그리고 Cisco 조사에서 최상위 그룹의 비율은 **3년째 13퍼센트에 고정**돼 있었다.[^c5n4]
+1장에서 본 두 숫자를 다른 각도에서 다시 꺼내보자. Gartner 조사에서 고성숙 조직의 AI 이니셔티브가 3년 이상 운영된다고 답한 비율은 **45퍼센트**였다.[^c5n3] Cisco 조사에서는 최상위 그룹이 **세 해째 약 13퍼센트**에 머물렀다.[^c5n4]
 
 두 수치는 서로 다른 것을 말한다. Gartner는 높은 성숙도에서도 프로젝트를 장기 운영 상태로 유지하기가 쉽지 않음을 보여주고, Cisco는 최상위 집단의 비율이 3년 동안 넓어지지 않았음을 보여준다. 이 수치만으로 어느 조직이 올라오고 내려갔는지는 알 수 없다. 다만 **한 번 올라가면 끝**이라고 보기 어렵다는 신호는 충분하다.
 
@@ -182,4 +182,4 @@ SEI는 최고 단계를 **속도와 예측력**으로 정의한다. 새 기술�
 
 [^c5n3]: Gartner 보도자료(2025-06-30), *Gartner Survey Finds 45% of Organizations With High AI Maturity Keep AI Projects Operational for at Least Three Years*. — https://www.gartner.com/en/newsroom/press-releases/2025-06-30-gartner-survey-finds-forty-five-percent-of-organizations-with-high-artificial-intelligence-maturity-keep-artificial-intelligence-projects-operational-for-at-least-three-years
 
-[^c5n4]: Cisco AI Readiness Index 2025. 최상위 그룹 비율 13퍼센트와 3년 연속 고정. — https://www.cisco.com/c/dam/m/en_us/solutions/ai/readiness-index/2025-m10/documents/cisco-ai-readiness-index-2025-realizing-the-value-of-ai.pdf
+[^c5n4]: Cisco AI Readiness Index 2025. 최상위 그룹은 지난 3년간 전체의 약 13퍼센트였다. — https://www.cisco.com/c/m/en_us/solutions/ai/readiness-index.html

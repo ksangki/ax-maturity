@@ -1,0 +1,193 @@
+/* EPUB presentation for the book's editorial cards and data graphics. */
+
+.editorial-figure {
+  margin: 1.8em 0 2em;
+  page-break-inside: avoid;
+}
+
+.editorial-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.editorial-figure figcaption {
+  margin-top: .55em;
+  color: #675f58;
+  font-size: .82em;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.leader-summary,
+.reading-aid {
+  margin: 1.8em 0;
+  padding: 1em 1.1em;
+  border: 1px solid #cfc5ba;
+  border-radius: .35em;
+  background: #f7f2eb;
+}
+
+.leader-summary {
+  border-color: #8a5a3b;
+}
+
+.leader-summary h2,
+.reading-aid h3 {
+  margin-top: 0;
+}
+
+.stat-dashboard {
+  page-break-inside: auto;
+}
+
+.stat-dashboard .stat-caption {
+  margin: 1em 0 .55em;
+  color: #675f58;
+  font-size: .82em;
+  font-weight: bold;
+}
+
+.stat-dashboard .stat-caption--spaced {
+  margin-top: 1.5em;
+}
+
+.stat-chart {
+  page-break-inside: avoid;
+}
+
+.stat-wide-bar {
+  display: block;
+  width: 100%;
+  height: 1em;
+}
+
+.stat-scale {
+  display: flex;
+  justify-content: space-between;
+  margin-top: .4em;
+  font-size: .76em;
+}
+
+.stat-scale strong {
+  color: #7b5036;
+}
+
+.stat-scale span,
+.stat-series {
+  color: #675f58;
+}
+
+.stat-metric {
+  margin-top: 1em;
+  page-break-inside: avoid;
+}
+
+.stat-metric-label {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 .3em;
+  font-size: .84em;
+  font-weight: bold;
+}
+
+.stat-metric-label span {
+  color: #675f58;
+  font-size: .9em;
+  font-weight: normal;
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  gap: .45em;
+  margin: .3em 0;
+  font-size: .78em;
+}
+
+.stat-series {
+  display: inline-block;
+  flex: 0 0 4.2em;
+}
+
+.stat-mini-bar {
+  display: block;
+  flex: 1 1 auto;
+  width: 100%;
+  height: .68em;
+}
+
+.stat-value {
+  flex: 0 0 3em;
+  text-align: right;
+}
+
+.stat-bar-track {
+  fill: #ddd5cc;
+}
+
+.stat-fill--leader {
+  fill: #8a5a3b;
+}
+
+.stat-fill--compare {
+  fill: #91877d;
+}
+
+.stat-note {
+  margin: 1em 0 0;
+  padding-top: .7em;
+  border-top: 1px solid #cfc5ba;
+  color: #675f58;
+  font-size: .72em;
+  line-height: 1.55;
+}
+
+.stat-takeaway {
+  margin: 1em 0 0;
+  padding: .65em .75em;
+  border-left: .22em solid #8a5a3b;
+  background: #fff;
+  font-size: .84em;
+  line-height: 1.55;
+}
+
+@media (prefers-color-scheme: dark) {
+  .leader-summary,
+  .reading-aid {
+    border-color: #655b52;
+    background: #262229;
+  }
+
+  .leader-summary {
+    border-color: #d0a17a;
+  }
+
+  .stat-scale strong {
+    color: #d0a17a;
+  }
+
+  .stat-scale span,
+  .stat-series,
+  .stat-note,
+  .stat-dashboard .stat-caption {
+    color: #b5ada5;
+  }
+
+  .stat-bar-track {
+    fill: #49434b;
+  }
+
+  .stat-fill--leader {
+    fill: #d0a17a;
+  }
+
+  .stat-fill--compare {
+    fill: #958b82;
+  }
+
+  .stat-takeaway {
+    background: #1d1a20;
+    border-left-color: #d0a17a;
+  }
+}

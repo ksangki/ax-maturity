@@ -50,6 +50,8 @@ def main() -> int:
         strip_front_matter(path.read_text(encoding="utf-8"), path)
         for path in sources
     )
+    manuscript = ROOT / "04_manuscript.md"
+    manuscript.write_text(combined, encoding="utf-8")
 
     temp_dir = Path(tempfile.mkdtemp(prefix=".site-build-", dir=ROOT))
     combined_path = temp_dir / "book.md"
@@ -81,7 +83,10 @@ def main() -> int:
     finally:
         shutil.rmtree(temp_dir, ignore_errors=True)
 
-    print(f"생성 완료: {destination.relative_to(ROOT)}")
+    print(
+        "생성 완료: "
+        f"{manuscript.relative_to(ROOT)}, {destination.relative_to(ROOT)}"
+    )
     return 0
 
 
