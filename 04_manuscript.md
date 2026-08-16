@@ -153,6 +153,21 @@ MIT CISR이 721개 기업을 조사해 기업의 AI 성숙도를 네 단계로 �
 
 앞의 두 단계를 더해보자. **62퍼센트다.** 조사에 응한 기업의 열에 여섯이 아직 실험하거나 파일럿을 돌리는 중이었다.
 
+::: {.reading-aid .stat-dashboard .stat-dashboard--compact}
+### MIT CISR 조사, 100개 기업으로 읽기
+
+<p class="stat-caption">AI 성숙도 단계별 기업 분포</p>
+<div class="stat-chart stat-stage-distribution" role="img" aria-label="기업 100곳 가운데 1단계 실험·준비 28곳, 2단계 파일럿·역량 구축 34곳, 3단계 전사 산업화 31곳, 4단계 미래대비 7곳이다. 1단계와 2단계를 합하면 62곳이다.">
+<div class="stat-row"><span class="stat-series">1단계</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--leader" data-value="28" x="0" y="0" width="28" height="10" rx="5" /></svg><strong class="stat-value">28%</strong></div>
+<div class="stat-row"><span class="stat-series">2단계</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--leader" data-value="34" x="0" y="0" width="34" height="10" rx="5" /></svg><strong class="stat-value">34%</strong></div>
+<div class="stat-row"><span class="stat-series">3단계</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--compare" data-value="31" x="0" y="0" width="31" height="10" rx="5" /></svg><strong class="stat-value">31%</strong></div>
+<div class="stat-row"><span class="stat-series">4단계</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--compare" data-value="7" x="0" y="0" width="7" height="10" rx="5" /></svg><strong class="stat-value">7%</strong></div>
+</div>
+
+<p class="stat-note">네 막대는 전체 100개 기업 가운데 각 단계가 차지하는 비중이다. 갈색으로 표시한 1~2단계가 실험·파일럿 구간이다.</p>
+<p class="stat-takeaway"><strong>28곳 + 34곳 = 62곳.</strong> 열에 여섯이 아직 실험하거나 파일럿을 돌리는 중이었다.</p>
+:::
+
 **우리 조직이 아직 실험 단계 같다면, 뒤처진 게 아니라 다수다.** 다른 회사 사례 발표를 보고 있으면 우리만 유독 굼뜬 것 같아 조바심이 난다. 하지만 사례 발표와 721개 기업의 분포는 다른 표본이다. 적어도 이 조사만 놓고 보면 실험·파일럿 단계가 예외는 아니다.
 
 ## 그런데 위안은 딱 거기까지다
@@ -160,21 +175,6 @@ MIT CISR이 721개 기업을 조사해 기업의 AI 성숙도를 네 단계로 �
 여기서 안도하고 책을 덮으면 곤란하다. 같은 조사에 훨씬 중요한 대목이 하나 더 있다.
 
 1~2단계 기업은 재무성과가 **업계 평균 이하**였고, 3~4단계 기업은 **업계 평균을 웃돌았다.**[^c1n1] 그렇다면 그 선은 어디에 그어져 있을까. 하필 2단계와 3단계 사이다. 62퍼센트라는 다수의 무리와 그 바깥 사이에, 정확히 돈의 선이 지나간다.
-
-::: {.reading-aid .stat-dashboard .stat-dashboard--compact}
-### MIT CISR 조사, 100개 기업으로 읽기
-
-<p class="stat-caption">AI 성숙도 단계별 기업 분포</p>
-<div class="stat-chart stat-stage-distribution" role="img" aria-label="기업 100곳 가운데 1단계 실험·준비 28곳, 2단계 파일럿·역량 구축 34곳, 3단계 전사 산업화 31곳, 4단계 미래대비 7곳이다. 1단계와 2단계를 합하면 62곳이며, 조사에서 재무성과의 경계는 2단계와 3단계 사이에 있었다.">
-<div class="stat-row"><span class="stat-series">1단계</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--compare" data-value="28" x="0" y="0" width="28" height="10" rx="5" /></svg><strong class="stat-value">28%</strong></div>
-<div class="stat-row"><span class="stat-series">2단계</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--compare" data-value="34" x="0" y="0" width="34" height="10" rx="5" /></svg><strong class="stat-value">34%</strong></div>
-<div class="stat-row"><span class="stat-series">3단계</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--leader" data-value="31" x="0" y="0" width="31" height="10" rx="5" /></svg><strong class="stat-value">31%</strong></div>
-<div class="stat-row"><span class="stat-series">4단계</span><svg class="stat-mini-bar" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect class="stat-bar-track" x="0" y="0" width="100" height="10" rx="5" /><rect class="stat-fill stat-fill--leader" data-value="7" x="0" y="0" width="7" height="10" rx="5" /></svg><strong class="stat-value">7%</strong></div>
-</div>
-
-<p class="stat-note">회색은 업계 평균 이하였던 1~2단계, 갈색은 업계 평균을 웃돈 3~4단계다. 이 조사는 함께 움직인 관계를 보여줄 뿐, 성숙도가 재무성과의 원인임을 증명하지는 않는다.</p>
-<p class="stat-takeaway"><strong>1~2단계를 합하면 62곳.</strong> 다수가 서 있는 자리와 재무성과의 경계가 맞닿아 있다.</p>
-:::
 
 다수에 속해 있다는 사실은 위로가 되지만 목표가 될 수는 없다. 무리 안에 있는 편이 마음은 편한데, 그 무리 전체가 평균 이하에 서 있다. 잊지 말자. **다수라는 건 안전하다는 뜻이 아니다.**
 
