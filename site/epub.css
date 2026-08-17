@@ -1,5 +1,14 @@
 /* EPUB presentation for the book's editorial cards and data graphics. */
 
+/* 애플 북스를 비롯한 WebKit 기반 리더는 화면보다 넓은 블록의 글자를 제
+   나름대로 키운다. 옆으로 넘치는 표에서 긴 열만 부풀어 한 표 안에서
+   열마다 크기가 달라 보인다. 지정한 크기를 그대로 쓰게 한다.
+   none이 아니라 100%다. none은 독자가 키운 글자 크기까지 막는다. */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 .editorial-figure {
   margin: 1.8em 0 2em;
   page-break-inside: avoid;
