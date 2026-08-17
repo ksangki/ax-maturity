@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -13,6 +14,12 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+
+# 원고의 <img>는 웹용 반응형 속성을 달고 있다. pandoc은 src만 EPUB 안의
+# 경로로 고쳐 쓰고 srcset은 손대지 않는데, 리더는 srcset을 우선한다.
+# 그러면 EPUB에 없는 경로를 가리켜 그림이 통째로 빈칸이 된다. HTML 규칙상
+# srcset 후보가 없으면 src로 되돌아가지 않으므로 EPUB에서는 걷어낸다.
+RESPONSIVE_IMG_ATTRS = re.compile(r'\s+(?:srcset|sizes)="[^"]*"')
 
 
 def main() -> int:
@@ -37,10 +44,20 @@ def main() -> int:
 
     temp_dir = Path(tempfile.mkdtemp(prefix=".epub-build-", dir=ROOT))
     output_path = temp_dir / destination.name
+
+    epub_manuscript = temp_dir / "manuscript-for-epub.md"
+    source = manuscript.read_text(encoding="utf-8")
+    stripped, removed = RESPONSIVE_IMG_ATTRS.subn("", source)
+    if not removed:
+        print("반응형 이미지 속성을 찾지 못했습니다. 원고 형식이 바뀐 것 같습니다.", file=sys.stderr)
+        shutil.rmtree(temp_dir, ignore_errors=True)
+        return 1
+    epub_manuscript.write_text(stripped, encoding="utf-8")
+
     resource_path = os.pathsep.join((str(ROOT), str(ROOT / "docs")))
     command = [
         pandoc,
-        str(manuscript),
+        str(epub_manuscript),
         "--from=markdown+smart",
         "--to=epub3",
         f"--metadata-file={manifest_path}",

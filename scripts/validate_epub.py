@@ -46,6 +46,7 @@ def main() -> int:
         axmm_structures = 0
         axmm_structure_labels = 0
         axmm_cells = 0
+        responsive_imgs: list[str] = []
 
         for name in sorted(item for item in names if item.endswith(".xhtml")):
             try:
@@ -53,6 +54,16 @@ def main() -> int:
             except ElementTree.ParseError as error:
                 failures.append(f"XHTML 파싱 오류: {name}: {error}")
                 continue
+
+            # 리더는 src보다 srcset을 우선한다. pandoc이 src만 EPUB 안의
+            # 경로로 고치므로 srcset이 남아 있으면 없는 파일을 가리켜 그림이
+            # 빈칸이 된다. src가 멀쩡해도 대체되지 않는다.
+            for image in root.iter(f"{{{XHTML_NS}}}img"):
+                leftover = sorted(
+                    attr for attr in ("srcset", "sizes") if attr in image.attrib
+                )
+                if leftover:
+                    responsive_imgs.append(f"{name}:{','.join(leftover)}")
 
             for heading in root.iter(f"{{{XHTML_NS}}}h1"):
                 text = "".join(heading.itertext()).strip()
@@ -122,6 +133,11 @@ def main() -> int:
                 posixpath.join(str(PurePosixPath(document).parent), source)
             )
             require(resolved in names, f"EPUB 삽화 누락: {document} -> {source}")
+
+        require(
+            not responsive_imgs,
+            f"EPUB img에 반응형 속성이 남아 있습니다(그림이 빈칸이 됩니다): {responsive_imgs}",
+        )
 
         stylesheets = [name for name in names if name.endswith(".css")]
         css = "\n".join(archive.read(name).decode("utf-8") for name in stylesheets)
