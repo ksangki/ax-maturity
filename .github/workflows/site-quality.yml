@@ -16,10 +16,19 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v7
 
+      # 커밋된 docs/index.html과 한 글자까지 맞춰야 하는 검사가 아래에 있다.
+      # apt의 pandoc은 러너 이미지에 따라 판이 달라지고, 판이 다르면 같은
+      # 원고에서도 표의 even/odd 클래스나 각주 블록 태그가 달라진다.
+      # 집필 환경과 같은 판을 못 박는다.
       - name: Install Pandoc
+        env:
+          PANDOC_VERSION: 3.9.0.2
         run: |
-          sudo apt-get update
-          sudo apt-get install --yes pandoc
+          set -euo pipefail
+          curl -fsSL -o /tmp/pandoc.deb \
+            "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb"
+          sudo dpkg --install /tmp/pandoc.deb
+          pandoc --version | head -1
 
       - name: Build and validate site
         run: ./scripts/build-site.sh
