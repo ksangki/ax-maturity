@@ -13,6 +13,9 @@
 name: Build check
 
 on:
+  # Lets you check the currently published files without waiting for a change
+  # to them — useful right after adding this workflow to an existing book.
+  workflow_dispatch:
   push:
     branches: [main]
     paths:
