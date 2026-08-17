@@ -170,6 +170,20 @@
   .model-axis-table col:nth-child(1){width:16% !important}
   .model-axis-table col:nth-child(2){width:14% !important}
   .model-axis-table col:nth-child(3){width:70% !important}
+
+  /* 넓은 표는 화면이 넉넉할 때 본문 폭(44rem)을 벗어나 펼친다.
+     표 안쪽이 48rem을 요구하므로 그보다 좁으면 가로 스크롤이 반드시 생긴다.
+     좁은 화면에서는 기존대로 스크롤을 유지한다. */
+  @media (min-width:64rem){
+    .reading-aid.wide-table{
+      --breakout:min(94vw, 64rem);
+      width:var(--breakout);
+      margin-left:calc((100% - var(--breakout)) / 2);
+      margin-right:calc((100% - var(--breakout)) / 2);
+      overflow-x:visible;
+    }
+    .reading-aid.wide-table table{min-width:0}
+  }
   .stat-dashboard{overflow-x:visible}
   .stat-dashboard .stat-caption{
     margin:1rem 0 .6rem; color:var(--muted); font-size:.83rem; line-height:1.55;

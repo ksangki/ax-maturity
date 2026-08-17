@@ -180,6 +180,20 @@
   .model-axis-table col:nth-child(1){width:16% !important}
   .model-axis-table col:nth-child(2){width:14% !important}
   .model-axis-table col:nth-child(3){width:70% !important}
+
+  /* 넓은 표는 화면이 넉넉할 때 본문 폭(44rem)을 벗어나 펼친다.
+     표 안쪽이 48rem을 요구하므로 그보다 좁으면 가로 스크롤이 반드시 생긴다.
+     좁은 화면에서는 기존대로 스크롤을 유지한다. */
+  @media (min-width:64rem){
+    .reading-aid.wide-table{
+      --breakout:min(94vw, 64rem);
+      width:var(--breakout);
+      margin-left:calc((100% - var(--breakout)) / 2);
+      margin-right:calc((100% - var(--breakout)) / 2);
+      overflow-x:visible;
+    }
+    .reading-aid.wide-table table{min-width:0}
+  }
   .stat-dashboard{overflow-x:visible}
   .stat-dashboard .stat-caption{
     margin:1rem 0 .6rem; color:var(--muted); font-size:.83rem; line-height:1.55;
@@ -436,29 +450,29 @@
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>지금 필요한 것</th>
 <th>먼저 펼칠 곳</th>
 <th>이어서 볼 곳</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>막힌 축의 처방이 급하다</td>
 <td>8~12장</td>
 <td>우선순위를 고르는 13장</td>
 </tr>
-<tr class="even">
+<tr>
 <td>모델의 근거와 설계가 궁금하다</td>
 <td>1~7장</td>
 <td>기존 모델을 해부한 부록 C</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>경영 판단에 필요한 핵심만 읽고 싶다</td>
 <td>각 장의 「다음 보고에서 쓸 것」</td>
 <td>함께 재는 14장과 오용을 막는 15장</td>
 </tr>
-<tr class="even">
+<tr>
 <td>지금 바로 조직을 재보고 싶다</td>
 <td>부록 A의 서른 문항</td>
 <td>화면 안내인 부록 B</td>
@@ -557,34 +571,34 @@
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>예전에 망한 자리</th>
 <th>이번에 붙인 답</th>
 <th>진단 뒤 남겨야 할 것</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>등급이 목적이 된다</td>
 <td>인증·배지·순위표를 만들지 않는다</td>
 <td>다음 한 걸음</td>
 </tr>
-<tr class="even">
+<tr>
 <td>심사용 문서가 따로 생긴다</td>
 <td>오늘 이미 있는 증거만 센다</td>
 <td>실제로 쓰는 자료</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>심사 뒤 원래대로 돌아간다</td>
-<td>마지막 단계를 ’도달’이 아니라 ’되돌아옴’으로 본다</td>
+<td>마지막 단계를 ‘도달’이 아니라 ‘되돌아옴’으로 본다</td>
 <td>다시 잴 수 있는 주기</td>
 </tr>
-<tr class="even">
+<tr>
 <td>비용 때문에 소수만 참여한다</td>
 <td>무료 웹·15분·심사관 없음으로 줄인다</td>
 <td>결재 없이 시작할 수 있는 진단</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>컨설턴트가 떠나면 잴 사람이 없다</td>
 <td>문항과 처방을 전부 공개한다</td>
 <td>다음에도 스스로 잴 사람</td>
@@ -1387,14 +1401,14 @@ class="reading-aid wide-table model-axis-table">
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>모델</th>
 <th>구조</th>
 <th>축·기둥 이름</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>SEI</td>
 <td>8차원</td>
 <td>조직 전략 · 인력과 문화 · 워크플로 재설계 · 리스크와 거버넌스 ·
@@ -1402,7 +1416,7 @@ class="reading-aid wide-table model-axis-table">
 class="footnote-ref" id="fnref18"
 role="doc-noteref"><sup>18</sup></a></td>
 </tr>
-<tr class="even">
+<tr>
 <td>Gartner</td>
 <td>7기둥</td>
 <td>AI 전략 · 유스케이스·제품 포트폴리오 · AI 거버넌스 · AI 엔지니어링 ·
@@ -1410,7 +1424,7 @@ AI 데이터 · AI 생태계·운영모델 · 사람·문화<a href="#fn19"
 class="footnote-ref" id="fnref19"
 role="doc-noteref"><sup>19</sup></a></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Cisco</td>
 <td>6기둥</td>
 <td>전략 · 인프라 · 데이터 · 인재 · 거버넌스 · 문화<a href="#fn20"
@@ -1509,39 +1523,39 @@ role="doc-noteref"><sup>20</sup></a></td>
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>축</th>
 <th>핵심 질문</th>
 <th>결과를 쓰는 곳</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>A. 인식·동기·역량</td>
 <td>왜 하는지 알고, 배우고, 실제 과제로 넘어가는가</td>
 <td>팀이 직접 개선</td>
 </tr>
-<tr class="even">
+<tr>
 <td>B. 기획·개발</td>
 <td>무엇을 어디까지 AI에게 맡길지 정하고 만들 수 있는가</td>
 <td>팀이 직접 개선</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>C. 연동·배포·운영</td>
 <td>만든 것을 붙이고 올리고, 사람과 무관하게 계속 굴릴 수 있는가</td>
 <td>팀이 직접 개선</td>
 </tr>
-<tr class="even">
+<tr>
 <td>D. 평가·측정·개선</td>
 <td>제대로 도는지 재고, 결과를 개선과 인정으로 되돌리는가</td>
 <td>팀이 직접 개선</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>I. 자원·비용</td>
 <td>시범을 실 운영으로 넘길 자원과 예산 경로가 있는가</td>
 <td>근거를 갖춰 상신</td>
 </tr>
-<tr class="even">
+<tr>
 <td>J. 보안·거버넌스</td>
 <td>에이전트가 안전하게 행동할 권장 경로가 있는가</td>
 <td>기준안을 갖춰 상신</td>
@@ -1873,7 +1887,7 @@ J5
 축</span>
 </div>
 <p class="axmm-map-rule">
-<strong>읽는 법</strong> 축 단계는 왼쪽부터 ’보유’가 끊기지 않은 마지막
+<strong>읽는 법</strong> 축 단계는 왼쪽부터 ‘보유’가 끊기지 않은 마지막
 칸, 조직 단계는 여섯 축 가운데 가장 낮은 값이다.
 </p>
 </figure>
@@ -2237,7 +2251,7 @@ role="doc-noteref"><sup>24</sup></a> 산출물이 있다고 성숙한 것도 아
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>값</th>
 <th>어떻게 구하나</th>
 <th>무엇을 말하나</th>
@@ -2245,37 +2259,37 @@ role="doc-noteref"><sup>24</sup></a> 산출물이 있다고 성숙한 것도 아
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>축별 단계</td>
-<td>1번부터 ’보유’가 연속된 마지막 자리</td>
+<td>1번부터 ‘보유’가 연속된 마지막 자리</td>
 <td>그 축이 실제로 버티는 높이</td>
 <td>처음 끊긴 문항은 무엇인가</td>
 </tr>
-<tr class="even">
+<tr>
 <td>조직 단계</td>
 <td>여섯 축 중 가장 낮은 값</td>
 <td>조직 전체를 붙잡는 약한 고리</td>
 <td>가장 낮은 축은 무엇인가</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>진행도</td>
 <td>여섯 축 단계의 평균</td>
 <td>조직 단계가 그대로일 때도 보이는 전진</td>
 <td>지난번보다 움직였는가</td>
 </tr>
-<tr class="even">
+<tr>
 <td>불균형도</td>
 <td>가장 높은 축에서 가장 낮은 축을 뺀 값</td>
 <td>특정 축이 뒤처진 정도</td>
 <td>차이가 3 이상인가</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>병목 축</td>
 <td>가장 낮은 단계에 있는 축</td>
 <td>처방이 시작될 자리</td>
 <td>어디부터 손댈 것인가</td>
 </tr>
-<tr class="even">
+<tr>
 <td>미확정 비율</td>
 <td>‘보완’ 응답 수를 30으로 나눈 값</td>
 <td>부분 보유·제약·증거 부족이 얼마나 많은지</td>
@@ -2867,7 +2881,7 @@ id="fnref27" role="doc-noteref"><sup>27</sup></a></p>
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>수준</th>
 <th>AI가 하는 일</th>
 <th>사람의 자리</th>
@@ -2875,19 +2889,19 @@ id="fnref27" role="doc-noteref"><sup>27</sup></a></p>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>요약</td>
 <td>읽고 정리해 사람에게 건넨다</td>
 <td>결과를 반드시 한 번 본다</td>
 <td>사람을 거치기 전에 실행되는 일이 있는가</td>
 </tr>
-<tr class="even">
+<tr>
 <td>자체 실행</td>
 <td>스스로 판단해 다음 행동을 고른다</td>
 <td>결과를 보고, 중간 판단은 따로 열어본다</td>
 <td>허용한 행동의 범위가 문서에 있는가</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>다른 시스템에 쓰기</td>
 <td>티켓·메일·값처럼 바깥에 흔적을 남긴다</td>
 <td>누가 언제 확인할지 미리 정한다</td>
@@ -3543,7 +3557,7 @@ D까지는 3단계이고 I축이 1단계였다면 이야기는 달라진다. 우
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>결과 칸</th>
 <th>해당 축</th>
 <th>누가 움직이나</th>
@@ -3551,19 +3565,19 @@ D까지는 3단계이고 I축이 1단계였다면 이야기는 달라진다. 우
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>직접 개선 가능</td>
 <td>A·B·C·D</td>
 <td>팀과 리더</td>
 <td>끊긴 첫 문항에서 다음 분기에 끝낼 한 걸음을 고른다</td>
 </tr>
-<tr class="even">
+<tr>
 <td>상신 필요</td>
 <td>I·J</td>
 <td>예산·정책 결정권자</td>
 <td>막연한 지원 요청 대신 견적이나 기준안 한 장을 올린다</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>병행할 때</td>
 <td>앞의 네 축과 기반축이 함께 낮은 경우</td>
 <td>팀과 결재선이 각자 움직인다</td>
@@ -3864,29 +3878,29 @@ class="footnote-ref" id="fnref33" role="doc-noteref"><sup>33</sup></a>
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>구분</th>
 <th>신규 — 없는 것</th>
 <th>보완 중 ‘안 정해진 것’</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>비어 있는 것</td>
 <td>도구·시스템·인력 같은 물건</td>
 <td>기준·역할·판단선 같은 문장</td>
 </tr>
-<tr class="even">
+<tr>
 <td>처방</td>
 <td>새로 만든다</td>
 <td>이미 있는 것 사이에서 정한다</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>움직이는 시간</td>
 <td>예산과 분기</td>
 <td>회의와 결재 한 줄</td>
 </tr>
-<tr class="even">
+<tr>
 <td>첫 질문</td>
 <td>무엇을 만들어야 하는가</td>
 <td>오늘 결정할 수 있는 사람은 누구인가</td>
@@ -3991,7 +4005,7 @@ class="reading-aid decision-path">
 <ol type="1">
 <li>여섯 축에서 가장 낮은 축을 찾는다.</li>
 <li>동률이면 A→B→C→D 순서로 고르고, I·J는 상신을 병행한다.</li>
-<li>끊긴 자리가 ’없는 것’인지 ’안 정해진 것’인지 가른다.</li>
+<li>끊긴 자리가 ‘없는 것’인지 ‘안 정해진 것’인지 가른다.</li>
 <li>끊긴 첫 문항에서 대상 하나만 고른다.</li>
 <li>다른 사람의 행동으로 확인할 <strong>됐다는 신호</strong>를
 적는다.</li>
@@ -4180,7 +4194,7 @@ class="reading-aid decision-path">
 <col style="width: 23%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>구간</th>
 <th style="text-align: right;">시간</th>
 <th>할 일</th>
@@ -4188,31 +4202,31 @@ class="reading-aid decision-path">
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>개별 응답</td>
 <td style="text-align: right;">15분</td>
 <td>서로 말하지 않고 서른 문항에 각자 답한다</td>
 <td>맞추지 않은 원래 응답</td>
 </tr>
-<tr class="even">
+<tr>
 <td>편차 읽기</td>
 <td style="text-align: right;">30분</td>
 <td>답이 갈린 문항만 열고 왜 다르게 봤는지 듣는다</td>
 <td>갈린 이유의 목록</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>병목 확인</td>
 <td style="text-align: right;">20분</td>
-<td>가장 낮은 축과 ’없는 것·안 정해진 것’을 가른다</td>
+<td>가장 낮은 축과 ‘없는 것·안 정해진 것’을 가른다</td>
 <td>병목 문항 하나</td>
 </tr>
-<tr class="even">
+<tr>
 <td>다음 걸음</td>
 <td style="text-align: right;">15분</td>
-<td>한 걸음과 ’됐다는 신호’를 함께 정한다</td>
+<td>한 걸음과 ‘됐다는 신호’를 함께 정한다</td>
 <td>행동 하나와 관찰 신호 하나</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>재측정 예약</td>
 <td style="text-align: right;">10분</td>
 <td>다시 잴 날을 실제 달력에 넣는다</td>
@@ -4446,34 +4460,34 @@ class="reading-aid decision-path">
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>위험 신호</th>
 <th>무엇으로 바뀌나</th>
 <th>그 자리에서 할 일</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>축 이름보다 팀의 단계 숫자가 먼저 나온다</td>
 <td>진단이 부서 간 순위표가 된다</td>
 <td>숫자 대신 병목 축을 말한다</td>
 </tr>
-<tr class="even">
-<td>’보유’를 만들려고 새 문서를 쓴다</td>
+<tr>
+<td>‘보유’를 만들려고 새 문서를 쓴다</td>
 <td>실제 문서와 심사용 문서가 갈라진다</td>
 <td>오늘 이미 있는 증거만 적는다</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>다음 진단 날짜 없이 한 번 재고 끝낸다</td>
 <td>개선이 캠페인이 된다</td>
 <td>결과를 받은 날 다시 잴 날짜를 잡는다</td>
 </tr>
-<tr class="even">
+<tr>
 <td>밖의 사람이 대신 답을 적는다</td>
 <td>조직에 잴 줄 아는 사람이 남지 않는다</td>
 <td>진행은 맡겨도 답은 우리가 적는다</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>전 팀의 결과 제출과 취합이 시작된다</td>
 <td>엑셀 한 장이 순위표가 된다</td>
 <td>단계 대신 갈린 문항과 병목 축을 모은다</td>
@@ -4784,34 +4798,34 @@ AI의 동작 수준(요약 / 자체 실행 / 다른 시스템에 쓰기)과 사�
 <h2 id="다섯-단계">다섯 단계</h2>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>단계</th>
 <th>이름</th>
 <th>한 문장</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1</td>
 <td>각자도생</td>
 <td>잘 하는 사람이 잘 한다. 조직은 그걸 모른다</td>
 </tr>
-<tr class="even">
+<tr>
 <td>2</td>
 <td>반복</td>
 <td>반복되는 용례가 생겼다. 그러나 기준은 없다</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>3</td>
 <td>레일</td>
 <td>표준과 권장 경로가 깔렸다. 새 사람도 그 길로 간다</td>
 </tr>
-<tr class="even">
+<tr>
 <td>4</td>
 <td>검증</td>
 <td>만든 것이 맞는지 재고, 그 수치로 판단한다</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>5</td>
 <td>진화</td>
 <td>결과가 개선과 보상으로 되돌아온다. 레일이 스스로 넓어진다</td>
@@ -4906,44 +4920,44 @@ AI의 동작 수준(요약 / 자체 실행 / 다른 시스템에 쓰기)과 사�
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>화면 요소</th>
 <th>뜻</th>
 <th>먼저 할 일</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>다음 한 걸음</td>
 <td>지금 가장 낮은 자리에서 시작할 행동</td>
 <td>이것부터 펼친다</td>
 </tr>
-<tr class="even">
+<tr>
 <td>축별 단계</td>
 <td>여섯 축이 각각 버티는 높이</td>
 <td>가장 낮은 축을 찾는다</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>조직 단계</td>
 <td>여섯 축 중 최저값</td>
 <td>평균처럼 읽지 않는다</td>
 </tr>
-<tr class="even">
+<tr>
 <td>진행도·불균형도</td>
 <td>움직인 정도와 축 사이의 격차</td>
 <td>단계가 같아도 전진한 문항을 본다</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>미확정 비율</td>
-<td>’보완’이 차지하는 비율</td>
+<td>‘보완’이 차지하는 비율</td>
 <td>어떤 제약인지 먼저 확인한다</td>
 </tr>
-<tr class="even">
+<tr>
 <td>직접 개선·상신 필요</td>
 <td>팀 안에서 풀 일과 결재선으로 올릴 일</td>
 <td>두 목록의 다음 행동을 섞지 않는다</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>장 번호</td>
 <td>병목 축의 해설과 처방 위치</td>
 <td>해당 장의 다음 한 걸음으로 이동한다</td>
@@ -5012,7 +5026,7 @@ Cisco는 다른 조직과 비교한 준비도를 보여준다. <strong>자의 �
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>모델</th>
 <th>이 부록이 직접 확인한 자료</th>
 <th>공개 범위</th>
@@ -5020,25 +5034,25 @@ Cisco는 다른 조직과 비교한 준비도를 보여준다. <strong>자의 �
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>CMU SEI</td>
 <td>124쪽 모델 원문과 공식 발표 자료</td>
 <td>원문 PDF 전체 공개</td>
 <td>장기 추적 검증과 독립 평가 결과</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MIT CISR</td>
 <td>2024년 공식 브리핑과 2025년 후속 브리핑</td>
 <td>본문·표·사례 공개, 일부 내려받기와 추가 자료는 로그인 필요</td>
 <td>누구나 실행할 수 있는 독립 셀프 진단 도구</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Gartner</td>
 <td>모델 공식 초록과 2025년 조사 보도자료</td>
 <td>일곱 기둥과 조사 방법·주요 결과 공개</td>
 <td>전체 툴킷, 세부 판정 지침과 중간 단계 설명</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Cisco</td>
 <td>2025 AI Readiness Index, 공식 보도자료와 셀프 진단</td>
 <td>보고서·주요 수치·진단 도구 공개</td>
@@ -5133,52 +5147,52 @@ class="reading-aid wide-table">
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>묶음</th>
 <th>차원</th>
 <th>역량영역과 귀속 단계</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>조직 변화</td>
 <td>조직 전략</td>
 <td>AI 전략 개발(2) · AI 파트너십 개발(3) · 조직 구조 정렬(3) · 미래대비
 계획(5)</td>
 </tr>
-<tr class="even">
+<tr>
 <td>조직 변화</td>
 <td>인력과 문화</td>
 <td>AI 리터러시 인력 개발(1) · 조직 문화 진화(3)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>조직 변화</td>
 <td>워크플로 재설계</td>
 <td>실험(1) · 비즈니스 워크플로 혁신(3) · 인간 주도 자동화(3) · 측정과
 분석(3)</td>
 </tr>
-<tr class="even">
+<tr>
 <td>조직 변화</td>
 <td>리스크와 거버넌스</td>
 <td>리스크 관리(2) · 정책과 컴플라이언스(2) · 책임 있는 AI(2)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>생애주기 엔지니어링</td>
 <td>데이터</td>
 <td>데이터 생애주기 관리(2) · 데이터 품질 보증(2)</td>
 </tr>
-<tr class="even">
+<tr>
 <td>생애주기 엔지니어링</td>
 <td>엔지니어링</td>
 <td>AI 아키텍팅(2) · <strong>테스트와 평가(2)</strong> · 레거시 통합(3)
 · 투명성과 설명가능성(3)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>생애주기 엔지니어링</td>
 <td>운영</td>
 <td>AI 모델 관리(2) · AI 모델·에이전트 보안(2) · 모니터링(3)</td>
 </tr>
-<tr class="even">
+<tr>
 <td>생애주기 엔지니어링</td>
 <td>기술 생태계</td>
 <td>기술 인프라(2) · 공급망 관리(3) · 대규모 배포(4)</td>
@@ -5489,7 +5503,7 @@ class="reading-aid wide-table">
 <col style="width: 22%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>단계</th>
 <th style="text-align: right;">총 AI 효과성</th>
 <th style="text-align: right;">응답 기업</th>
@@ -5498,7 +5512,7 @@ class="reading-aid wide-table">
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1. 실험하고 준비하기</td>
 <td style="text-align: right;">0~49점</td>
 <td style="text-align: right;">28퍼센트</td>
@@ -5506,21 +5520,21 @@ class="reading-aid wide-table">
 <td style="text-align: right;">업계 평균 대비 -12.6 /
 -9.6퍼센트포인트</td>
 </tr>
-<tr class="even">
+<tr>
 <td>2. 파일럿과 역량 구축</td>
 <td style="text-align: right;">50~74점</td>
 <td style="text-align: right;">34퍼센트</td>
 <td>사업 사례와 파일럿</td>
 <td style="text-align: right;">-3.5 / -2.2퍼센트포인트</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>3. AI 방식으로 일하기</td>
 <td style="text-align: right;">75~99점</td>
 <td style="text-align: right;">31퍼센트</td>
 <td>플랫폼·대시보드 확장</td>
 <td style="text-align: right;">+11.3 / +8.7퍼센트포인트</td>
 </tr>
-<tr class="even">
+<tr>
 <td>4. AI 미래대비</td>
 <td style="text-align: right;">100점</td>
 <td style="text-align: right;">7퍼센트</td>
@@ -5585,7 +5599,7 @@ id="fnref43" role="doc-noteref"><sup>43</sup></a></p>
 <col style="width: 17%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>조사</th>
 <th style="text-align: right;">표본</th>
 <th style="text-align: right;">1단계</th>
@@ -5595,7 +5609,7 @@ id="fnref43" role="doc-noteref"><sup>43</sup></a></p>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>2022 Future Ready Survey</td>
 <td style="text-align: right;">721개 기업</td>
 <td style="text-align: right;">28퍼센트</td>
@@ -5603,7 +5617,7 @@ id="fnref43" role="doc-noteref"><sup>43</sup></a></p>
 <td style="text-align: right;">31퍼센트</td>
 <td style="text-align: right;">7퍼센트</td>
 </tr>
-<tr class="even">
+<tr>
 <td>2025 Real-Time Business Survey</td>
 <td style="text-align: right;">152개 기업</td>
 <td style="text-align: right;">13퍼센트</td>
@@ -5654,37 +5668,37 @@ role="doc-noteref"><sup>45</sup></a></p>
 <col style="width: 50%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>기둥</th>
 <th>이 책에서 풀어 쓴 질문</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>AI 전략</td>
 <td>어디에 왜 투자하며 어떤 사업 결과를 노리는가</td>
 </tr>
-<tr class="even">
+<tr>
 <td>유스케이스·제품 포트폴리오</td>
 <td>후보를 어떻게 고르고 중단·확장할 것인가</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>AI 거버넌스</td>
 <td>책임·정책·리스크 기준을 어떻게 운영하는가</td>
 </tr>
-<tr class="even">
+<tr>
 <td>AI 엔지니어링</td>
 <td>만들고 시험하고 배포하는 생애주기가 있는가</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>AI 데이터</td>
 <td>필요한 데이터의 접근성·품질·관리 기반이 있는가</td>
 </tr>
-<tr class="even">
+<tr>
 <td>AI 생태계·운영모델</td>
 <td>내부 역할과 외부 파트너, 공통 운영방식이 정렬돼 있는가</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>사람·문화</td>
 <td>리더십·역량·수용성이 실제 사용을 뒷받침하는가</td>
 </tr>
@@ -5711,34 +5725,34 @@ role="doc-noteref"><sup>47</sup></a></p>
 <col style="width: 36%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>조사 항목</th>
 <th style="text-align: right;">고성숙 조직</th>
 <th style="text-align: right;">저성숙 조직</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>AI 이니셔티브가 3년 이상 프로덕션에서 운영됨</td>
 <td style="text-align: right;">45퍼센트</td>
 <td style="text-align: right;">20퍼센트</td>
 </tr>
-<tr class="even">
+<tr>
 <td>사업부가 새 AI 솔루션을 신뢰하고 사용할 준비가 됨</td>
 <td style="text-align: right;">57퍼센트</td>
 <td style="text-align: right;">14퍼센트</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>리스크 재무분석·ROI·고객 영향을 구체적으로 측정</td>
 <td style="text-align: right;">63퍼센트</td>
 <td style="text-align: right;">공개값 없음</td>
 </tr>
-<tr class="even">
+<tr>
 <td>전담 AI 리더를 이미 임명</td>
 <td style="text-align: right;">91퍼센트</td>
 <td style="text-align: right;">공개값 없음</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>데이터 가용성·품질을 주요 장벽으로 지목</td>
 <td style="text-align: right;">29퍼센트</td>
 <td style="text-align: right;">34퍼센트</td>
@@ -5773,33 +5787,33 @@ id="fnref48" role="doc-noteref"><sup>48</sup></a></p>
 <h3 id="여섯-기둥과-네-그룹">여섯 기둥과 네 그룹</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>기둥</th>
 <th>주로 보는 준비</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>전략</td>
 <td>로드맵·유스케이스·투자 우선순위·장단기 자금</td>
 </tr>
-<tr class="even">
+<tr>
 <td>인프라</td>
 <td>네트워크·컴퓨팅·GPU·확장성과 보안</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>데이터</td>
 <td>중앙화·품질·접근성과 통합 가능성</td>
 </tr>
-<tr class="even">
+<tr>
 <td>거버넌스</td>
 <td>정책·책임·위협 대응·에이전트 통제</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>인재</td>
 <td>AI 숙련도·채용·재교육·인력 계획</td>
 </tr>
-<tr class="even">
+<tr>
 <td>문화</td>
 <td>리더십 수용성·변화관리·현장 참여</td>
 </tr>
@@ -5821,44 +5835,44 @@ role="doc-noteref"><sup>49</sup></a></p>
 <col style="width: 36%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>조사 항목</th>
 <th style="text-align: right;">Pacesetters</th>
 <th style="text-align: right;">전체 응답</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>명확한 AI 로드맵 보유</td>
 <td style="text-align: right;">99퍼센트</td>
 <td style="text-align: right;">58퍼센트</td>
 </tr>
-<tr class="even">
+<tr>
 <td>변화관리 계획 보유</td>
 <td style="text-align: right;">91퍼센트</td>
 <td style="text-align: right;">35퍼센트</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>장단기 자금 전략 보유</td>
 <td style="text-align: right;">96퍼센트</td>
 <td style="text-align: right;">43퍼센트</td>
 </tr>
-<tr class="even">
+<tr>
 <td>어떤 AI 과제에도 즉시 확장 가능한 유연한 네트워크</td>
 <td style="text-align: right;">71퍼센트</td>
 <td style="text-align: right;">15퍼센트</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>유스케이스 생성·확장의 성숙하고 반복 가능한 절차</td>
 <td style="text-align: right;">62퍼센트</td>
 <td style="text-align: right;">13퍼센트</td>
 </tr>
-<tr class="even">
+<tr>
 <td>유스케이스를 확정해 프로덕션으로 옮김</td>
 <td style="text-align: right;">77퍼센트</td>
 <td style="text-align: right;">18퍼센트</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>AI 에이전트를 통제하고 보호할 준비가 됨</td>
 <td style="text-align: right;">75퍼센트</td>
 <td style="text-align: right;">31퍼센트</td>
@@ -5915,7 +5929,7 @@ role="doc-noteref"><sup>53</sup></a></p>
 <col style="width: 20%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>모델</th>
 <th>근거·규모</th>
 <th>구조·접근</th>
@@ -5924,7 +5938,7 @@ role="doc-noteref"><sup>53</sup></a></p>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>CMU SEI × Accenture</td>
 <td>100건 이상 검토, 36개 이상 정밀 분석, 임원 20명 이상 인터뷰, 실무자
 약 600명 설문, Fortune 500 파일럿</td>
@@ -5933,28 +5947,28 @@ role="doc-noteref"><sup>53</sup></a></p>
 <td>검증은 2단계이며 자원·비용의 독립 역량영역과 담당자 인계 문항은
 없다</td>
 </tr>
-<tr class="even">
+<tr>
 <td>MIT CISR</td>
 <td>2022년 721개 기업, 2025년 152개 기업 후속 조사</td>
 <td>효과성 점수 기반 4단계, 공식 브리핑 공개</td>
 <td>단계와 성장·이익의 관계, 2→3단계의 분수령을 실증한다</td>
 <td>공개 설문지나 독립 셀프 진단은 없어 같은 점수를 재현하기 어렵다</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Gartner</td>
 <td>6개국 응답자 432명, 일곱 문항 조사</td>
 <td>5수준·7기둥, 전체 툴킷은 유료</td>
 <td>장기 운영·신뢰·측정과 성숙도의 관계를 보여준다</td>
 <td>전사 투자 대화에는 강하지만 공개 판정 지침은 제한적이다</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Cisco</td>
 <td>30개 시장·26개 산업, 리더 8,000명 이중맹검 조사</td>
 <td>6기둥·4그룹, 연례 보고서와 셀프 진단 공개</td>
 <td>다른 조직 대비 준비도와 기반 병목을 비교하기 쉽다</td>
 <td>벤치마크에는 강하지만 다음 행동 처방은 약하다</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>AXMM</td>
 <td>서른 문항, 15분 셀프 점검</td>
 <td>5단계·6축, 무료·심사관 없음</td>
@@ -5973,34 +5987,34 @@ role="doc-noteref"><sup>53</sup></a></p>
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>지금 알고 싶은 것</th>
 <th>먼저 볼 모델</th>
 <th>이유</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>전사 AI 역량을 실천과 증거 수준까지 해부하고 싶다</td>
 <td>SEI</td>
 <td>목표·실천·예시 산출물까지 가장 촘촘하다</td>
 </tr>
-<tr class="even">
+<tr>
 <td>파일럿에서 전사 방식으로 넘어갈 사업 효과의 경계를 보고 싶다</td>
 <td>MIT CISR</td>
 <td>단계 판정이 효과성 점수와 성장·이익 자료에 연결된다</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>전사 투자·운영모델·리더십의 공통 로드맵을 짜고 싶다</td>
 <td>Gartner</td>
 <td>일곱 기둥이 전략과 자원 배분 대화에 맞춰져 있다</td>
 </tr>
-<tr class="even">
+<tr>
 <td>동종 조직과 준비도를 비교하고 인프라 병목을 찾고 싶다</td>
 <td>Cisco</td>
 <td>큰 연례 표본과 공개 벤치마크가 있다</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>한 팀이 당장 바꿀 수 있는 약한 고리와 다음 행동을 고르고 싶다</td>
 <td>AXMM</td>
 <td>서른 문항과 축별 처방을 팀 단위로 쓰게 설계했다</td>
@@ -6046,7 +6060,7 @@ GPU·컴퓨팅을 전략·인프라 기둥 안에서 측정한다. 차이는 <st
 <strong>중간 리더와 팀이 자기 손이 닿는 병목을 찾고 다음 행동을 고르는
 자리</strong>다.</p>
 <hr />
-<aside id="footnotes" class="footnotes footnotes-end-of-document"
+<section id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
 <ol>
@@ -6429,7 +6443,7 @@ href="#fnref52" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 https://www.cisco.com/c/m/en_us/solutions/ai/readiness-index/lookup-tool.html<a
 href="#fnref53" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</aside>
+</section>
 </main>
 <a class="totop" href="#top">맨 위로</a>
 <footer class="colophon">
