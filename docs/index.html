@@ -181,17 +181,33 @@
   .model-axis-table col:nth-child(2){width:14% !important}
   .model-axis-table col:nth-child(3){width:70% !important}
 
-  /* 넓은 표는 화면이 넉넉할 때 본문 폭(44rem)을 벗어나 펼친다.
-     표 안쪽이 48rem을 요구하므로 그보다 좁으면 가로 스크롤이 반드시 생긴다.
-     좁은 화면에서는 기존대로 스크롤을 유지한다. */
+  /* Pandoc은 마크다운 구분선 길이로 열 너비를 정한다. 내용과 무관해서
+     짧은 열과 긴 열이 같은 폭을 받는 일이 생긴다. 그 값을 무시하고
+     내용에 맞춰 나누게 한다. 축 비교표만은 의도한 비율을 유지한다. */
+  .reading-aid:not(.model-axis-table) table{table-layout:auto}
+  .reading-aid:not(.model-axis-table) col{width:auto !important}
+
+  /* .reading-aid 밖에 그대로 놓인 표는 감싸주는 스크롤 상자가 없어서
+     좁은 화면에서 페이지 전체를 옆으로 밀어버린다. 표 자신이 스크롤을
+     맡게 한다. */
+  .wrap>table{display:block; max-width:100%; overflow-x:auto}
+
+  /* 화면이 넓어지면 본문도 함께 넓힌다. 본문만 44rem에 묶어두면
+     펼쳐진 표와 폭이 어긋나 보인다. 상한은 가장 넓은 표(48rem)가
+     가로 스크롤 없이 들어가는 선에서 멈춘다. 더 늘려봐야 표는 남는데
+     한 줄에 들어가는 글자만 늘어 읽기가 나빠진다.
+     짧은 첫 열이 두 줄로 접히는 것도 여기서만 막는다. 좁은 화면에서는
+     접혀야 표가 화면 안에 들어온다. */
   @media (min-width:64rem){
-    .reading-aid.wide-table{
-      --breakout:min(94vw, 64rem);
-      width:var(--breakout);
-      margin-left:calc((100% - var(--breakout)) / 2);
-      margin-right:calc((100% - var(--breakout)) / 2);
-      overflow-x:visible;
-    }
+    :root{ --maxw:min(92vw, 53rem) }
+    /* 폭만 늘리면 한 줄에 들어가는 글자가 그만큼 늘어난다. 글자를 같이
+       키워 한 줄 길이를 원래대로 되돌린다. 표는 폭을 벌기 위해 늘린
+       것이니 본문 크기를 따라가지 않게 둔다. */
+    body{font-size:18px}
+    .reading-aid,.leader-summary,figure,table{font-size:16px}
+    .reading-aid td:first-child,
+    .reading-aid th:first-child{white-space:nowrap}
+    .reading-aid.wide-table{overflow-x:visible}
     .reading-aid.wide-table table{min-width:0}
   }
   .stat-dashboard{overflow-x:visible}
