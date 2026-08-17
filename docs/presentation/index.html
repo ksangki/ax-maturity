@@ -8,6 +8,12 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
 <style>
+  /* 모바일 사파리는 화면보다 넓은 블록의 글자를 제 나름대로 키운다.
+     표가 옆으로 스크롤될 때 긴 열만 부풀어 같은 표 안에서 열마다 글자
+     크기가 달라 보인다. 지정한 크기를 그대로 쓰게 한다. none이 아니라
+     100%다 — none은 독자가 키운 글자 크기 설정까지 막는다. */
+  html{-webkit-text-size-adjust:100%; text-size-adjust:100%}
+
 :root{
   --bg:#12111a; --surface:#1b1922; --surface-2:#262230; --line:#332f3c;
   --text:#f0ece5; --muted:#a8a2b0; --dim:#6a6474;
