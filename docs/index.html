@@ -78,7 +78,12 @@
            --panel:#201d24; --panel-strong:#30271f; }
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth; color:var(--fg); background:var(--bg); font-size:100%}
+  /* 모바일 사파리는 화면보다 넓은 블록의 글자를 제 나름대로 키운다.
+     표가 옆으로 스크롤될 때 긴 열만 부풀어 같은 표 안에서 열마다
+     글자 크기가 달라 보인다. 지정한 크기를 그대로 쓰게 한다.
+     none이 아니라 100%다. none은 사용자의 글자 크기 설정까지 막는다. */
+  html{scroll-behavior:smooth; color:var(--fg); background:var(--bg); font-size:100%;
+       -webkit-text-size-adjust:100%; text-size-adjust:100%}
   body{
     margin:0; padding:0; background:var(--bg); color:var(--fg);
     font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
