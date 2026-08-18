@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>나는 이 게임을 안다 — 표지</title>
+<style>
+  /* 표지 원본. scripts/build_cover.py가 이 파일을 1600×2560으로 렌더한다.
+     표지의 그리드는 장식이 아니라 이 책의 주장이다 — 여섯 축이 각자
+     어디까지 왔는지 보여주고, 조직의 단계는 그중 가장 낮은 축이 정한다.
+     그래서 축 이름과 단계 번호를 실제로 적고, 최소값에 선을 세운다. */
+  :root{
+    --bg:#17161d;
+    --ink:#f0ede8;
+    --dim:#8b857d;
+    --have:#d3a877;      /* 보유 */
+    --weak:#8a5a3b;      /* 가장 약한 고리 */
+    --grid:#2e2b35;      /* 아직 아닌 칸 */
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{-webkit-text-size-adjust:100%; text-size-adjust:100%}
+  body{
+    width:1600px; height:2560px; background:var(--bg); color:var(--ink);
+    font-family:"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;
+    -webkit-font-smoothing:antialiased;
+    display:flex; flex-direction:column;
+    padding:150px 130px 130px;
+  }
+
+  /* 위쪽 얇은 선 하나로 판을 잡는다 */
+  .rule{height:3px; background:var(--have); width:190px; margin-bottom:54px}
+
+  .kicker{
+    font-size:40px; letter-spacing:.20em; color:var(--dim);
+    font-weight:500; margin-bottom:64px;
+  }
+
+  h1{
+    font-size:206px; line-height:1.06; font-weight:200;
+    letter-spacing:-.035em; margin-bottom:56px;
+  }
+  h1 b{font-weight:600}
+  h1 .accent{color:var(--have); font-weight:600}
+
+  .subtitle{
+    font-size:60px; font-weight:300; color:#c9c3ba;
+    letter-spacing:-.015em; margin-bottom:26px;
+  }
+
+  /* ── 진단표 ── */
+  .matrix{margin-top:124px}
+  .stages{
+    display:grid; grid-template-columns:250px repeat(5, 1fr);
+    gap:14px; margin-bottom:22px;
+  }
+  .stages span{
+    font-size:31px; color:var(--dim); font-weight:500;
+    text-align:center; letter-spacing:-.01em;
+  }
+  .stages span:first-child{text-align:left}
+
+  .row{
+    display:grid; grid-template-columns:250px repeat(5, 1fr);
+    gap:14px; margin-bottom:16px; align-items:center;
+  }
+  .axis{font-size:34px; color:#b3aca3; font-weight:400; letter-spacing:-.02em}
+  .axis b{color:var(--ink); font-weight:600; margin-right:14px}
+  .cell{height:88px; border-radius:5px; background:var(--grid)}
+  .cell.have{background:var(--have)}
+  .cell.weak{background:var(--weak)}
+
+  /* 가장 약한 고리에 세우는 선. 조직의 단계가 여기서 결정된다. */
+  .verdict{
+    display:grid; grid-template-columns:250px repeat(5, 1fr);
+    gap:14px; margin-top:30px;
+  }
+  .verdict .mark{grid-column:2; text-align:center}
+  .verdict .mark i{
+    display:block; width:4px; height:44px; background:var(--have);
+    margin:0 auto 16px;
+  }
+  .verdict .mark span{
+    font-size:33px; color:var(--have); font-weight:600; white-space:nowrap;
+    letter-spacing:-.01em;
+  }
+
+  /* ── 아래쪽 ── */
+  footer{margin-top:auto}
+  .claim{
+    font-size:52px; line-height:1.48; font-weight:300; color:#c9c3ba;
+    letter-spacing:-.02em; margin-bottom:76px;
+  }
+  .claim b{color:var(--ink); font-weight:600}
+  .byline{display:flex; align-items:baseline; justify-content:space-between}
+  .byline .who{font-size:58px; font-weight:600; letter-spacing:-.02em}
+  .byline .url{font-size:33px; color:var(--dim); font-weight:400}
+</style>
+</head>
+<body>
+  <div class="rule"></div>
+  <p class="kicker">AX 성숙도 모델 · AXMM</p>
+
+  <h1>나는<br />이 게임을<br /><span class="accent">안다</span></h1>
+  <p class="subtitle">AX 성숙도를 스스로 재는 법</p>
+
+  <div class="matrix">
+    <div class="stages">
+      <span>여섯 축 · 다섯 단계</span>
+      <span>1 각자도생</span><span>2 반복</span><span>3 레일</span>
+      <span>4 검증</span><span>5 진화</span>
+    </div>
+
+    <div class="row"><p class="axis"><b>A</b>인식·동기·역량</p>
+      <i class="cell have"></i><i class="cell have"></i><i class="cell have"></i><i class="cell"></i><i class="cell"></i></div>
+    <div class="row"><p class="axis"><b>B</b>기획·개발</p>
+      <i class="cell have"></i><i class="cell have"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i></div>
+    <div class="row"><p class="axis"><b>C</b>연동·배포·운영</p>
+      <i class="cell have"></i><i class="cell have"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i></div>
+    <div class="row"><p class="axis"><b>D</b>평가·측정·개선</p>
+      <i class="cell weak"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i></div>
+    <div class="row"><p class="axis"><b>I</b>자원·비용</p>
+      <i class="cell have"></i><i class="cell have"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i></div>
+    <div class="row"><p class="axis"><b>J</b>보안·거버넌스</p>
+      <i class="cell have"></i><i class="cell have"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i></div>
+
+    <div class="verdict">
+      <p class="mark"><i></i><span>조직 단계 1</span></p>
+    </div>
+  </div>
+
+  <footer>
+    <p class="claim">조직의 단계는 평균이 아니라<br /><b>가장 약한 고리</b>가 정한다</p>
+    <p class="byline"><span class="who">김상기</span><span class="url">axmm-check.vercel.app</span></p>
+  </footer>
+</body>
+</html>
