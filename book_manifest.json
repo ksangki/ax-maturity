@@ -10,16 +10,23 @@
   "identifier": "urn:uuid:913dfefc-f804-4d35-a10a-e36dd1452d26",
   "description": "10년 전 CMMI와 TMMi로 개발 프로세스의 성숙도를 재던 사람이 같은 질문을 AX에 던진다. 「우리 조직은 지금 몇 단계인가?」 카네기멜론 SEI, MIT CISR, 가트너, 시스코에도 각자의 자가 있다. 잘 만들어진 모델들이지만 조직 전체를 위에서 내려다보는 데 초점이 맞아, 실제로 만드는 사람이 만든 다음 어디서 막히는지까지는 충분히 드러내지 않는다. 이 책은 그 빈자리를 잰다. 심사관 없이 15분 안에 답할 수 있는 서른 개의 질문과, 재고 난 뒤 무엇부터 할지 고르는 방법을 담았다.",
   "cover_image": "cover.png",
-  "rights": "© 2026 김상기",
-  "accessModes": ["textual"],
-  "accessModeSufficient": ["textual"],
+  "license": "CC BY-NC-SA 4.0",
+  "rights": "© 2026 김상기 — Licensed under CC BY-NC-SA 4.0",
+  "accessModes": [
+    "textual"
+  ],
+  "accessModeSufficient": [
+    "textual"
+  ],
   "accessibilityFeatures": [
     "alternativeText",
     "readingOrder",
     "structuralNavigation",
     "tableOfContents"
   ],
-  "accessibilityHazards": ["none"],
+  "accessibilityHazards": [
+    "none"
+  ],
   "target_audience": "AX를 실제로 굴려야 하는 중간 리더 — 위에서는 「어디쯤이냐」를 묻고 아래에서는 「뭐부터 하냐」를 묻는 AX 추진 담당자와 팀장",
   "chapters": [
     "들어가며",
