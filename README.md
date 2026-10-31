@@ -11,7 +11,7 @@
 ## 읽기
 
 - **웹 버전**: [GitHub Pages에서 읽기](https://ksangki.github.io/ax-maturity/)
-- **EPUB**: [`나는-이-게임을-안다-v1.0.0.epub`](나는-이-게임을-안다-v1.0.0.epub) 다운로드
+- **EPUB**: [`나는-이-게임을-안다-v1.0.1.epub`](나는-이-게임을-안다-v1.0.1.epub) 다운로드
 - **발표 자료**: [1시간 발표용 슬라이드 30장](https://ksangki.github.io/ax-maturity/presentation/)
 - **오프닝 영상**: [60초 모션그래픽](https://ksangki.github.io/ax-maturity/media/opening.mp4) · 웹 버전 첫 화면에도 실려 있다
 
@@ -116,5 +116,7 @@ Pull Request와 `main` 푸시에서도 같은 검증이 자동 실행된다.
 ---
 
 **김상기** 지음 · 2026
+
+판 이력 — v1.0.1: 문체 점검 — AI 문체 패턴 109곳 정리, 내용·수치 변경 없음 (2026-11-01)
 
 이 책의 모든 서술은 특정 조직을 식별할 수 없도록 일반화되었다. 인용한 외부 자료는 각 장의 각주에 출처를 밝혔다.
