@@ -40,19 +40,19 @@
 
 이 문장을 읽고 한참 앉아 있었다. 얼마나 깔았느냐가 아니라 믿을 만하게 만들 능력이라니, 우리가 앞 장에서 도구 이야기를 하며 짚었던 내용이다. 앞서 나간 사람이 같은 자리를 먼저 찍어놓은 걸 발견하면 기분이 묘해진다. 억울한 것 같기도 하고 반가운 것 같기도 하다.
 
-그렇다면 이 문장을 어떻게 다뤄야 할까? 못 본 척 숨기는 방법도 있다. 하지만 그러지 말자. 오히려 앞에 내세우는 편이 낫다. **성숙도 모델의 원조를 만든 조직이 독립적으로 같은 결론에 도달했다면, 그건 우리 주장이 흔들린다는 뜻이 아니라 그 방향이 맞다는 두 번째 증거다.**
+그렇다면 이 문장을 어떻게 다뤄야 할까? 못 본 척 숨기는 방법도 있다. 하지만 그러지 말자. 오히려 앞에 내세우는 편이 낫다. **성숙도 모델의 원조를 만든 조직이 독립적으로 같은 결론에 도달했다면, 그건 우리 주장을 흔드는 일이기보다 그 방향이 맞다는 두 번째 증거다.**
 
 그러니 이 책이 만들려는 자는 "우리가 처음"이라고 말하는 물건이 아니다. **"우리는 다르게 본다"**고 말하는 물건이다. 그렇다면 정확히 어디가 다른가. 그걸 찾느라 문서를 한 번 더 읽었고, 두 번째 읽기에서 예상 못 한 걸 발견했다.
 
 ## 세어보다가 생각이 바뀌었다
 
-두 번째로 읽을 때는 내용이 아니라 배치를 봤다. 이 모델은 역량영역 하나하나가 특정 단계에 걸려 있는 구조다. 그러니까 "이 역량영역의 목표를 다 채워야 그 차원이 몇 단계에 도달한다"는 식으로, 역량영역마다 소속 단계가 붙어 있다.
+두 번째로 읽을 때는 내용 대신 배치를 봤다. 이 모델에서는 역량영역 하나하나가 특정 단계에 걸려 있다. 그러니까 "이 역량영역의 목표를 다 채워야 그 차원이 몇 단계에 도달한다"는 식으로, 역량영역마다 소속 단계가 붙어 있다.
 
 그래서 그냥 세어봤다. 단계가 명시된 스물다섯 개가 어디에 걸려 있는지.
 
 1단계에 둘. **2단계에 열하나. 3단계에 열.** 4단계에 하나. 5단계에 하나.[^c2n1]
 
-세어놓고 숫자를 한참 들여다봤다. 가운데 두 단계에만 스물하나, **전체의 84퍼센트가 몰려 있다.** 위의 두 단계에는 각각 하나씩만 있다. 다섯 단계짜리 모델인데 무게는 아래쪽 절반에 다 실려 있는 셈이다. 며칠 동안 문장을 따라 읽을 때는 보이지 않던 것이 반나절 손으로 세자 드러났다. 이때부터는 개별 항목보다 분포 자체를 읽어야 했다.
+세어놓고 숫자를 한참 들여다봤다. 가운데 두 단계에만 스물하나, **전체의 84퍼센트가 몰려 있다.** 위의 두 단계에는 각각 하나씩만 있다. 다섯 단계짜리 모델인데 무게는 아래쪽 절반에 다 실려 있다. 며칠 동안 문장을 따라 읽을 때는 보이지 않던 것이 반나절 손으로 세자 드러났다. 이때부터는 개별 항목보다 분포 자체를 읽어야 했다.
 
 ::: {.reading-aid .stat-dashboard .stat-dashboard--compact}
 ### SEI 모델, 25개 역량영역으로 읽기
@@ -70,7 +70,7 @@
 <p class="stat-takeaway"><strong>2~3단계에 21개, 전체의 84퍼센트.</strong> SEI 모델은 초기·중간 단계의 역량을 특히 촘촘하게 다룬다.</p>
 :::
 
-## 분포가 곧 세계관이다
+## 분포에 세계관이 드러난다
 
 이 분포는 모델의 무게가 어디에 실려 있는지를 보여준다. **초기·중간 단계의 역량을 특히 촘촘하게 다룬다.** 왜 그렇게 배치했는지까지 숫자만으로 단정할 수는 없다.
 
@@ -88,7 +88,7 @@
 
 ## 그들에게 아예 없는 것 둘
 
-여기까지는 같은 것을 다르게 배치한 이야기다. 그런데 배치의 차이가 아니라 아예 없는 것도 있었다. 원문 전체를 검색해서 확인한 것이 둘이다.
+여기까지는 같은 것을 다르게 배치한 이야기다. 그런데 배치 차이를 넘어 아예 없는 것도 있었다. 원문 전체를 검색해서 확인한 것이 둘이다.
 
 첫째, **예산과 자원을 다루는 축이 없다.** 대응하는 역량영역이 아예 없고, 예산이라는 단어는 "자원에는 인력과 자금이 포함된다" 정도의 부속 언급으로 딱 한 번 나온다.[^c2n1]
 
@@ -126,16 +126,16 @@ SEI 모델의 단계 정의와 여덟 차원, 역량영역의 구성이 궁금�
 
 ## 마무리
 
-이미 나와 있는 자들은 잘 만들어졌고, 다만 다른 곳을 보라고 만들어졌다. 우리가 할 일은 그걸 깎아내리는 게 아니라, 그들이 보지 않은 자리에 눈금을 새기는 것이다.
+이미 나와 있는 자들은 잘 만들어졌고, 다만 다른 곳을 보라고 만들어졌다. 우리가 할 일은 그걸 깎아내리는 대신, 그들이 보지 않은 자리에 눈금을 새기는 것이다.
 
 지금까지 우리는 성숙도 모델들끼리 비교했을 뿐이다. **성숙도 모델이라는 물건 자체가 쓸모없다는 비판**은 아직 하나도 다루지 않았다. 그리고 그 비판은 꽤 오래됐고, 꽤 날카롭고, 상당 부분 맞다. 단계로 줄 세우는 게 무슨 근거가 있느냐, 등급이 붙는 순간 조작이 시작되지 않느냐, 재고 나서 뭘 하라는 말은 왜 없느냐.
 
-이런 말을 들으면 방어하고 싶어진다. 하지만 자를 내놓는 사람이 그 약점을 먼저 말하지 않으면 결국 다른 사람이 말한다. 그래서 이어지는 장은 성숙도 모델을 변호하지 않고, 오래된 비판 가운데 무엇이 맞는지부터 인정하며 시작한다.
+이런 말을 들으면 방어하고 싶어진다. 하지만 자를 내놓는 사람이 그 약점을 먼저 말하지 않으면 다른 사람이 대신 말한다. 그래서 이어지는 장은 성숙도 모델을 변호하는 대신, 오래된 비판 가운데 무엇이 맞는지부터 인정하며 시작한다.
 
 ---
 
-[^c2n1]: Carnegie Mellon University SEI, *The AI Adoption Maturity Model v1.0* (2026-06-30), 124쪽. 본문의 인용문, 역량영역의 단계 귀속과 그 분포, `Test and Evaluation` 역량영역의 목표·실천 내용, 예시 산출물에 관한 경고, 예산 언급 빈도와 인계 관련 표현의 부재는 모두 공개된 원문 PDF를 직접 확인한 것이다. — https://www.sei.cmu.edu/library/ai-adoption-maturity-model/ / PDF: https://www.sei.cmu.edu/documents/6534/The_AI_Adoption_Maturity_Model.pdf
+[^c2n1]: Carnegie Mellon University SEI, *The AI Adoption Maturity Model v1.0* (2026-06-30), 124쪽. 본문의 인용문, 역량영역의 단계 귀속과 그 분포, `Test and Evaluation` 역량영역의 목표·실천 내용, 예시 산출물에 관한 경고, 예산 언급 빈도와 인계 관련 표현의 부재는 모두 공개된 원문 PDF를 직접 확인한 것이다. 출처: https://www.sei.cmu.edu/library/ai-adoption-maturity-model/ / PDF: https://www.sei.cmu.edu/documents/6534/The_AI_Adoption_Maturity_Model.pdf
 
-[^c2n2]: 모델 개발 규모(기존 시도 100건 이상 검토, 임원 인터뷰 20~25명, 실무자 약 600명 설문, 포춘 500대 기업 파일럿)는 SEI·Accenture의 발표 자료와 원문 서문에 근거한다. 설문은 SEI와 Accenture의 자체 조사(2026-01)임을 밝혀둔다. — SEI 보도자료, https://www.sei.cmu.edu/news/sei-and-accenture-release-ai-adoption-maturity-model-to-help-organizations-scale-ai-with-predictable-outcomes/ / Accenture 뉴스룸, https://newsroom.accenture.com/news/2026/accenture-and-the-carnegie-mellon-university-software-engineering-institute-launch-ai-adoption-maturity-model-to-help-organizations-scale-ai-with-predictable-outcomes
+[^c2n2]: 모델 개발 규모(기존 시도 100건 이상 검토, 임원 인터뷰 20~25명, 실무자 약 600명 설문, 포춘 500대 기업 파일럿)는 SEI·Accenture의 발표 자료와 원문 서문에 근거한다. 설문은 SEI와 Accenture의 자체 조사(2026-01)임을 밝혀둔다. 출처: SEI 보도자료, https://www.sei.cmu.edu/news/sei-and-accenture-release-ai-adoption-maturity-model-to-help-organizations-scale-ai-with-predictable-outcomes/ / Accenture 뉴스룸, https://newsroom.accenture.com/news/2026/accenture-and-the-carnegie-mellon-university-software-engineering-institute-launch-ai-adoption-maturity-model-to-help-organizations-scale-ai-with-predictable-outcomes
 
-[^c2n3]: MIT CISR 공식 브리핑은 2022년 721개 기업 조사와 단계 판정 방식, 2025년 152개 기업 후속 조사까지 본문을 공개한다. 다만 누구나 같은 점수를 계산할 독립 셀프 진단은 제공하지 않는다 — https://cisr.mit.edu/publication/2024_1201_EnterpriseAIMaturityModel_WeillWoernerSebastian / https://cisr.mit.edu/publication/2025_0801_EnterpriseAIMaturityUpdate_WoernerSebastianWeillKaganer. Gartner의 공개 초록은 5수준·7기둥을 설명하지만 전체 툴킷은 고객 전용이다 — https://www.gartner.com/en/documents/5937907. Cisco는 AI Readiness Index와 함께 무료 셀프 진단을 운영한다 — https://www.cisco.com/c/m/en_us/solutions/ai/readiness-index/lookup-tool.html
+[^c2n3]: MIT CISR 공식 브리핑은 2022년 721개 기업 조사와 단계 산정 방식, 2025년 152개 기업 후속 조사까지 본문을 공개한다. 다만 누구나 같은 점수를 계산할 독립 셀프 진단은 제공하지 않는다. 출처: https://cisr.mit.edu/publication/2024_1201_EnterpriseAIMaturityModel_WeillWoernerSebastian / https://cisr.mit.edu/publication/2025_0801_EnterpriseAIMaturityUpdate_WoernerSebastianWeillKaganer. Gartner의 공개 초록은 5수준·7기둥을 설명하지만 전체 툴킷은 고객 전용이다. 출처: https://www.gartner.com/en/documents/5937907. Cisco는 AI Readiness Index와 함께 무료 셀프 진단을 운영한다. 출처: https://www.cisco.com/c/m/en_us/solutions/ai/readiness-index/lookup-tool.html
