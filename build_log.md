@@ -1,3 +1,17 @@
+# Build Log: 나는 이 게임을 안다 v1.0.3
+
+- **Date:** 2026-11-07
+- **Output:** `나는-이-게임을-안다-v1.0.3.epub` (루트 + `docs/epub/`)
+- **Size:** 1562159 bytes
+- **Build:** `./scripts/build-site.sh` (build_site → validate_site → build_epub → validate_epub)
+- **Site check:** passed (chapters 15, figures 16, internal_links 129, TOC 21/21 링크 해석)
+- **EPUB check:** passed (editorial_figures 15, embedded_images 15, stat_dashboards 4, stat_charts 5, axmm_cells 30)
+- **epubcheck:** 0 fatal / 0 error / 0 warning
+- **Playwright:** 웹·발표 자료 390px·1440px 가로 넘침 0, 오프닝 영상 블록·발표 자료 링크 유지
+- **변경:** 1장 소제목 하나를 v1.0.1 문장으로 되돌림, 내용·수치 변경 없음 (`proofread_log.md`).
+
+---
+
 # Build Log — 나는 이 게임을 안다 v1.0.2
 
 - **Date:** 2026-11-07
