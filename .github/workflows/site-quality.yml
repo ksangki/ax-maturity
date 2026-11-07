@@ -22,7 +22,7 @@ jobs:
       # 집필 환경과 같은 판을 못 박는다.
       - name: Install Pandoc
         env:
-          PANDOC_VERSION: 3.9.0.2
+          PANDOC_VERSION: "3.13"
         run: |
           set -euo pipefail
           curl -fsSL -o /tmp/pandoc.deb \
